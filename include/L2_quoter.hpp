@@ -14,6 +14,9 @@
 #include <unistd.h>
 //#include <map>
 #include "TORATstpLev2MdApi.h"
+#include "/root/clickhouse-cpp/clickhouse/client.h"//数据库
+
+#include <unistd.h>
 //#include "concurrentqueue.h"
 //#include <jemalloc/jemalloc.h>
 //#include "Strategy.hpp"
@@ -26,6 +29,7 @@
 //#include "spdlog/async.h"
 //#include "helper_functions.hpp"
 using namespace TORALEV2API;
+using namespace clickhouse;//数据库下的名字空间
 class Lev2MdSpi : public CTORATstpLev2MdSpi{
 public:
 	Lev2MdSpi():m_api(nullptr),m_request_id(0){};
