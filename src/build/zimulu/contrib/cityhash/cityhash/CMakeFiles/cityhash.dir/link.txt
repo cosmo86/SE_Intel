@@ -1,0 +1,2 @@
+/opt/rh/devtoolset-8/root/usr/bin/ar qc libcityhash.a CMakeFiles/cityhash.dir/city.cc.o
+/opt/rh/devtoolset-8/root/usr/bin/ranlib libcityhash.a

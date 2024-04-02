@@ -1,0 +1,2 @@
+/opt/rh/devtoolset-8/root/usr/bin/ar qc liblz4.a CMakeFiles/lz4.dir/lz4.c.o CMakeFiles/lz4.dir/lz4hc.c.o
+/opt/rh/devtoolset-8/root/usr/bin/ranlib liblz4.a

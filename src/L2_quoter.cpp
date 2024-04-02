@@ -1,4 +1,21 @@
 #include "../include/L2_quoter.hpp"//头文件信息
+Client client(ClientOptions().SetHost("localhost"));//初始化
+
+    //gettime
+    std::string Lev2MdSpi::gettime() {
+        std::time_t currentTime = std::time(nullptr);
+        // 转换为本地时间
+        std::tm* localTime = std::localtime(&currentTime);
+
+        // 使用ostringstream来构建格式化的字符串
+        std::ostringstream oss;
+        oss << localTime->tm_year + 1900  // 年份
+            << std::setfill('0') << std::setw(2) << localTime->tm_mon + 1  // 月份
+            << std::setfill('0') << std::setw(2) << localTime->tm_mday; // 日期
+
+        std::string tm_date = oss.str(); // 从ostringstream获取字符串
+        return tm_date;
+    }
     
 	//初始化，账号，密码，连接地址
     void Lev2MdSpi::init(char * userid,char * password,char * address){
@@ -59,7 +76,9 @@
         int ret_nt = m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
         if (ret_nt == 0)
         {
+            
             std::cout<<"yes 0"<<std::endl;
+           // gettime();
         }
         else
         {
@@ -72,6 +91,7 @@
 		if (ret_od == 0)
 		{
 			std::cout<<"yes 1"<<std::endl;
+            
 		}
 		else
 		{
@@ -90,7 +110,7 @@
 		}
 
 		//Subscribe to market data
-		int ret_md = m_api->SubscribeMarketData(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
+		/*int ret_md = m_api->SubscribeMarketData(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
 		if (ret_md == 0)
 		{
 			std::cout<<"yes 3"<<std::endl;
@@ -98,7 +118,7 @@
 		else
 		{
 			std::cout<<"no"<<std::endl;
-		}
+		}*/
     }
     
     //------------------------------------------------------------------------响应报文----------------------------------------------------------------------------------//
@@ -106,13 +126,16 @@
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspsubRtnNGTSTick sub market data success! \n");
+            std::string sql="CREATE TABLE IF NOT EXISTS NGTSTick_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
+            std::cout<<sql<<std::endl;
+            client.Execute(sql.c_str());//建表
         }
         else
         {
          printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
         pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
     }
-	void Lev2MdSpi::OnRspSubMarketData(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
+	/*void Lev2MdSpi::OnRspSubMarketData(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubMarketData sub market data success! \n");
@@ -121,11 +144,14 @@
         {
          printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
         pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
-    }
+    }*/
 	void Lev2MdSpi::OnRspSubTransaction(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubTransaction sub market data success! \n");
+           std::string sql="CREATE TABLE IF NOT EXISTS Transaction_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
+            std::cout<<sql<<std::endl;
+            client.Execute(sql.c_str());//建表
         }
         else
         {
@@ -136,6 +162,9 @@
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubOrderDetail sub market data success! \n");
+            std::string sql="CREATE TABLE IF NOT EXISTS OrderDetail_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
+            std::cout<<sql<<std::endl;
+            client.Execute(sql.c_str());//建表
         }
         else
         {
@@ -143,33 +172,43 @@
         pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
     }
     //------------------------------------------------------------------------应答报文----------------------------------------------------------------------------------//
-    void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
+    /*void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
        
-        /*printf("OnRtnMarketData:security_id[%s] last_price[%f] time_stamp[%d] total_value_trade[%lld]\n",
+        printf("OnRtnMarketData:security_id[%s] last_price[%f] time_stamp[%d] total_value_trade[%lld]\n",
             pDepthMarketData ->SecurityID,
             pDepthMarketData ->LastPrice,
             pDepthMarketData ->DataTimeStamp,
-            pDepthMarketData ->TotalValueTrade);*/
-	}
+            pDepthMarketData ->TotalValueTrade);
+	}*/
     void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         
-       /* ///交易所代码
+        
+       //交易所代码
 		std::cout<<pTick->ExchangeID<<' ';
 		///证券代码
 		std::cout<<pTick->SecurityID<<' ';
         ///时间
-        std::cout<<pTick->	TickTime<<' ';
+        std::cout<<pTick->TickTime<<' ';  
         ///价格
-		std::cout<<pTick->	Price<<' ';
+		std::cout<<pTick->Price<<' ';
 		///数量
 		std::cout<<pTick->Volume<<' ';
         //方向
-        std::cout<<pTick->	Side<<std::endl;*/
+        std::cout<<pTick->Side<<std::endl;
+
+        std::string DATA="(";
+        DATA+=pTick->ExchangeID;
+        DATA+=",";
+        DATA+=pTick->SecurityID;
+        DATA+=","+std::to_string(pTick->TickTime)+","+std::to_string(pTick->Price)+","+std::to_string(pTick->Volume)+","+std::to_string(pTick->Side)+")";
+        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime()+std::string(" values") + DATA;
+        std::cout<<insert_sql<<std::endl;
+        client.Execute(insert_sql.c_str());
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
         std::cout<<"OnRtnTransaction"<<" ";
        
-        		///交易所代码
+        ///交易所代码
 		std::cout<<pTransaction->ExchangeID<<' ';
 
 		///证券代码
@@ -186,6 +225,14 @@
 
 		///成交类别（只有深圳行情有效）
 		std::cout<<pTransaction->	ExecType<<std::endl;
+        std::string DATA="(";
+        DATA+=pTransaction->ExchangeID;
+        DATA+=",";
+        DATA+=pTransaction->SecurityID;
+        DATA+=","+std::to_string(pTransaction->TradeTime)+","+std::to_string(pTransaction->TradePrice)+","+std::to_string(pTransaction->TradeVolume)+","+std::to_string(pTransaction->ExecType)+")";
+        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime()+std::string(" values") + DATA;
+        std::cout<<insert_sql<<std::endl;
+        client.Execute(insert_sql.c_str());
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
         std::cout<<"OnRtnOrderDetail"<<" ";
@@ -206,9 +253,20 @@
 
 		///委托方向
 		std::cout<<pOrderDetail->  Side<<std::endl;
+        std::string DATA="(";
+        DATA+=pOrderDetail->ExchangeID;
+        DATA+=",";
+        DATA+=pOrderDetail->SecurityID;
+        DATA+=","+std::to_string(pOrderDetail->OrderTime)+","+std::to_string(pOrderDetail->Price)+","+std::to_string(pOrderDetail->Volume)+","+std::to_string(pOrderDetail->Side)+")";
+        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime() +std::string(" values")+ DATA;
+        std::cout<<insert_sql<<std::endl;
+        client.Execute(insert_sql.c_str());
     }
     int main(){
         Lev2MdSpi spi;
+        
+        
+        client.Execute("CREATE TABLE IF NOT EXISTS default.numbers (id UInt64, name String) ENGINE = Memory");//创建表格
         char userid[21],passwd[32],addrs[64];
         strcpy(userid,"00032129");
         strcpy(passwd,"19359120");
@@ -217,38 +275,7 @@
         spi.init(userid,passwd,addrs);
         sleep(3);
         spi.add();
-        Client client(ClientOptions().SetHost("localhost"));//初始化客户端连接
-        client.Execute("CREATE TABLE IF NOT EXISTS default.numbers (id UInt64, name String) ENGINE = Memory");//创建表格
-             /// 插入一些数值。
-        {
-            Block block;
-
-            auto id = std::make_shared<ColumnUInt64>();
-            id->Append(1);
-            id->Append(7);
-
-            auto name = std::make_shared<ColumnString>();
-            name->Append("one");
-            name->Append("two");
-
-            block.AppendColumn("id", id);
-            block.AppendColumn("name", name);
-
-            client.Insert("default.numbers", block);
-        }
-
-        /// 查询前面插入的数值。
-        client.Select("SELECT id, name FROM default.numbers", [](const Block& block)
-            {
-                for (size_t i = 0; i < block.GetRowCount(); ++i) {
-                    std::cout << block[0]->As<ColumnUInt64>()->At(i) << " "
-                            << block[1]->As<ColumnString>()->At(i) << "\n";
-                }
-            }
-        );
-
-        /// 删除表格。
-        client.Execute("DROP TABLE default.numbers");
+         
         while(1){
 
         }
