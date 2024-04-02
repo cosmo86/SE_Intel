@@ -47,7 +47,10 @@
 		//	security_list[i]=(char *)malloc(sizeof(char)*16);
 		//}
         char nonconst_id[31];
-        strcpy(nonconst_id ,"002387");
+        std::cout<<"plase write number"<<std::endl;
+        std::string s;
+        std::cin>>s;
+        strcpy(nonconst_id ,s.c_str());
         security_list[0] = nonconst_id;
 		//strcpy(security_list[0],"002387");
 		//strcpy(security_list[1],"600124");
@@ -56,7 +59,7 @@
         int ret_nt = m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
         if (ret_nt == 0)
         {
-            std::cout<<"yes"<<std::endl;
+            std::cout<<"yes 0"<<std::endl;
         }
         else
         {
@@ -68,7 +71,7 @@
 		int ret_od = m_api->SubscribeOrderDetail(security_list, sizeof(security_list) / sizeof(char*),TORA_TSTP_EXD_SZSE);
 		if (ret_od == 0)
 		{
-			std::cout<<"yes"<<std::endl;
+			std::cout<<"yes 1"<<std::endl;
 		}
 		else
 		{
@@ -79,7 +82,7 @@
 		int ret_t = m_api->SubscribeTransaction(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
         if (ret_t == 0)
 		{
-			std::cout<<"yes"<<std::endl;
+			std::cout<<"yes 2"<<std::endl;
 		}
 		else
 		{
@@ -90,7 +93,7 @@
 		int ret_md = m_api->SubscribeMarketData(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
 		if (ret_md == 0)
 		{
-			std::cout<<"yes"<<std::endl;
+			std::cout<<"yes 3"<<std::endl;
 		}
 		else
 		{
@@ -141,15 +144,16 @@
     }
     //------------------------------------------------------------------------应答报文----------------------------------------------------------------------------------//
     void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
-        std::cout<<"yes"<<std::endl;
-        printf("OnRtnMarketData:security_id[%s] last_price[%f] time_stamp[%d] total_value_trade[%lld]\n",
+       
+        /*printf("OnRtnMarketData:security_id[%s] last_price[%f] time_stamp[%d] total_value_trade[%lld]\n",
             pDepthMarketData ->SecurityID,
             pDepthMarketData ->LastPrice,
             pDepthMarketData ->DataTimeStamp,
-            pDepthMarketData ->TotalValueTrade);
+            pDepthMarketData ->TotalValueTrade);*/
 	}
     void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
-        ///交易所代码
+        
+       /* ///交易所代码
 		std::cout<<pTick->ExchangeID<<' ';
 		///证券代码
 		std::cout<<pTick->SecurityID<<' ';
@@ -160,9 +164,11 @@
 		///数量
 		std::cout<<pTick->Volume<<' ';
         //方向
-        std::cout<<pTick->	Side<<std::endl;
+        std::cout<<pTick->	Side<<std::endl;*/
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
+        std::cout<<"OnRtnTransaction"<<" ";
+       
         		///交易所代码
 		std::cout<<pTransaction->ExchangeID<<' ';
 
@@ -182,7 +188,8 @@
 		std::cout<<pTransaction->	ExecType<<std::endl;
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-        ///交易所代码
+        std::cout<<"OnRtnOrderDetail"<<" ";
+       ///交易所代码
 		std::cout<<	pOrderDetail->  ExchangeID<<' ';
 
 		///证券代码
@@ -209,7 +216,7 @@
        //strcpy(addrs, "tcp://127.0.0.1:8500");
         spi.init(userid,passwd,addrs);
         sleep(3);
-        //spi.add();
+        spi.add();
         Client client(ClientOptions().SetHost("localhost"));//初始化客户端连接
         client.Execute("CREATE TABLE IF NOT EXISTS default.numbers (id UInt64, name String) ENGINE = Memory");//创建表格
              /// 插入一些数值。
@@ -222,7 +229,7 @@
 
             auto name = std::make_shared<ColumnString>();
             name->Append("one");
-            name->Append("seven");
+            name->Append("two");
 
             block.AppendColumn("id", id);
             block.AppendColumn("name", name);
