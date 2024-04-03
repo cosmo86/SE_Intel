@@ -232,47 +232,41 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
-        std::cout<<"OnRtnTransaction"<<" ";
+       // std::cout<<"OnRtnTransaction"<<std::endl;
        
-       std::string sql = "INSERT INTO TransactionField_" + gettime() + " (ExchangeID, SecurityID, TradeTime, TradePrice, TradeVolume, ExecType, MainSeq, SubSeq, BuyNo, SellNo, Info1, Info2, Info3, TradeBSFlag, BizIndex) VALUES ";
-
-            sql += "(";
-            const CTORATstpLev2TransactionField& trans = pTransaction[0]; // 假设结构体数组中只有一条数据
-            sql += "(" ;
-            sql += trans.ExchangeID ;
-            sql+=", " ;
-            sql+=trans.SecurityID;
-            sql+= ", "
-                + std::to_string(trans.TradeTime) + ", " + std::to_string(trans.TradePrice) + ", "
-                + std::to_string(trans.TradeVolume) + ", " + trans.ExecType + ", "
-                + std::to_string(trans.MainSeq) + ", " + std::to_string(trans.SubSeq) + ", "
-                + std::to_string(trans.BuyNo) + ", " + std::to_string(trans.SellNo) + ", "
-                + std::to_string(trans.Info1) + ", " + std::to_string(trans.Info2) + ", "
-                + std::to_string(trans.Info3) + ", " + trans.TradeBSFlag + ", "
-                + std::to_string(trans.BizIndex) + ")";
-            sql += ")";
+             std::string sql = "INSERT INTO TransactionField_" + gettime() + " (ExchangeID, SecurityID, TradeTime, TradePrice, TradeVolume, ExecType, MainSeq, SubSeq, BuyNo, SellNo, Info1, Info2, Info3, TradeBSFlag, BizIndex) VALUES ";
+            sql += "('";
+            sql +=  pTransaction->ExchangeID ;
+            sql+="', '" ;
+            sql+= pTransaction->SecurityID;
+            sql+= "', "
+                + std::to_string( pTransaction->TradeTime) + ", " + std::to_string( pTransaction->TradePrice) + ", "
+                + std::to_string( pTransaction->TradeVolume) + ", '" +  pTransaction->ExecType + "', "
+                + std::to_string( pTransaction->MainSeq) + ", " + std::to_string( pTransaction->SubSeq) + ", "
+                + std::to_string( pTransaction->BuyNo) + ", " + std::to_string( pTransaction->SellNo) + ", "
+                + std::to_string( pTransaction->Info1) + ", " + std::to_string( pTransaction->Info2) + ", "
+                + std::to_string( pTransaction->Info3) + ",'" +  pTransaction->TradeBSFlag + "', "
+                + std::to_string( pTransaction->BizIndex) + ")";
             std::cout<<sql<<std::endl;
+            client.Execute(sql.c_str()); // 执行插入数据的 SQL
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-        std::cout<<"OnRtnOrderDetail"<<" ";
-       ///交易所代码
-		std::cout<<	pOrderDetail->  ExchangeID<<' ';
-
-		///证券代码
-		std::cout<<	pOrderDetail->  SecurityID<<' ';
-
-		///时间戳
-		std::cout<<pOrderDetail->  OrderTime<<' ';
-
-		///委托价格
-		std::cout<<pOrderDetail->  Price<<' ';
-
-		///委托数量
-		std::cout<<	pOrderDetail->  Volume<<' ';
-
-		///委托方向
-		std::cout<<pOrderDetail->  Side<<std::endl;
-
+        std::cout<<"OnRtnOrderDetail"<<std::endl;
+       std::string sql = "INSERT INTO OrderDetail_" + gettime() + " (ExchangeID,SecurityID,OrderTime,Price,Volume,Side,OrderType,MainSeq,SubSeq,Info1,Info2,Info3,OrderNO,OrderStatus,BizIndex) VALUES ";
+            sql += "('";
+            sql += pOrderDetail->ExchangeID ;
+            sql+="', '" ;
+            sql+= pOrderDetail->SecurityID;
+            sql+= "', "
+                + std::to_string( pOrderDetail->OrderTime) + ", " + std::to_string( pOrderDetail->Price) + ", "
+                + std::to_string( pOrderDetail->Volume) + ", '" +  pOrderDetail->Side + "', '"
+                + pOrderDetail->OrderType + "', " + std::to_string( pOrderDetail->MainSeq) + ", "
+                + std::to_string( pOrderDetail->SubSeq) + ", " + std::to_string( pOrderDetail->Info1) + ", "
+                + std::to_string( pOrderDetail->Info2) + ", " + std::to_string( pOrderDetail->Info3) + ", "
+                + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
+                + std::to_string( pOrderDetail->BizIndex) + ")";
+            std::cout<<sql<<std::endl;
+            client.Execute(sql.c_str()); // 执行插入数据的 SQL
     }
     int main(){
         Lev2MdSpi spi;
