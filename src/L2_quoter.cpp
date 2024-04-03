@@ -126,8 +126,9 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspsubRtnNGTSTick sub market data success! \n");
-            std::string sql="CREATE TABLE IF NOT EXISTS NGTSTick_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
-            std::cout<<sql<<std::endl;
+            std::string sql="CREATE TABLE IF NOT EXISTS NGTSTickField_";
+            sql+=gettime();
+            sql+=std::string(" (ExchangeID String,SecurityID String,MainSeq Int32,SubSeq Int64,TickTime Int32,TickType String,BuyNo Int64,SellNo Int64,Price Float64,Volume Int64,TradeMoney Float64,Side String,TradeBSFlag String,MDSecurityStat String,Info1 Int32,Info2 Int32,Info3 Int32) ENGINE = MergeTree()ORDER BY (TickTime, ExchangeID, SecurityID)");            std::cout<<sql<<std::endl;
             client.Execute(sql.c_str());//建表
         }
         else
@@ -149,8 +150,9 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubTransaction sub market data success! \n");
-           std::string sql="CREATE TABLE IF NOT EXISTS Transaction_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
-            std::cout<<sql<<std::endl;
+            std::string sql="CREATE TABLE IF NOT EXISTS TransactionField_";
+            sql+=gettime();
+            sql+=std::string("(ExchangeID String,SecurityID String,TradeTime Int32,TradePrice Float64,TradeVolume Int64,ExecType String,MainSeq Int32,SubSeq Int64,BuyNo Int64,SellNo Int64,Info1 Int32,Info2 Int32,Info3 Int32,TradeBSFlag String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (TradeTime, MainSeq, SubSeq)");            std::cout<<sql<<std::endl;
             client.Execute(sql.c_str());//建表
         }
         else
@@ -162,8 +164,9 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubOrderDetail sub market data success! \n");
-            std::string sql="CREATE TABLE IF NOT EXISTS OrderDetail_"+gettime()+std::string("(ExchangeID String,SecurityID String,TickTime Int32,Price Float64,Volume Int64,Side String)  ENGINE = MergeTree ORDER BY TickTime");
-            std::cout<<sql<<std::endl;
+            std::string sql="CREATE TABLE IF NOT EXISTS OrderDetail_";
+            sql+=gettime();
+            sql+=std::string("(ExchangeID String,SecurityID String,OrderTime Int32,Price Float64,Volume Int64,Side String,OrderType String,MainSeq Int32,SubSeq Int32,Info1 Int32,Info2 Int32,Info3 Int32,OrderNO Int64,OrderStatus String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (OrderTime, ExchangeID, SecurityID);");            std::cout<<sql<<std::endl;
             client.Execute(sql.c_str());//建表
         }
         else
@@ -196,43 +199,59 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         //方向
         std::cout<<pTick->Side<<std::endl;
 
-        std::string DATA="(";
-        DATA+=pTick->ExchangeID;
-        DATA+=",";
-        DATA+=pTick->SecurityID;
-        DATA+=","+std::to_string(pTick->TickTime)+","+std::to_string(pTick->Price)+","+std::to_string(pTick->Volume)+","+std::to_string(pTick->Side)+")";
-        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime()+std::string(" values") + DATA;
-        std::cout<<insert_sql<<std::endl;
-        client.Execute(insert_sql.c_str());
+            // 构建插入数据的 SQL 语句
+            std::string sql_insert = "INSERT INTO NGTSTickField_";
+            sql_insert += gettime(); // Assuming gettime() returns the current time or some unique identifier
+            sql_insert += " (ExchangeID, SecurityID, MainSeq, SubSeq, TickTime, TickType, BuyNo, SellNo, Price, Volume, TradeMoney, Side, TradeBSFlag, MDSecurityStat, Info1, Info2, Info3) VALUES (";
+            sql_insert += "'" ;
+            sql_insert += pTick->ExchangeID + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->SecurityID ;
+            sql_insert += "',";
+            sql_insert += "'" + std::to_string(pTick->MainSeq) + "',"; // 转换为字符串
+            sql_insert += "'" + std::to_string(pTick->SubSeq) + "',"; // 转换为字符串
+            sql_insert += std::to_string(pTick->TickTime) + ",";
+            sql_insert += "'" ;
+            sql_insert += pTick->TickType + "',";
+            sql_insert += "'" + std::to_string(pTick->BuyNo) + "',"; // 转换为字符串
+            sql_insert += "'" + std::to_string(pTick->SellNo) + "',"; // 转换为字符串
+            sql_insert += std::to_string(pTick->Price) + ",";
+            sql_insert += std::to_string(pTick->Volume) + ",";
+            sql_insert += std::to_string(pTick->TradeMoney) + ",";
+            sql_insert += "'" ;
+            sql_insert += pTick->Side + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->TradeBSFlag + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->MDSecurityStat + "',";
+            sql_insert += std::to_string(pTick->Info1) + ",";
+            sql_insert += std::to_string(pTick->Info2) + ",";
+            sql_insert += std::to_string(pTick->Info3) + ")";
+            std::cout<<sql_insert<<std::endl;
+            client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
+        
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
         std::cout<<"OnRtnTransaction"<<" ";
        
-        ///交易所代码
-		std::cout<<pTransaction->ExchangeID<<' ';
+       std::string sql = "INSERT INTO TransactionField_" + gettime() + " (ExchangeID, SecurityID, TradeTime, TradePrice, TradeVolume, ExecType, MainSeq, SubSeq, BuyNo, SellNo, Info1, Info2, Info3, TradeBSFlag, BizIndex) VALUES ";
 
-		///证券代码
-		std::cout<<pTransaction->	SecurityID<<' ';
-
-		///时间戳
-		std::cout<<pTransaction->	TradeTime<<' ';
-
-		///成交价格
-	std::cout<<pTransaction->	TradePrice<<' ';
-
-		///成交数量
-		std::cout<<pTransaction->	TradeVolume<<' ';
-
-		///成交类别（只有深圳行情有效）
-		std::cout<<pTransaction->	ExecType<<std::endl;
-        std::string DATA="(";
-        DATA+=pTransaction->ExchangeID;
-        DATA+=",";
-        DATA+=pTransaction->SecurityID;
-        DATA+=","+std::to_string(pTransaction->TradeTime)+","+std::to_string(pTransaction->TradePrice)+","+std::to_string(pTransaction->TradeVolume)+","+std::to_string(pTransaction->ExecType)+")";
-        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime()+std::string(" values") + DATA;
-        std::cout<<insert_sql<<std::endl;
-        client.Execute(insert_sql.c_str());
+            sql += "(";
+            const CTORATstpLev2TransactionField& trans = pTransaction[0]; // 假设结构体数组中只有一条数据
+            sql += "(" ;
+            sql += trans.ExchangeID ;
+            sql+=", " ;
+            sql+=trans.SecurityID;
+            sql+= ", "
+                + std::to_string(trans.TradeTime) + ", " + std::to_string(trans.TradePrice) + ", "
+                + std::to_string(trans.TradeVolume) + ", " + trans.ExecType + ", "
+                + std::to_string(trans.MainSeq) + ", " + std::to_string(trans.SubSeq) + ", "
+                + std::to_string(trans.BuyNo) + ", " + std::to_string(trans.SellNo) + ", "
+                + std::to_string(trans.Info1) + ", " + std::to_string(trans.Info2) + ", "
+                + std::to_string(trans.Info3) + ", " + trans.TradeBSFlag + ", "
+                + std::to_string(trans.BizIndex) + ")";
+            sql += ")";
+            std::cout<<sql<<std::endl;
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
         std::cout<<"OnRtnOrderDetail"<<" ";
@@ -253,20 +272,11 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
 
 		///委托方向
 		std::cout<<pOrderDetail->  Side<<std::endl;
-        std::string DATA="(";
-        DATA+=pOrderDetail->ExchangeID;
-        DATA+=",";
-        DATA+=pOrderDetail->SecurityID;
-        DATA+=","+std::to_string(pOrderDetail->OrderTime)+","+std::to_string(pOrderDetail->Price)+","+std::to_string(pOrderDetail->Volume)+","+std::to_string(pOrderDetail->Side)+")";
-        std::string insert_sql = "INSERT INTO NGTSTick_" + gettime() +std::string(" values")+ DATA;
-        std::cout<<insert_sql<<std::endl;
-        client.Execute(insert_sql.c_str());
+
     }
     int main(){
         Lev2MdSpi spi;
         
-        
-        client.Execute("CREATE TABLE IF NOT EXISTS default.numbers (id UInt64, name String) ENGINE = Memory");//创建表格
         char userid[21],passwd[32],addrs[64];
         strcpy(userid,"00032129");
         strcpy(passwd,"19359120");
