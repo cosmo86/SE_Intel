@@ -1,6 +1,6 @@
 #include "../include/L2_quoter.hpp"//头文件信息
 Client client(ClientOptions().SetHost("localhost"));//初始化
-
+int socked_test=0;
     //gettime
     std::string Lev2MdSpi::gettime() {
         std::time_t currentTime = std::time(nullptr);
@@ -249,6 +249,7 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
                 + std::to_string( pTransaction->BizIndex) + ")";
             std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
+             send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
         std::cout<<"OnRtnOrderDetail"<<std::endl;
@@ -267,7 +268,58 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
                 + std::to_string( pOrderDetail->BizIndex) + ")";
             std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
+            send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
     }
+    int socket_init(){
+    int sockfd=socket(AF_INET,SOCK_STREAM,0);
+    if(sockfd==-1){
+        printf("socket err\n");
+        return -1;
+    }
+    struct sockaddr_in saddr;
+    memset(&saddr,0,sizeof(saddr));
+    saddr.sin_family=AF_INET;
+    saddr.sin_port=htons(6000);
+    saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
+    int res=bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
+    if(res==-1){
+        printf("bind err\n");
+        return -1;
+    }
+    res=listen(sockfd,5);
+    if(res==-1){
+        printf("listen err\n");
+        return -1;
+    }
+    return sockfd;
+}
+void accept_c(int c,short ev,void *arg){
+    if(ev&EV_READ){
+    char buff[128]={0};
+    int n=recv(c,buff,127,0);
+    if(n<=0){
+        close(c);
+        //event_free();
+		return;
+    }
+    else{
+        printf("%d is buff=%s\n",c,buff);
+        send(c,"ok",2,0);
+    }}
+}
+void accept_cb(int sockfd,short ev,void *arg){
+    if(ev&EV_READ){//如果读事件
+		int c=accept(sockfd,NULL,NULL);
+        if(c<0){
+            return;
+        }
+        printf("c=%d",c);
+        socked_test=c;
+        struct event *c_cv=event_new((struct event_base*)arg,c,EV_READ|EV_PERSIST,accept_c,NULL);
+        event_add(c_cv,NULL);
+    }
+}
+
     int main(){
         Lev2MdSpi spi;
         
@@ -279,7 +331,19 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
         spi.init(userid,passwd,addrs);
         sleep(3);
         spi.add();
-         
+        int sockfd=socket_init();
+        if(sockfd==-1){
+            exit(1);
+        }
+        struct event_base *base=event_init();
+        if(base==NULL){
+            exit(1);
+        }
+        struct event*sock_ev=event_new(base,sockfd,EV_READ|EV_PERSIST,accept_cb,base);
+        event_add(sock_ev,NULL);
+        event_base_dispatch(base);
+        event_free(sock_ev);
+        event_base_free(base);
         while(1){
 
         }

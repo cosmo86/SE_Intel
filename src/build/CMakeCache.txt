@@ -256,6 +256,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //Print debug info about dependencies duting build
 DEBUG_DEPENDENCIES:BOOL=ON
 
+//Path to a library.
+LIBEVENT_LIBRARIES:FILEPATH=/usr/lib64/libevent.so
+
 //Use OpenSSL for TLS connections
 WITH_OPENSSL:BOOL=OFF
 
@@ -270,6 +273,9 @@ WITH_SYSTEM_LZ4:BOOL=OFF
 
 //Dependencies for the target
 clickhouse-cpp-lib_LIB_DEPENDS:STATIC=general;absl::int128;general;cityhash::cityhash;general;lz4::lz4;
+
+//The directory containing a CMake configuration file for libevent.
+libevent_DIR:PATH=libevent_DIR-NOTFOUND
 
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/root/SE_Intel/src/build

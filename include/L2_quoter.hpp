@@ -14,6 +14,18 @@
 #include <unistd.h>
 #include <iomanip> // 用于格式化输出
 #include <sstream> // 用于字符串流
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/epoll.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <event.h>
+#include <event2/event.h>
 //#include <map>
 #include "TORATstpLev2MdApi.h"
 //#include </root/clickhouse-cpp/clickhouse/client.h>

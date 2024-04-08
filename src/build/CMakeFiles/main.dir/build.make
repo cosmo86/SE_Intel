@@ -94,6 +94,8 @@ main: CMakeFiles/main.dir/L2_quoter.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: zimulu/clickhouse/libclickhouse-cpp-lib.a
 main: /root/SE_Intel/lib/liblev2mdapi.so
+main: /usr/lib64/libevent.so
+main: /usr/lib64/libevent_pthreads.so
 main: zimulu/contrib/absl/absl/libabsl_int128.a
 main: zimulu/contrib/cityhash/cityhash/libcityhash.a
 main: zimulu/contrib/lz4/lz4/liblz4.a
