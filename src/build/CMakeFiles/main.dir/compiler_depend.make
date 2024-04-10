@@ -79,6 +79,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
@@ -137,6 +138,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
@@ -219,6 +221,15 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h \
+  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h \
   /usr/include/_G_config.h \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -459,10 +470,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /usr/include/bits/byteswap.h:
 
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/asm/posix_types_64.h:
-
 /usr/include/asm/posix_types.h:
 
 /usr/include/sys/socket.h:
@@ -484,6 +491,22 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 /usr/include/ctype.h:
 
 /usr/include/_G_config.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc:
 
@@ -513,6 +536,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/geo.h:
 
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/enum.h:
+
 /usr/include/sched.h:
 
 /usr/include/fcntl.h:
@@ -531,23 +556,17 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/server_exception.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cctype:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h:
-
 /usr/include/bits/huge_valf.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_vector.h:
 
-/usr/include/endian.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/chrono:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/memory:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cctype:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h:
 
@@ -675,6 +694,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /usr/include/pthread.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h:
 
 /usr/include/bits/waitstatus.h:
@@ -745,6 +766,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/stack:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/char_traits.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/streambuf_iterator.h:
@@ -787,6 +810,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/new:
 
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/array.h:
@@ -809,6 +834,12 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h:
 
+/usr/include/endian.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/chrono:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef:
@@ -824,6 +855,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdlib:
+
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc:
 
@@ -953,6 +986,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 /usr/include/bits/fcntl-linux.h:
 
+/root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h:
@@ -1008,5 +1043,3 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/date.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/decimal.h:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/enum.h:

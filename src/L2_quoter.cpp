@@ -1,6 +1,7 @@
 #include "../include/L2_quoter.hpp"//头文件信息
 Client client(ClientOptions().SetHost("localhost"));//初始化
 int socked_test=0;
+int cishu=0;
     //gettime
     std::string Lev2MdSpi::gettime() {
         std::time_t currentTime = std::time(nullptr);
@@ -247,12 +248,20 @@ int socked_test=0;
                 + std::to_string( pTransaction->Info1) + ", " + std::to_string( pTransaction->Info2) + ", "
                 + std::to_string( pTransaction->Info3) + ",'" +  pTransaction->TradeBSFlag + "', "
                 + std::to_string( pTransaction->BizIndex) + ")";
-            std::cout<<sql<<std::endl;
+            //std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
-             send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
+                        Json::Value val,k;
+            std::string s=sql;
+            k["a"]=2;
+            k["b"]='c';
+            k["c"]=s;
+            k["d"]=12.23;
+            val["type"]=1;
+            val["val"]=k;
+             send(socked_test,val.toStyledString().c_str(),strlen(val.toStyledString().c_str()),0);
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-        std::cout<<"OnRtnOrderDetail"<<std::endl;
+        //std::cout<<"OnRtnOrderDetail"<<std::endl;
        std::string sql = "INSERT INTO OrderDetail_" + gettime() + " (ExchangeID,SecurityID,OrderTime,Price,Volume,Side,OrderType,MainSeq,SubSeq,Info1,Info2,Info3,OrderNO,OrderStatus,BizIndex) VALUES ";
             sql += "('";
             sql += pOrderDetail->ExchangeID ;
@@ -266,11 +275,47 @@ int socked_test=0;
                 + std::to_string( pOrderDetail->Info2) + ", " + std::to_string( pOrderDetail->Info3) + ", "
                 + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
                 + std::to_string( pOrderDetail->BizIndex) + ")";
-            std::cout<<sql<<std::endl;
+            //std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
-            send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
+            //send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
+            Json::Value val,k;
+            std::string s=sql;
+            k["a"]=2;
+            k["b"]='c';
+            k["c"]=s;
+            k["d"]=12.23;
+            val["type"]=1;
+            val["val"]=k;
+                //printf("%s\n%d",val.toStyledString().c_str(),strlen(val.toStyledString().c_str()));
+                send(socked_test,val.toStyledString().c_str(),strlen(val.toStyledString().c_str()),0);
+            
     }
-    int socket_init(){
+    void test::print(test* p){
+        std::cout<<"type=2"<<std::endl;
+        std::cout<<"a="<<p->a<<std::endl;
+        std::cout<<"b="<<p->b<<std::endl;
+        std::cout<<"c="<<p->c<<std::endl;
+    }
+    void test::print_zidingyi(){
+        std::cout<<"type=3"<<std::endl;
+    }
+void test_print(){
+    test ceshi;
+    ceshi.print();
+}
+void test_print_zidingyi(){
+    test ceshi;
+    ceshi.print_zidingyi();
+}
+void test_print_p(Json::Value &val){
+    int a=val["val"]["a"].asInt();
+    double b=val["val"]["b"].asDouble();
+    std::string c=val["val"]["c"].asCString();
+    test *p=new test(a,b,c);
+    test ceshi;
+    ceshi.print(p);
+}
+int socket_init(){
     int sockfd=socket(AF_INET,SOCK_STREAM,0);
     if(sockfd==-1){
         printf("socket err\n");
@@ -295,17 +340,28 @@ int socked_test=0;
 }
 void accept_c(int c,short ev,void *arg){
     if(ev&EV_READ){
-    char buff[128]={0};
-    int n=recv(c,buff,127,0);
-    if(n<=0){
-        close(c);
-        //event_free();
-		return;
+        char buff[128]={0};
+        int n=recv(c,buff,127,0);
+        if(n<=0){
+            close(c);
+            //event_free();
+            return;
+        }
+        else{
+            Json::Value val;
+            Json::Reader read;
+            if(!read.parse(buff,val)){
+                std::cout<<"josn err"<<std::endl;
+            }
+            int k=val["type"].asInt();
+            switch(k){
+                case 1:test_print();break;
+                case 2:test_print_p(val);break;
+                case 3:test_print_zidingyi();break;
+                default:break;
+            }
+        }
     }
-    else{
-        printf("%d is buff=%s\n",c,buff);
-        send(c,"ok",2,0);
-    }}
 }
 void accept_cb(int sockfd,short ev,void *arg){
     if(ev&EV_READ){//如果读事件
@@ -322,7 +378,6 @@ void accept_cb(int sockfd,short ev,void *arg){
 
     int main(){
         Lev2MdSpi spi;
-        
         char userid[21],passwd[32],addrs[64];
         strcpy(userid,"00032129");
         strcpy(passwd,"19359120");

@@ -275,4 +275,15 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/chrono \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h

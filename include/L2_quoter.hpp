@@ -30,9 +30,11 @@
 #include "TORATstpLev2MdApi.h"
 //#include </root/clickhouse-cpp/clickhouse/client.h>
 //#include "/root/clickhouse-cpp/clickhouse/client.h"//数据库
-#include </root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/client.h>
+#include <clickhouse/client.h>
 #include <unistd.h>
 #include <ctime>
+//#include <json/json.h>
+#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
 //#include "concurrentqueue.h"
 //#include <jemalloc/jemalloc.h>
 //#include "Strategy.hpp"
@@ -46,6 +48,21 @@
 //#include "helper_functions.hpp"
 using namespace TORALEV2API;
 using namespace clickhouse;//数据库下的名字空间
+class test{
+private:
+	int a;
+	double b;
+	std::string c;
+public:
+	test():a(0),b(0),c(""){}
+	test(int a1,double b1,std::string c1):a(a1),b(b1),c(c1){}
+	~test(){}
+	void print(){
+		std::cout<<"type=1"<<std::endl;
+	}
+	void print(test *p);
+	void print_zidingyi();
+};
 class Lev2MdSpi : public CTORATstpLev2MdSpi{
 public:
 	Lev2MdSpi():m_api(nullptr),m_request_id(0){};
@@ -72,9 +89,6 @@ public:
 	virtual void OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction);
 	virtual void OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail);
 	void add();
-	
-
-
 private:
 	int m_request_id;
     CTORATstpLev2MdApi *m_api;

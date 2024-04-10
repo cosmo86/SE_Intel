@@ -11,4 +11,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE /root/clickhouse-app/contribs
 
 link_directories(/root/SE_Intel/lib)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE clickhouse-cpp-lib /root/SE_Intel/lib/liblev2mdapi.so /usr/lib64/libevent.so /usr/lib64/libevent_pthreads.so)
+target_link_libraries(${PROJECT_NAME} PRIVATE clickhouse-cpp-lib /root/SE_Intel/lib/liblev2mdapi.so /usr/lib64/libevent.so /usr/lib64/libevent_pthreads.so /root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a)
