@@ -6,7 +6,7 @@
 #ifndef L2_QUOTER_HPP
 #define L2_QUOTER_HPP
 #pragma once
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <string>
@@ -27,14 +27,21 @@
 #include <event.h>
 #include <event2/event.h>
 //#include <map>
+#include <openssl/sha.h>
 #include "TORATstpLev2MdApi.h"
+#include <websocketpp/config/asio_no_tls.hpp>
+#include <websocketpp/server.hpp>
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <sstream>
 //#include </root/clickhouse-cpp/clickhouse/client.h>
 //#include "/root/clickhouse-cpp/clickhouse/client.h"//数据库
 #include <clickhouse/client.h>
 #include <unistd.h>
 #include <ctime>
 //#include <json/json.h>
-#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
+#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"*/
 //#include "concurrentqueue.h"
 //#include <jemalloc/jemalloc.h>
 //#include "Strategy.hpp"
@@ -46,8 +53,42 @@
 //#include "spdlog/sinks/basic_file_sink.h"
 //#include "spdlog/async.h"
 //#include "helper_functions.hpp"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/epoll.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <event.h>
+#include <event2/event.h>
+#include <openssl/sha.h>
+#include "TORATstpLev2MdApi.h"
+#include <websocketpp/config/asio_no_tls.hpp>
+#include <websocketpp/server.hpp>
+#include <iostream>
+#include <chrono>
+#include <thread>
+#include <sstream>
+#include <clickhouse/client.h>
+#include <unistd.h>
+#include <ctime>
+#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
+#include <vector>
+#include <ctime>
+//#include <map>
+//#include </root/clickhouse-cpp/clickhouse/client.h>
+//#include "/root/clickhouse-cpp/clickhouse/client.h"  // 数据库
+//#include <json/json.h>
 using namespace TORALEV2API;
 using namespace clickhouse;//数据库下的名字空间
+typedef websocketpp::server<websocketpp::config::asio> server;
+using websocketpp::lib::placeholders::_1;
+using websocketpp::lib::placeholders::_2;
+using websocketpp::lib::bind;
 class test{
 private:
 	int a;

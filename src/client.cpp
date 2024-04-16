@@ -8,11 +8,9 @@
 #include <string>
 #include <iostream>
 #include <random>
-//#include <json/json.h>
 #include <pthread.h>
+//#include <json/json.h>
 #include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
-//#include "/root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a"
-//#include <jsoncpp/json/json.h>
 int sockfd;
 class test{
 public:
@@ -33,6 +31,7 @@ public:
 void word::printf(test*k){
     std::cout<<k->a<<std::endl;
     std::cout<<k->b<<std::endl;
+    std::cout<<a+d<<std::endl;
     std::cout<<k->c<<std::endl;
     std::cout<<k->d<<std::endl;
 }
@@ -78,7 +77,7 @@ void sockfd_init(){
     memset(&saddr,0,sizeof(saddr));
     saddr.sin_family=AF_INET;
     saddr.sin_port=htons(6000);
-    saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
+    saddr.sin_addr.s_addr=inet_addr("91.208.73.166");
     int res=connect(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
     if(res==-1){
         printf("connect err\n");

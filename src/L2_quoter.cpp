@@ -1,10 +1,55 @@
 #include "../include/L2_quoter.hpp"//头文件信息
 Client client(ClientOptions().SetHost("localhost"));//初始化
-int socked_test=0;
-int cishu=0;
+//int socked_test=0;
+//int cishu=0;
+server echo_server;
+std::vector<websocketpp::connection_hdl>socked_V;
+/*std::string timestamp_to_datetime(const std::time_t timestamp) {
+    // 将时间戳转换为本地时间
+    std::tm* local_time = std::localtime(&timestamp);
+    
+    // 构建年月日时分秒字符串
+    std::string datetime_str = (local_time->tm_hour < 10 ? "0" : "") + std::to_string(local_time->tm_hour) + ":" // 小时小于10时在前面补零
+                             + (local_time->tm_min < 10 ? "0" : "") + std::to_string(local_time->tm_min) + ":" // 分钟小于10时在前面补零
+                             + (local_time->tm_sec < 10 ? "0" : "") + std::to_string(local_time->tm_sec); // 秒数小于10时在前面补零
+    
+    return datetime_str;
+}*/
+std::string timestampToString(std::time_t timestamp) {
+    std::time_t currentTime = std::time(nullptr);
+    std::tm* tm_info = std::localtime(&currentTime);
+    std::ostringstream oss;
+    oss << std::put_time(tm_info, "%Y-%m-%dT%H:%M:%S");
+    return oss.str();
+}
+void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, websocketpp::connection_hdl hdl) ;
     //gettime
+    std::string sha256(const std::string& input) {
+    unsigned char hash[SHA256_DIGEST_LENGTH];
+    SHA256_CTX sha256;
+    SHA256_Init(&sha256);
+    SHA256_Update(&sha256, input.c_str(), input.length());
+    SHA256_Final(hash, &sha256);
+
+    std::stringstream ss;
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];
+    }
+    return ss.str();
+    }
+    /*std::string timestamp_to_hh_mm_ss(time_t timestamp) {
+        int hours, minutes, seconds;
+        hours = timestamp / 3600;
+        timestamp %= 3600;
+        minutes = timestamp / 60;
+        seconds = timestamp % 60;
+
+        char buffer[9]; // HH:MM:SS\0，需要 9 个字符的缓冲区
+        std::snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d", hours, minutes, seconds);
+        return std::string(buffer);
+    }*/
     std::string Lev2MdSpi::gettime() {
-        std::time_t currentTime = std::time(nullptr);
+      /* std::time_t currentTime = std::time(nullptr);
         // 转换为本地时间
         std::tm* localTime = std::localtime(&currentTime);
 
@@ -15,9 +60,9 @@ int cishu=0;
             << std::setfill('0') << std::setw(2) << localTime->tm_mday; // 日期
 
         std::string tm_date = oss.str(); // 从ostringstream获取字符串
-        return tm_date;
+        return tm_date;*/
+        return "20240416";
     }
-    
 	//初始化，账号，密码，连接地址
     void Lev2MdSpi::init(char * userid,char * password,char * address){
         strcpy(this->userid,userid);
@@ -228,7 +273,6 @@ int cishu=0;
             sql_insert += std::to_string(pTick->Info1) + ",";
             sql_insert += std::to_string(pTick->Info2) + ",";
             sql_insert += std::to_string(pTick->Info3) + ")";
-            std::cout<<sql_insert<<std::endl;
             client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
         
     }
@@ -248,17 +292,12 @@ int cishu=0;
                 + std::to_string( pTransaction->Info1) + ", " + std::to_string( pTransaction->Info2) + ", "
                 + std::to_string( pTransaction->Info3) + ",'" +  pTransaction->TradeBSFlag + "', "
                 + std::to_string( pTransaction->BizIndex) + ")";
-            //std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
-                        Json::Value val,k;
-            std::string s=sql;
-            k["a"]=2;
-            k["b"]='c';
-            k["c"]=s;
-            k["d"]=12.23;
-            val["type"]=1;
-            val["val"]=k;
-             send(socked_test,val.toStyledString().c_str(),strlen(val.toStyledString().c_str()),0);
+            std::cout<<pTransaction->TradeTime<<std::endl;
+            for(int i=0;i<socked_V.size();i++){
+                std::thread t(send_json_packet,pTransaction ,&echo_server, socked_V[i]);
+                 t.detach(); // Detach the thread to run independently
+            }
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
         //std::cout<<"OnRtnOrderDetail"<<std::endl;
@@ -275,19 +314,8 @@ int cishu=0;
                 + std::to_string( pOrderDetail->Info2) + ", " + std::to_string( pOrderDetail->Info3) + ", "
                 + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
                 + std::to_string( pOrderDetail->BizIndex) + ")";
-            //std::cout<<sql<<std::endl;
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
-            //send(socked_test,sql.c_str(),sizeof(sql.c_str()),0);
-            Json::Value val,k;
-            std::string s=sql;
-            k["a"]=2;
-            k["b"]='c';
-            k["c"]=s;
-            k["d"]=12.23;
-            val["type"]=1;
-            val["val"]=k;
-                //printf("%s\n%d",val.toStyledString().c_str(),strlen(val.toStyledString().c_str()));
-                send(socked_test,val.toStyledString().c_str(),strlen(val.toStyledString().c_str()),0);
+           
             
     }
     void test::print(test* p){
@@ -315,65 +343,79 @@ void test_print_p(Json::Value &val){
     test ceshi;
     ceshi.print(p);
 }
-int socket_init(){
-    int sockfd=socket(AF_INET,SOCK_STREAM,0);
-    if(sockfd==-1){
-        printf("socket err\n");
-        return -1;
+
+void on_message(server* s, websocketpp::connection_hdl hdl, server::message_ptr msg) {
+    std::cout << "on_message called with hdl: " << hdl.lock().get()
+              << " and message: " << msg->get_payload()
+              << std::endl;
+
+    // Check for a special command to instruct the server to stop listening
+    if (msg->get_payload() == "stop-listening") {
+        s->stop_listening();
+        return;
     }
-    struct sockaddr_in saddr;
-    memset(&saddr,0,sizeof(saddr));
-    saddr.sin_family=AF_INET;
-    saddr.sin_port=htons(6000);
-    saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
-    int res=bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
-    if(res==-1){
-        printf("bind err\n");
-        return -1;
-    }
-    res=listen(sockfd,5);
-    if(res==-1){
-        printf("listen err\n");
-        return -1;
-    }
-    return sockfd;
-}
-void accept_c(int c,short ev,void *arg){
-    if(ev&EV_READ){
-        char buff[128]={0};
-        int n=recv(c,buff,127,0);
-        if(n<=0){
-            close(c);
-            //event_free();
-            return;
-        }
-        else{
-            Json::Value val;
-            Json::Reader read;
-            if(!read.parse(buff,val)){
-                std::cout<<"josn err"<<std::endl;
-            }
-            int k=val["type"].asInt();
-            switch(k){
-                case 1:test_print();break;
-                case 2:test_print_p(val);break;
-                case 3:test_print_zidingyi();break;
-                default:break;
-            }
-        }
+
+    // Construct the response message
+    std::string response = "Service response: " + msg->get_payload();
+
+    try {
+        // Send the response message back to the client
+        s->send(hdl, response, websocketpp::frame::opcode::text);
+    } catch (const websocketpp::exception& e) {
+        std::cout << "Send failed because: " << e.what() << std::endl;
     }
 }
-void accept_cb(int sockfd,short ev,void *arg){
-    if(ev&EV_READ){//如果读事件
-		int c=accept(sockfd,NULL,NULL);
-        if(c<0){
-            return;
-        }
-        printf("c=%d",c);
-        socked_test=c;
-        struct event *c_cv=event_new((struct event_base*)arg,c,EV_READ|EV_PERSIST,accept_c,NULL);
-        event_add(c_cv,NULL);
+
+// Function to send JSON packet every second
+void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, websocketpp::connection_hdl hdl) {
+    if(pTransaction->TradePrice==0)return;
+    Json::Value val;
+    val["ExchangeId"]=pTransaction->ExchangeID;
+    val["ExchangeID"]=pTransaction->ExchangeID;
+    val["SecurityID"]=pTransaction->SecurityID;
+    val["TradeTime"]= timestampToString(pTransaction->TradeTime);
+    //val["TradeTime"]=pTransaction->TradeTime;
+    val["TradePrice"]=pTransaction->TradePrice;
+    val["TradeVolume"]=std::to_string(pTransaction->TradeVolume);
+    val["ExecType"]=pTransaction->ExecType;
+    val["MainSeq"]=pTransaction->MainSeq;
+    val["SubSeq"]=std::to_string(pTransaction->SubSeq);
+    val["SellNo"]=std::to_string(pTransaction->SellNo);
+    val["Info1"]=pTransaction->Info1;
+    val["Info2"]=pTransaction->Info2;
+    val["Info3"]=pTransaction->Info3;
+    val["TradeBSFlag"]=pTransaction->TradeBSFlag;
+    val["BizIndex"]=std::to_string(pTransaction->BizIndex);
+    std::cout<<val["TradeTime"]<<std::endl;
+    
+    try {
+            // Send the JSON packet to the client
+            s->send(hdl, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
     }
+    //ws://91.208.73.166:9002
+
+
+}
+
+// Callback function when a new connection is established
+void on_open(server* s, websocketpp::connection_hdl hdl) {
+    std::cout << "New connection established" << std::endl;
+    socked_V.push_back(hdl);
+    // Start a new thread to send JSON packets to the client
+    //std::thread t(send_json_packet, s, hdl);
+    //t.detach(); // Detach the thread to run independently
+}
+void on_close(server* s, websocketpp::connection_hdl hdl) {
+    // Handle connection close
+    // Assuming socked_V is declared outside this function and is accessible here
+    /*for(auto it = socked_V.begin(); it != socked_V.end(); ++it) {
+        if(*it.lock().get() ==hdl.lock().get()) {
+            socked_V.erase(it);
+            break; // Stop looping once the connection handle is erased
+        }
+    }*/
 }
 
     int main(){
@@ -386,21 +428,124 @@ void accept_cb(int sockfd,short ev,void *arg){
         spi.init(userid,passwd,addrs);
         sleep(3);
         spi.add();
-        int sockfd=socket_init();
-        if(sockfd==-1){
-            exit(1);
-        }
-        struct event_base *base=event_init();
-        if(base==NULL){
-            exit(1);
-        }
-        struct event*sock_ev=event_new(base,sockfd,EV_READ|EV_PERSIST,accept_cb,base);
-        event_add(sock_ev,NULL);
-        event_base_dispatch(base);
-        event_free(sock_ev);
-        event_base_free(base);
-        while(1){
+         
+            try {
+                // Set logging settings
+                echo_server.set_access_channels(websocketpp::log::alevel::all);
+                echo_server.clear_access_channels(websocketpp::log::alevel::frame_payload);
 
-        }
+                // Initialize Asio
+                echo_server.init_asio();
+
+                // Register the message handler
+                echo_server.set_message_handler(bind(&on_message, &echo_server, ::_1, ::_2));
+
+                // Register the open connection handler
+                echo_server.set_open_handler(bind(&on_open, &echo_server, ::_1));
+                // enl close
+                echo_server.set_close_handler(bind(&on_close, &echo_server, ::_1));
+
+
+                // Listen on port 9002
+                echo_server.listen(9002);
+
+                // Start the server accept loop
+                echo_server.start_accept();
+
+                // Start the ASIO io_service run loop
+                echo_server.run();
+            } catch (const websocketpp::exception& e) {
+                std::cout << e.what() << std::endl;
+            } catch (...) {
+                std::cout << "Other exception" << std::endl;
+            }
+            while(1){}
         std::cout<<"this ok"<<std::endl;
     }
+/*int socket_init(){
+    int sockfd=socket(AF_INET,SOCK_STREAM,0);
+    if(sockfd==-1){
+        printf("socket err\n");
+        return -1;
+    }
+    struct sockaddr_in saddr;
+    memset(&saddr,0,sizeof(saddr));
+    saddr.sin_family=AF_INET;
+    saddr.sin_port=htons(6000);
+    saddr.sin_addr.s_addr=inet_addr("91.208.73.166");
+    int res=bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
+    if(res==-1){
+        printf("bind err\n");
+        return -1;
+    }
+    res=listen(sockfd,5);
+    if(res==-1){
+        printf("listen err\n");
+        return -1;
+    }
+    return sockfd;
+}*/
+/*void accept_c(int c,short ev,void *arg){
+    if(ev&EV_READ){
+        char buff[1024]={0};
+        int n=recv(c,buff,1023,0);
+        
+        std::cout<<n<<">>>>>:";
+        for(int i=0;i<n;i++){
+            std::cout<<buff[i];
+        }
+        if(n<=0){
+            std::cout<<"errrrrr"<<std::endl;
+            close(c);
+            //event_free();
+            return;
+        }
+        else{
+            std::cout<<5201314<<std::endl;
+             std::string websocketHandshake = "HTTP/1.1 101 Switching Protocols\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=\nSec-WebSocket-Protocol: chat";
+
+// 构建TLS握手头部
+std::string tlsHandshakeHeader = "TLS/1.2 200 OK\nContent-Type: application/octet-stream\n";
+
+// 计算TLS握手消息体的长度
+std::string tlsHandshakeBody = websocketHandshake;
+int bodyLength = tlsHandshakeBody.size();
+
+// 构建TLS握手头部，指定消息体长度
+tlsHandshakeHeader += "Content-Length: " + std::to_string(bodyLength) + "\n\n";
+
+// 计算TLS握手消息的校验和
+// 假设这里使用SHA256进行哈希计算
+std::string checksum = sha256(tlsHandshakeBody); // 自定义函数，用于计算SHA256校验和
+
+// 构建最终的TLS握手消息
+    std::string tlsHandshake = tlsHandshakeHeader + tlsHandshakeBody + checksum;
+    //std::string ans=std::string("HTTP/1.1 101 Switching Protocols\nUpgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=\nSec-WebSocket-Protocol: chat");
+    struct sockaddr_in addr;
+    socklen_t addr_len = sizeof(addr);
+    if (getsockname(c, (struct sockaddr*)&addr, &addr_len) < 0) {
+        std::cerr << "Error getting socket name" << std::endl;
+        close(c);
+        return;
+    }
+    char ip[INET_ADDRSTRLEN];
+    inet_ntop(AF_INET, &(addr.sin_addr), ip, INET_ADDRSTRLEN);
+
+    std::cout << "Local IP address: " << ip << std::endl;
+    std::cout << "Local port: " << ntohs(addr.sin_port) << std::endl;
+        send(c,tlsHandshake.c_str(),strlen(tlsHandshake.c_str()),0);
+        }
+    }
+}*/
+/*void accept_cb(int sockfd,short ev,void *arg){
+    if(ev&EV_READ){//如果读事件
+		int c=accept(sockfd,NULL,NULL);
+        if(c<0){
+            return;
+        }
+        //printf("c=%d",c);
+       
+        struct event *c_cv=event_new((struct event_base*)arg,c,EV_READ|EV_PERSIST,accept_c,NULL);
+        event_add(c_cv,NULL);
+    }
+}*/
