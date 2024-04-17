@@ -1,21 +1,27 @@
 #ifndef CLICKHOUSE
 #define CLICKHOUSE
-#include </root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/client.h>
-#include <iostream>
+#include <clickhouse/client.h>
 #include <string>
+#include <sstream>
+#include <vector>
+#include <unordered_map>
+#include <functional>
 using namespace clickhouse;//数据库下的名字空间
-using namespace std;
-class ClickHouse{//数据库类
-private:
-    Client client; 
-public:
-    ClickHouse(string client_ip="localhost"):client(ClientOptions().SetHost(client_ip.c_str())){}
-    ~ClickHouse(){}
-public:
-    void Init(); //初始化
+class ClickHouse{
+    private:
+        Client client;
+        std::unordered_map<std::string, std::function<void()>> buildFunctions;
+        static std::string getCurrentDate();
+        void buildNGTSTick();
+        void buildTransaction();
+        void buildOrderDetail();
+    public:
+        bool Init_CH();
+        ClickHouse():client(ClientOptions().SetHost("localhost")){}
+        ~ClickHouse(){}
+    public:
+        void execute(std::string sql);
+        bool build(std::string sign);
+        void Insert(std::vector<void *>&it,int sign){}
 };
-
-
-
-
 #endif

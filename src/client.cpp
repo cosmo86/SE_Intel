@@ -1,117 +1,70 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <string>
+#include <websocketpp/config/asio_no_tls_client.hpp>
+#include <websocketpp/client.hpp>
+
 #include <iostream>
-#include <random>
-#include <pthread.h>
-//#include <json/json.h>
-#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
-int sockfd;
-class test{
-public:
-    int a;
-    std::string b;
-    std::string c;
-    double d;
-    test(){}
-    virtual ~test(){}
-    virtual void print(test* k){}
-};
-class word :public test{
-public:
-    word(){}
-    ~word(){}
-    void printf(test*k);
-};
-void word::printf(test*k){
-    std::cout<<k->a<<std::endl;
-    std::cout<<k->b<<std::endl;
-    std::cout<<a+d<<std::endl;
-    std::cout<<k->c<<std::endl;
-    std::cout<<k->d<<std::endl;
-}
-void huidiaoyi(Json::Value ans){
-    test T;
-    T.a=ans["val"]["a"].asInt();
-    T.b=ans["val"]["b"].asString();
-    T.c=ans["val"]["c"].asString();
-    T.d=ans["val"]["d"].asDouble();
-    word C;
-    C.printf(&T);
-}
-void *fun(void *arg){
-    while(1){
-        char *buff=new char[1024];
-         memset(buff,0,sizeof(buff));
-         int n=recv(sockfd,buff,1024,0);
-         if(n<=0){
-            std::cout<<"ser close"<<std::endl;
-            break;
-        }
-        Json::Value val;
-        Json::Reader read;
-        if(!read.parse(buff,val)){
-            std::cout<<"json err"<<std::endl;
-        }
-        int leixing=val["type"].asInt();
-        switch(leixing){
-            case 1:huidiaoyi(val);
-        }
-        
-    }
-    close(sockfd);
-    return nullptr;
-}
-void sockfd_init(){
-    sockfd=socket(AF_INET,SOCK_STREAM,0);//监听套机字
-    if(sockfd==-1){
-        printf("socket create err");
-        exit(0);
-    }
-    struct sockaddr_in saddr;//代表服务器的地址
-    memset(&saddr,0,sizeof(saddr));
-    saddr.sin_family=AF_INET;
-    saddr.sin_port=htons(6000);
-    saddr.sin_addr.s_addr=inet_addr("91.208.73.166");
-    int res=connect(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
-    if(res==-1){
-        printf("connect err\n");
-        exit(1);
-    }
-    pthread_t id;
-    pthread_create(&id,NULL,fun,nullptr);
-}
-int main(){
-    sockfd_init();
-    while(1){
-        sleep(1);
-        //std::cout<<"yes"<<std::endl;
-        // 使用随机设备作为种子引擎
-        std::random_device rd;
 
-        // 使用 Mersenne Twister 引擎，并以随机设备作为种子
-        std::mt19937 gen(rd());
+typedef websocketpp::client<websocketpp::config::asio_client> client;
 
-        // 定义随机数分布，例如在 [1, 100] 范围内生成整数
-        std::uniform_int_distribution<> dis(1, 3);
+using websocketpp::lib::placeholders::_1;
+using websocketpp::lib::placeholders::_2;
+using websocketpp::lib::bind;
 
-        // 生成随机数
-        int randomNumber = dis(gen);
-        Json::Value val;
-        val["type"]=randomNumber;
-        if(randomNumber==2){
-            Json::Value k;
-            k["a"]=2;
-            k["b"]=2.2;
-            k["c"]=std::string("zhangxuanweiwu");
-            val["val"]=k;
+// pull out the type of messages sent by our config
+typedef websocketpp::config::asio_client::message_type::ptr message_ptr;
+
+// This message handler will be invoked once for each incoming message. It
+// prints the message and then sends a copy of the message back to the server.
+void on_message(client* c, websocketpp::connection_hdl hdl, message_ptr msg) {
+    std::cout << "on_message called with hdl: " << hdl.lock().get()
+              << " and message: " << msg->get_payload()
+              << std::endl;
+
+
+    websocketpp::lib::error_code ec;
+
+    c->send(hdl, msg->get_payload(), msg->get_opcode(), ec);
+    if (ec) {
+        std::cout << "Echo failed because: " << ec.message() << std::endl;
+    }
+}
+
+int main(int argc, char* argv[]) {
+    // Create a client endpoint
+    client c;
+
+    std::string uri = "ws://localhost:9002";
+
+    if (argc == 2) {
+        uri = argv[1];
+    }
+
+    try {
+        // Set logging to be pretty verbose (everything except message payloads)
+        c.set_access_channels(websocketpp::log::alevel::all);
+        c.clear_access_channels(websocketpp::log::alevel::frame_payload);
+
+        // Initialize ASIO
+        c.init_asio();
+
+        // Register our message handler
+        c.set_message_handler(bind(&on_message,&c,::_1,::_2));
+
+        websocketpp::lib::error_code ec;
+        client::connection_ptr con = c.get_connection(uri, ec);
+        if (ec) {
+            std::cout << "could not create connection because: " << ec.message() << std::endl;
+            return 0;
         }
-        
-        send(sockfd,val.toStyledString().c_str(),strlen(val.toStyledString().c_str()),0);
+
+        // Note that connect here only requests a connection. No network messages are
+        // exchanged until the event loop starts running in the next line.
+        c.connect(con);
+
+        // Start the ASIO io_service run loop
+        // this will cause a single connection to be made to the server. c.run()
+        // will exit when this connection is closed.
+        c.run();
+    } catch (websocketpp::exception const & e) {
+        std::cout << e.what() << std::endl;
     }
 }

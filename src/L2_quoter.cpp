@@ -4,17 +4,7 @@ Client client(ClientOptions().SetHost("localhost"));//初始化
 //int cishu=0;
 server echo_server;
 std::vector<websocketpp::connection_hdl>socked_V;
-/*std::string timestamp_to_datetime(const std::time_t timestamp) {
-    // 将时间戳转换为本地时间
-    std::tm* local_time = std::localtime(&timestamp);
-    
-    // 构建年月日时分秒字符串
-    std::string datetime_str = (local_time->tm_hour < 10 ? "0" : "") + std::to_string(local_time->tm_hour) + ":" // 小时小于10时在前面补零
-                             + (local_time->tm_min < 10 ? "0" : "") + std::to_string(local_time->tm_min) + ":" // 分钟小于10时在前面补零
-                             + (local_time->tm_sec < 10 ? "0" : "") + std::to_string(local_time->tm_sec); // 秒数小于10时在前面补零
-    
-    return datetime_str;
-}*/
+
 std::string timestampToString(std::time_t timestamp) {
     std::time_t currentTime = std::time(nullptr);
     std::tm* tm_info = std::localtime(&currentTime);
@@ -22,7 +12,7 @@ std::string timestampToString(std::time_t timestamp) {
     oss << std::put_time(tm_info, "%Y-%m-%dT%H:%M:%S");
     return oss.str();
 }
-void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, websocketpp::connection_hdl hdl) ;
+/*void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, websocketpp::connection_hdl hdl) ;
     //gettime
     std::string sha256(const std::string& input) {
     unsigned char hash[SHA256_DIGEST_LENGTH];
@@ -36,17 +26,6 @@ void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, web
         ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];
     }
     return ss.str();
-    }
-    /*std::string timestamp_to_hh_mm_ss(time_t timestamp) {
-        int hours, minutes, seconds;
-        hours = timestamp / 3600;
-        timestamp %= 3600;
-        minutes = timestamp / 60;
-        seconds = timestamp % 60;
-
-        char buffer[9]; // HH:MM:SS\0，需要 9 个字符的缓冲区
-        std::snprintf(buffer, sizeof(buffer), "%02d:%02d:%02d", hours, minutes, seconds);
-        return std::string(buffer);
     }*/
     std::string Lev2MdSpi::gettime() {
       /* std::time_t currentTime = std::time(nullptr);
@@ -73,8 +52,8 @@ void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, web
         m_api=CTORATstpLev2MdApi::CreateTstpLev2MdApi(TORA_TSTP_MST_TCP,true);
         m_api->RegisterFront(address);//调用 RegisterFront 方法注册前置机地址
         m_api->RegisterSpi(this);//派生自回调接口类的实例
-        
         m_api->Init();
+        CH.Init_CH();//数据库初始化
         std::cout<<"Init yes"<<std::endl;
     }
     //登陆
@@ -115,14 +94,9 @@ void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, web
         std::cin>>s;
         strcpy(nonconst_id ,s.c_str());
         security_list[0] = nonconst_id;
-		//strcpy(security_list[0],"002387");
-		//strcpy(security_list[1],"600124");
-		//strcpy(security_list[2],"688345");
-        //Subscribe NGTS (orderdetial and trasaction together)
         int ret_nt = m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
         if (ret_nt == 0)
         {
-            
             std::cout<<"yes 0"<<std::endl;
            // gettime();
         }
@@ -210,10 +184,7 @@ void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, web
         if (pRspInfo->ErrorID == 0)
         {
             printf("OnRspSubOrderDetail sub market data success! \n");
-            std::string sql="CREATE TABLE IF NOT EXISTS OrderDetail_";
-            sql+=gettime();
-            sql+=std::string("(ExchangeID String,SecurityID String,OrderTime Int32,Price Float64,Volume Int64,Side String,OrderType String,MainSeq Int32,SubSeq Int32,Info1 Int32,Info2 Int32,Info3 Int32,OrderNO Int64,OrderStatus String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (OrderTime, ExchangeID, SecurityID);");            std::cout<<sql<<std::endl;
-            client.Execute(sql.c_str());//建表
+            CH.build("OnRspSubOrderDetail");
         }
         else
         {
@@ -410,12 +381,12 @@ void on_open(server* s, websocketpp::connection_hdl hdl) {
 void on_close(server* s, websocketpp::connection_hdl hdl) {
     // Handle connection close
     // Assuming socked_V is declared outside this function and is accessible here
-    /*for(auto it = socked_V.begin(); it != socked_V.end(); ++it) {
-        if(*it.lock().get() ==hdl.lock().get()) {
+    for(auto it = socked_V.begin(); it != socked_V.end(); ++it) {
+        if((*it).lock().get() ==hdl.lock().get()) {
             socked_V.erase(it);
             break; // Stop looping once the connection handle is erased
         }
-    }*/
+    }
 }
 
     int main(){
@@ -428,7 +399,6 @@ void on_close(server* s, websocketpp::connection_hdl hdl) {
         spi.init(userid,passwd,addrs);
         sleep(3);
         spi.add();
-         
             try {
                 // Set logging settings
                 echo_server.set_access_channels(websocketpp::log::alevel::all);
