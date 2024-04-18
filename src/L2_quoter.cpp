@@ -12,21 +12,6 @@ std::string timestampToString(std::time_t timestamp) {
     oss << std::put_time(tm_info, "%Y-%m-%dT%H:%M:%S");
     return oss.str();
 }
-/*void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, websocketpp::connection_hdl hdl) ;
-    //gettime
-    std::string sha256(const std::string& input) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256_CTX sha256;
-    SHA256_Init(&sha256);
-    SHA256_Update(&sha256, input.c_str(), input.length());
-    SHA256_Final(hash, &sha256);
-
-    std::stringstream ss;
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];
-    }
-    return ss.str();
-    }*/
     std::string Lev2MdSpi::gettime() {
       /* std::time_t currentTime = std::time(nullptr);
         // 转换为本地时间
@@ -42,18 +27,17 @@ std::string timestampToString(std::time_t timestamp) {
         return tm_date;*/
         return "20240416";
     }
-	//初始化，账号，密码，连接地址
+	//初始化，账号，密码，连接地址,数据库，网络
     void Lev2MdSpi::init(char * userid,char * password,char * address){
-        strcpy(this->userid,userid);
-        strcpy(this->password,password);
-        strcpy(this->address,address);
-        //m_api = CTORATstpLev2MdApi::CreateTstpLev2MdApi( TORA_TSTP_MST_MCAST,true);
-        //m_api->RegisterMulticast(address,"172.16.2121.1","");//对于 UDP 连接，调用 RegisterMulticast 方法注册多播地址
+        strcpy(this->userid,userid);//账号
+        strcpy(this->password,password);//密码
+        strcpy(this->address,address);//地址
         m_api=CTORATstpLev2MdApi::CreateTstpLev2MdApi(TORA_TSTP_MST_TCP,true);
         m_api->RegisterFront(address);//调用 RegisterFront 方法注册前置机地址
         m_api->RegisterSpi(this);//派生自回调接口类的实例
         m_api->Init();
-        CH.Init_CH();//数据库初始化
+        CH.clickhouse_init();//数据库初始化
+        SV.service_init();//网络初始化
         std::cout<<"Init yes"<<std::endl;
     }
     //登陆
@@ -61,13 +45,10 @@ std::string timestampToString(std::time_t timestamp) {
         std::cout<<"OnFrontConnected!"<<std::endl;
         CTORATstpReqUserLoginField req_user_login_field;
         memset(&req_user_login_field, 0, sizeof(req_user_login_field));//清空
-        strcpy(req_user_login_field.LogInAccount, userid);//username
+        strcpy(req_user_login_field.LogInAccount, userid);//userid
         req_user_login_field.LogInAccountType =  TORALEV2API::TORA_TSTP_LACT_UserID;//login_type
-        //req_user_login_field.AuthMode = TORA_TSTP_SP_AM_Password;
         strcpy(req_user_login_field.Password, password);//password
         strcpy(req_user_login_field.UserProductInfo, "HX5ZJ0C1PV");//用户端产品信息
-        std::cout<<req_user_login_field.Password<<std::endl;
-        std::cout<<req_user_login_field.LogInAccount<<std::endl;
         int ret = m_api->ReqUserLogin(&req_user_login_field, ++m_request_id);//调用登陆函数，参数为登陆请求信息
         if (ret != 0)//登陆失败返回0
         {
@@ -83,113 +64,61 @@ std::string timestampToString(std::time_t timestamp) {
             printf("login fail, error_id[%d] error_msg[%s]\n",pRspInfo ->ErrorID, pRspInfo ->ErrorMsg);
         }
     }
+
     void Lev2MdSpi::add(){
         char* security_list[1];
-		//for(int i=0;i<3;i++){
-		//	security_list[i]=(char *)malloc(sizeof(char)*16);
-		//}
         char nonconst_id[31];
         std::cout<<"plase write number"<<std::endl;
         std::string s;
         std::cin>>s;
         strcpy(nonconst_id ,s.c_str());
         security_list[0] = nonconst_id;
-        int ret_nt = m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
-        if (ret_nt == 0)
-        {
-            std::cout<<"yes 0"<<std::endl;
-           // gettime();
+        if (m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE) == 0){
+            std::cout<<"add SubscribeNGTSTick success!"<<std::endl;
         }
-        else
-        {
-            std::cout<<"no"<<std::endl;
+        else{
+            std::cout<<"add SubscribeNGTSTick error!"<<std::endl;
         }
-		
-		
 		//Subscribe old orderdetial 
-		int ret_od = m_api->SubscribeOrderDetail(security_list, sizeof(security_list) / sizeof(char*),TORA_TSTP_EXD_SZSE);
-		if (ret_od == 0)
-		{
-			std::cout<<"yes 1"<<std::endl;
-            
+		if (m_api->SubscribeOrderDetail(security_list, sizeof(security_list) / sizeof(char*),TORA_TSTP_EXD_SZSE) == 0){
+			std::cout<<"add SubscribeOrderDetail success!"<<std::endl;
+        }
+		else{
+			std::cout<<"add SubscribeOrderDetail error!"<<std::endl;
 		}
-		else
-		{
-			std::cout<<"no"<<std::endl;
-		}
-
 		//Subscribe old trasaction 
-		int ret_t = m_api->SubscribeTransaction(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
-        if (ret_t == 0)
-		{
-			std::cout<<"yes 2"<<std::endl;
+        if (m_api->SubscribeTransaction(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE) == 0){
+			std::cout<<"add SubscribeTransaction success!"<<std::endl;
 		}
-		else
-		{
-			std::cout<<"no"<<std::endl;
+		else{
+			std::cout<<"add SubscribeTransaction error!"<<std::endl;
 		}
-
-		//Subscribe to market data
-		/*int ret_md = m_api->SubscribeMarketData(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE);
-		if (ret_md == 0)
-		{
-			std::cout<<"yes 3"<<std::endl;
-		}
-		else
-		{
-			std::cout<<"no"<<std::endl;
-		}*/
     }
     
     //------------------------------------------------------------------------响应报文----------------------------------------------------------------------------------//
     void Lev2MdSpi::OnRspSubNGTSTick(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
-        if (pRspInfo->ErrorID == 0)
-        {
-            printf("OnRspsubRtnNGTSTick sub market data success! \n");
-            std::string sql="CREATE TABLE IF NOT EXISTS NGTSTickField_";
-            sql+=gettime();
-            sql+=std::string(" (ExchangeID String,SecurityID String,MainSeq Int32,SubSeq Int64,TickTime Int32,TickType String,BuyNo Int64,SellNo Int64,Price Float64,Volume Int64,TradeMoney Float64,Side String,TradeBSFlag String,MDSecurityStat String,Info1 Int32,Info2 Int32,Info3 Int32) ENGINE = MergeTree()ORDER BY (TickTime, ExchangeID, SecurityID)");            std::cout<<sql<<std::endl;
-            client.Execute(sql.c_str());//建表
+        if (pRspInfo->ErrorID == 0){
+            CH.buildNGTSTick();
         }
-        else
-        {
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
-        pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
+        else{
+            printf("sub market data fail, error_id[%d] error_msg[%s] \n",pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+        }
     }
-	/*void Lev2MdSpi::OnRspSubMarketData(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
-        if (pRspInfo->ErrorID == 0)
-        {
-            printf("OnRspSubMarketData sub market data success! \n");
-        }
-        else
-        {
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
-        pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
-    }*/
 	void Lev2MdSpi::OnRspSubTransaction(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
-        if (pRspInfo->ErrorID == 0)
-        {
-            printf("OnRspSubTransaction sub market data success! \n");
-            std::string sql="CREATE TABLE IF NOT EXISTS TransactionField_";
-            sql+=gettime();
-            sql+=std::string("(ExchangeID String,SecurityID String,TradeTime Int32,TradePrice Float64,TradeVolume Int64,ExecType String,MainSeq Int32,SubSeq Int64,BuyNo Int64,SellNo Int64,Info1 Int32,Info2 Int32,Info3 Int32,TradeBSFlag String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (TradeTime, MainSeq, SubSeq)");            std::cout<<sql<<std::endl;
-            client.Execute(sql.c_str());//建表
+        if (pRspInfo->ErrorID == 0){
+            CH.buildTransaction();
         }
-        else
-        {
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
-        pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
+        else{
+         printf("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+        }
     }
 	void Lev2MdSpi::OnRspSubOrderDetail(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
-        if (pRspInfo->ErrorID == 0)
-        {
-            printf("OnRspSubOrderDetail sub market data success! \n");
-            CH.build("OnRspSubOrderDetail");
+        if (pRspInfo->ErrorID == 0){
+           CH.buildOrderDetail();
         }
-        else
-        {
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", 
-        pRspInfo->ErrorID, pRspInfo->ErrorMsg); }
+        else{
+         printf("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+        }
     }
     //------------------------------------------------------------------------应答报文----------------------------------------------------------------------------------//
     /*void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
@@ -201,8 +130,8 @@ std::string timestampToString(std::time_t timestamp) {
             pDepthMarketData ->TotalValueTrade);
 	}*/
     void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
-        
-        
+        CH.insertNGTSTick(pTick);
+        SV.service.send()
        //交易所代码
 		std::cout<<pTick->ExchangeID<<' ';
 		///证券代码
@@ -245,7 +174,6 @@ std::string timestampToString(std::time_t timestamp) {
             sql_insert += std::to_string(pTick->Info2) + ",";
             sql_insert += std::to_string(pTick->Info3) + ")";
             client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
-        
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
        // std::cout<<"OnRtnTransaction"<<std::endl;
@@ -286,8 +214,6 @@ std::string timestampToString(std::time_t timestamp) {
                 + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
                 + std::to_string( pOrderDetail->BizIndex) + ")";
             client.Execute(sql.c_str()); // 执行插入数据的 SQL
-           
-            
     }
     void test::print(test* p){
         std::cout<<"type=2"<<std::endl;
@@ -366,27 +292,6 @@ void send_json_packet(CTORATstpLev2TransactionField* pTransaction,server* s, web
             std::cout << "Send failed because: " << e.what() << std::endl;
     }
     //ws://91.208.73.166:9002
-
-
-}
-
-// Callback function when a new connection is established
-void on_open(server* s, websocketpp::connection_hdl hdl) {
-    std::cout << "New connection established" << std::endl;
-    socked_V.push_back(hdl);
-    // Start a new thread to send JSON packets to the client
-    //std::thread t(send_json_packet, s, hdl);
-    //t.detach(); // Detach the thread to run independently
-}
-void on_close(server* s, websocketpp::connection_hdl hdl) {
-    // Handle connection close
-    // Assuming socked_V is declared outside this function and is accessible here
-    for(auto it = socked_V.begin(); it != socked_V.end(); ++it) {
-        if((*it).lock().get() ==hdl.lock().get()) {
-            socked_V.erase(it);
-            break; // Stop looping once the connection handle is erased
-        }
-    }
 }
 
     int main(){
@@ -399,37 +304,7 @@ void on_close(server* s, websocketpp::connection_hdl hdl) {
         spi.init(userid,passwd,addrs);
         sleep(3);
         spi.add();
-            try {
-                // Set logging settings
-                echo_server.set_access_channels(websocketpp::log::alevel::all);
-                echo_server.clear_access_channels(websocketpp::log::alevel::frame_payload);
-
-                // Initialize Asio
-                echo_server.init_asio();
-
-                // Register the message handler
-                echo_server.set_message_handler(bind(&on_message, &echo_server, ::_1, ::_2));
-
-                // Register the open connection handler
-                echo_server.set_open_handler(bind(&on_open, &echo_server, ::_1));
-                // enl close
-                echo_server.set_close_handler(bind(&on_close, &echo_server, ::_1));
-
-
-                // Listen on port 9002
-                echo_server.listen(9002);
-
-                // Start the server accept loop
-                echo_server.start_accept();
-
-                // Start the ASIO io_service run loop
-                echo_server.run();
-            } catch (const websocketpp::exception& e) {
-                std::cout << e.what() << std::endl;
-            } catch (...) {
-                std::cout << "Other exception" << std::endl;
-            }
-            while(1){}
+        while(1){}
         std::cout<<"this ok"<<std::endl;
     }
 /*int socket_init(){
