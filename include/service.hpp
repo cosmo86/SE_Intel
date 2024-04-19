@@ -3,6 +3,8 @@
 #include <websocketpp/server.hpp>
 #include <string>
 #include <vector>
+#include "TORATstpLev2MdApi.h"
+#include "TORATstpLev2ApiDataType.h"
 #include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
 using websocketpp::lib::placeholders::_1;
 using websocketpp::lib::placeholders::_2;
@@ -21,6 +23,7 @@ class service{
     // Callback function when a new connection is established
     void on_open( websocketpp::connection_hdl hdl);
     void on_close( websocketpp::connection_hdl hdl);
+    void  send_CTORATstpLev2TransactionField(CTORATstpLev2TransactionField* pTransaction);
     void service_init();
 };
             

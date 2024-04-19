@@ -64,4 +64,81 @@
             std::cout << "Other exception" << std::endl;
         }
     }
+    // Function to send JSON packet every second
+void  service::sendTransaction(CTORATstpLev2TransactionField* pTransaction){
+    if(pTransaction->TradePrice==0)return;
+    Json::Value val;
+    val["ExchangeId"]=pTransaction->ExchangeID;
+    val["ExchangeID"]=pTransaction->ExchangeID;
+    val["SecurityID"]=pTransaction->SecurityID;
+    val["TradeTime"]= timestampToString(pTransaction->TradeTime);
+    //val["TradeTime"]=pTransaction->TradeTime;
+    val["TradePrice"]=pTransaction->TradePrice;
+    val["TradeVolume"]=std::to_string(pTransaction->TradeVolume);
+    val["ExecType"]=pTransaction->ExecType;
+    val["MainSeq"]=pTransaction->MainSeq;
+    val["SubSeq"]=std::to_string(pTransaction->SubSeq);
+    val["SellNo"]=std::to_string(pTransaction->SellNo);
+    val["Info1"]=pTransaction->Info1;
+    val["Info2"]=pTransaction->Info2;
+    val["Info3"]=pTransaction->Info3;
+    val["TradeBSFlag"]=pTransaction->TradeBSFlag;
+    val["BizIndex"]=std::to_string(pTransaction->BizIndex);
+    std::cout<<val["TradeTime"]<<std::endl;
+    for(auto i:socked_V){
+        try {
+            // Send the JSON packet to the client
+           echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
+        }
+    }
+    //ws://91.208.73.166:9002
+}
+void service::sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
+    Json::Value val;
+    val["ExchangeID"]=pOrderDetail->ExchangeID;
+    val["SecurityID"]=pOrderDetail->SecurityID;
+    val["OrderTime"]=pOrderDetail->OrderTime;
+    val["Price"]=pOrderDetail->Price;
+    val["Volume"]=pOrderDetail->Volume;
+    val["Side"]=pOrderDetail->Side;
+    val["MainSeq"]=pOrderDetail->MainSeq;
+    val["SubSeq"]=pOrderDetail->SubSeq;
+    val["Info1"]=pOrderDetail->Info1;
+    val["Info2"]=pOrderDetail->Info2;
+    val["Info3"]=pOrderDetail->Info3;
+    val["OrderNO"]=pOrderDetail->OrderNO;
+    val["OrderStatus"]=pOrderDetail->OrderStatus;
+    val["BizIndex"]=pOrderDetail->BizIndex;
+    for(auto i:socked_V){
+        try {
+            // Send the JSON packet to the client
+        echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
+        }
+    }
+}
+void service::sendNGTSTick(CTORATstpLev2NGTSTickField* pTick){
+    Json::Value val;    
+    val["ExchangeID"]=pTick->ExchangeID;
+    val["SecurityID"]=pTick->SecurityID;
+    val["MainSeq"]=pTick->MainSeq;
+    val["SubSeq"]=pTick->SubSeq;
+    val["TickTime"]=pTick->TickTime;
+    val["TickType"]=pTick->TickType;
+    val["BuyNo"]=pTick->BuyNo;
+    val["SellNo"]=pTick->SellNo;
+    val["Price"]=pTick->Price;
+    val["Volume"]=pTick->Volume;
+    val["TradeMoney"]=pTick->TradeMoney;
+    val["Side"]=pTick->Side;
+    val["TradeBSFlag"]=pTick->TradeBSFlag;
+    val["MDSecurityStat"]=pTick->MDSecurityStat;
+    val["Info1"]=pTick->Info1;
+    val["Info2"]=pTick->Info2;
+    val["Info3"]=pTick->Info3;
+}
+
       

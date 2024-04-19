@@ -33,4 +33,65 @@ void ClickHouse::buildOrderDetail(){
 void ClickHouse::execute(std::string sql){
     client.Execute(sql.c_str());
 }
-void ClickHouse::Insert(std::vector<void *>&it,int sign){}
+void ClickHouse::insertTransaction(CTORATstpLev2TransactionField* pTransaction){
+    std::string sql = "INSERT INTO TransactionField_" + getCurrentDate() + " (ExchangeID, SecurityID, TradeTime, TradePrice, TradeVolume, ExecType, MainSeq, SubSeq, BuyNo, SellNo, Info1, Info2, Info3, TradeBSFlag, BizIndex) VALUES ";
+    sql += "('";
+    sql +=  pTransaction->ExchangeID ;
+    sql+="', '" ;
+    sql+= pTransaction->SecurityID;
+    sql+= "', "
+        + std::to_string( pTransaction->TradeTime) + ", " + std::to_string( pTransaction->TradePrice) + ", "
+        + std::to_string( pTransaction->TradeVolume) + ", '" +  pTransaction->ExecType + "', "
+        + std::to_string( pTransaction->MainSeq) + ", " + std::to_string( pTransaction->SubSeq) + ", "
+        + std::to_string( pTransaction->BuyNo) + ", " + std::to_string( pTransaction->SellNo) + ", "
+        + std::to_string( pTransaction->Info1) + ", " + std::to_string( pTransaction->Info2) + ", "
+        + std::to_string( pTransaction->Info3) + ",'" +  pTransaction->TradeBSFlag + "', "
+        + std::to_string( pTransaction->BizIndex) + ")";
+    client.Execute(sql.c_str()); // 执行插入数据的 SQL
+}
+void ClickHouse::insertOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
+    std::string sql = "INSERT INTO OrderDetail_" + getCurrentDate() + " (ExchangeID,SecurityID,OrderTime,Price,Volume,Side,OrderType,MainSeq,SubSeq,Info1,Info2,Info3,OrderNO,OrderStatus,BizIndex) VALUES ";
+    sql += "('";
+    sql += pOrderDetail->ExchangeID ;
+    sql+="', '" ;
+    sql+= pOrderDetail->SecurityID;
+    sql+= "', "
+        + std::to_string( pOrderDetail->OrderTime) + ", " + std::to_string( pOrderDetail->Price) + ", "
+        + std::to_string( pOrderDetail->Volume) + ", '" +  pOrderDetail->Side + "', '"
+        + pOrderDetail->OrderType + "', " + std::to_string( pOrderDetail->MainSeq) + ", "
+        + std::to_string( pOrderDetail->SubSeq) + ", " + std::to_string( pOrderDetail->Info1) + ", "
+        + std::to_string( pOrderDetail->Info2) + ", " + std::to_string( pOrderDetail->Info3) + ", "
+        + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
+        + std::to_string( pOrderDetail->BizIndex) + ")";
+    client.Execute(sql.c_str()); // 执行插入数据的 SQL
+}
+void ClickHouse::insertNGTSTick(CTORATstpLev2NGTSTickField* pTick){
+    std::string sql_insert = "INSERT INTO NGTSTickField_";
+            sql_insert += getCurrentDate(); // Assuming gettime() returns the current time or some unique identifier
+            sql_insert += " (ExchangeID, SecurityID, MainSeq, SubSeq, TickTime, TickType, BuyNo, SellNo, Price, Volume, TradeMoney, Side, TradeBSFlag, MDSecurityStat, Info1, Info2, Info3) VALUES (";
+            sql_insert += "'" ;
+            sql_insert += pTick->ExchangeID + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->SecurityID ;
+            sql_insert += "',";
+            sql_insert += "'" + std::to_string(pTick->MainSeq) + "',"; // 转换为字符串
+            sql_insert += "'" + std::to_string(pTick->SubSeq) + "',"; // 转换为字符串
+            sql_insert += std::to_string(pTick->TickTime) + ",";
+            sql_insert += "'" ;
+            sql_insert += pTick->TickType + "',";
+            sql_insert += "'" + std::to_string(pTick->BuyNo) + "',"; // 转换为字符串
+            sql_insert += "'" + std::to_string(pTick->SellNo) + "',"; // 转换为字符串
+            sql_insert += std::to_string(pTick->Price) + ",";
+            sql_insert += std::to_string(pTick->Volume) + ",";
+            sql_insert += std::to_string(pTick->TradeMoney) + ",";
+            sql_insert += "'" ;
+            sql_insert += pTick->Side + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->TradeBSFlag + "',";
+            sql_insert += "'" ;
+            sql_insert += pTick->MDSecurityStat + "',";
+            sql_insert += std::to_string(pTick->Info1) + ",";
+            sql_insert += std::to_string(pTick->Info2) + ",";
+            sql_insert += std::to_string(pTick->Info3) + ")";
+            client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
+}
