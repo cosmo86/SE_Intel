@@ -115,23 +115,19 @@
         }
     }
 
-    void  Lev2MdSpi::OnRtnMarketData (CTORATstpLev2MarketDataField *pMarketData, const int *FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[],const int *FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
-       std::cout<<1<<std::endl;
-        CH.insertMarketData(pMarketData);
-        SV.sendMarketData(pMarketData);
+    void  Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
+        CH.insertMarketData(pDepthMarketData);
+        SV.sendMarketData(pDepthMarketData);
     }
     void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
-        std::cout<<2<<std::endl;
         CH.insertNGTSTick(pTick);
         SV.sendNGTSTick(pTick);
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
-       // std::cout<<3<<std::endl;
         CH.insertTransaction(pTransaction);
         SV.sendTransaction(pTransaction);
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-         //std::cout<<4<<std::endl;
         CH.insertOrderDetail(pOrderDetail);
         SV.sendOrderDetail(pOrderDetail);
     }
