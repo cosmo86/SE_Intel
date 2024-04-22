@@ -21,14 +21,21 @@ void ClickHouse::buildNGTSTick(){
 void ClickHouse::buildTransaction(){
     std::string sql="CREATE TABLE IF NOT EXISTS TransactionField_";
     sql+=getCurrentDate();
-    sql+=std::string("(ExchangeID String,SecurityID String,TradeTime Int32,TradePrice Float64,TradeVolume Int64,ExecType String,MainSeq Int32,SubSeq Int64,BuyNo Int64,SellNo Int64,Info1 Int32,Info2 Int32,Info3 Int32,TradeBSFlag String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (TradeTime, MainSeq, SubSeq)");            std::cout<<sql<<std::endl;
+    sql+=std::string("(ExchangeID String,SecurityID String,TradeTime Int32,TradePrice Float64,TradeVolume Int64,ExecType String,MainSeq Int32,SubSeq Int64,BuyNo Int64,SellNo Int64,Info1 Int32,Info2 Int32,Info3 Int32,TradeBSFlag String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (TradeTime, MainSeq, SubSeq)");
     client.Execute(sql.c_str());//建表
 }
 void ClickHouse::buildOrderDetail(){
     std::string sql="CREATE TABLE IF NOT EXISTS OrderDetail_";
     sql+=getCurrentDate();
-    sql+=std::string("(ExchangeID String,SecurityID String,OrderTime Int32,Price Float64,Volume Int64,Side String,OrderType String,MainSeq Int32,SubSeq Int32,Info1 Int32,Info2 Int32,Info3 Int32,OrderNO Int64,OrderStatus String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (OrderTime, ExchangeID, SecurityID);");            std::cout<<sql<<std::endl;
+    sql+=std::string("(ExchangeID String,SecurityID String,OrderTime Int32,Price Float64,Volume Int64,Side String,OrderType String,MainSeq Int32,SubSeq Int32,Info1 Int32,Info2 Int32,Info3 Int32,OrderNO Int64,OrderStatus String,BizIndex Int64) ENGINE = MergeTree() ORDER BY (OrderTime, ExchangeID, SecurityID);");
     client.Execute(sql.c_str());//建表
+}
+void ClickHouse::buildMarketData(){
+	std::string sql="CREATE TABLE IF NOT EXISTS MarketData_";
+	sql+=getCurrentDate();
+	sql+=std::string("(SecurityID String,ExchangeID String,DataTimeStamp Int32,PreClosePrice Float64,OpenPrice Float64,NumTrades Int64,TotalVolumeTrade Int64,TotalValueTrade Float64,TotalBidVolume Int64,AvgBidPrice Float64,TotalAskVolume Int64,AvgAskPrice Float64,HighestPrice Float64,LowestPrice Float64,LastPrice Float64,BidPrice1 Float64,BidVolume1 Int64,AskPrice1 Float64,AskVolume1 Int64,AskPrice2 Float64,AskVolume2 Int64,AskPrice3 Float64,AskVolume3 Int64,BidPrice2 Float64,BidVolume2 Int64,BidPrice3 Float64,BidVolume3 Int64,AskPrice4 Float64,AskVolume4 Int64,AskPrice5 Float64,AskVolume5 Int64,BidPrice4 Float64,BidVolume4 Int64,BidPrice5 Float64,BidVolume5 Int64,AskPrice6 Float64,AskVolume6 Int64,AskPrice7 Float64,AskVolume7 Int64,BidPrice6 Float64,BidVolume6 Int64,BidPrice7 Float64,BidVolume7 Int64,AskPrice8 Float64,AskVolume8 Int64,AskPrice9 Float64,AskVolume9 Int64,BidPrice8\
+ Float64,BidVolume8 Int64,BidPrice9 Float64,BidVolume9 Int64,BidPrice10 Float64,BidVolume10 Int64,AskPrice10 Float64,AskVolume10 Int64,Info1 Int32,Info2 Int32,Info3 Int32,UpperLimitPrice Float64,LowerLimitPrice Float64,ClosePrice Float64,MDSecurityStat String,TotalBidNumber Int32,TotalOfferNumber Int32,BidTradeMaxDuration Int32,OfferTradeMaxDuration Int32,IOPV Int32,Ask1NumOrders Int32,Bid1NumOrders Int32,Ask2NumOrders Int32,Bid2NumOrders Int32,Ask3NumOrders  Int32,Bid3NumOrders Int32,Ask4NumOrders Int32,Bid4NumOrders Int32,Ask5NumOrders Int32,Bid5NumOrders Int32,Ask6NumOrders Int32,Bid6NumOrders Int32,Ask7NumOrders Int32,Bid7NumOrders Int32,Ask8NumOrders Int32,Bid8NumOrders Int32,Ask9NumOrders Int32,Bid9NumOrders Int32,Ask10NumOrders Int32,Bid10NumOrders Int32,WithdrawBuyNumber Int32,WithdrawBuyAmount Int64,WithdrawBuyMoney Float64,WithdrawSellNumber Int32,WithdrawSellAmount Int64,WithdrawSellMoney Float64)ENGINE = MergeTree() ORDER BY (DataTimeStamp)");
+	client.Execute(sql.c_str()); // 建表
 }
 void ClickHouse::execute(std::string sql){
     client.Execute(sql.c_str());
@@ -94,4 +101,107 @@ void ClickHouse::insertNGTSTick(CTORATstpLev2NGTSTickField* pTick){
             sql_insert += std::to_string(pTick->Info2) + ",";
             sql_insert += std::to_string(pTick->Info3) + ")";
             client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
+}
+void ClickHouse::insertMarketData(CTORATstpLev2MarketDataField *pMarketData){
+    std::string insert_sql="INSERT INTO MarketData_";
+	insert_sql+=getCurrentDate();
+	insert_sql+=" (SecurityID,ExchangeID,DataTimeStamp,PreClosePrice,OpenPrice,NumTrades,TotalVolumeTrade,TotalValueTrade,TotalBidVolume,AvgBidPrice,TotalAskVolume,AvgAskPrice,HighestPrice,LowestPrice,LastPrice,BidPrice1,BidVolume1,AskPrice1,AskVolume1,AskPrice2,AskVolume2,AskPrice3,AskVolume3,BidPrice2,BidVolume2,BidPrice3,BidVolume3,AskPrice4,AskVolume4,AskPrice5,AskVolume5,BidPrice4,BidVolume4,BidPrice5,BidVolume5,AskPrice6,AskVolume6,AskPrice7,AskVolume7,BidPrice6,BidVolume6,BidPrice7,BidVolume7,AskPrice8,AskVolume8,AskPrice9,AskVolume9,BidPrice8,BidVolume8,BidPrice9,BidVolume9,BidPrice10,BidVolume10,AskPrice10,AskVolume10,Info1,Info2,Info3,UpperLimitPrice,LowerLimitPrice,ClosePrice,MDSecurityStatstring,TotalBidNumber,TotalOfferNumber,BidTradeMaxDuration,OfferTradeMaxDuration,IOPV,Ask1NumOrders,Bid1NumOrders,Ask2NumOrders,Bid2NumOrders,Ask3NumOrders,Bid3NumOrders,Ask4NumOrders,Bid4NumOrders,Ask5NumOrders,Bid5NumOrders,Ask6NumOrders,Bid6NumOrders,Ask7NumOrders,Bid7NumOrders,Ask8NumOrders,Bid8NumOrders,Ask9NumOrders,Bid9NumOrders,Ask10NumOrders,Bid10NumOrders,WithdrawBuyNumber,WithdrawBuyAmount,WithdrawBuyMoney,WithdrawSellNumber,WithdrawSellAmount,WithdrawSellMoney) VALUES (";
+		insert_sql+="'";
+		insert_sql+=pMarketData->SecurityID;
+		insert_sql+="','";
+		insert_sql+=pMarketData->ExchangeID;
+		insert_sql+="',";
+		insert_sql+=pMarketData->DataTimeStamp+",";
+		insert_sql+=std::to_string(pMarketData->PreClosePrice)+",";
+		insert_sql+=std::to_string(pMarketData->OpenPrice)+",";
+		insert_sql+=pMarketData->NumTrades+",";
+		insert_sql+=pMarketData->TotalVolumeTrade+",";
+		insert_sql+=std::to_string(pMarketData->TotalValueTrade)+",";
+		insert_sql+=pMarketData->TotalBidVolume+",";
+		insert_sql+=std::to_string(pMarketData->AvgBidPrice)+",";
+		insert_sql+=pMarketData->TotalAskVolume+",";
+		insert_sql+=std::to_string(pMarketData->AvgAskPrice)+",";
+		insert_sql+=std::to_string(pMarketData->HighestPrice)+",";
+		insert_sql+=std::to_string(pMarketData->LowestPrice)+",";
+		insert_sql+=std::to_string(pMarketData->LastPrice)+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice1)+",";
+		insert_sql+=std::to_string(pMarketData->BidVolume1)+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice1)+",";
+		insert_sql+=std::to_string(pMarketData->AskVolume1)+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice2)+",";
+		insert_sql+=pMarketData->AskVolume2+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice3)+",";
+		insert_sql+=pMarketData->AskVolume3+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice2)+",";
+		insert_sql+=pMarketData->BidVolume2+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice3)+",";
+		insert_sql+=pMarketData->BidVolume3+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice4)+",";
+		insert_sql+=pMarketData->AskVolume4+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice5)+",";
+		insert_sql+=pMarketData->AskVolume5+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice4)+",";
+		insert_sql+=pMarketData->BidVolume4+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice5)+",";
+		insert_sql+=pMarketData->BidVolume5+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice6)+",";
+		insert_sql+=pMarketData->AskVolume6+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice7)+",";
+		insert_sql+=pMarketData->AskVolume7+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice6)+",";
+		insert_sql+=pMarketData->BidVolume6+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice7)+",";
+		insert_sql+=pMarketData->BidVolume7+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice8)+",";
+		insert_sql+=pMarketData->AskVolume8+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice9)+",";
+		insert_sql+=pMarketData->AskVolume9+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice8)+",";
+		insert_sql+=pMarketData->BidVolume8+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice9)+",";
+		insert_sql+=pMarketData->BidVolume9+",";
+		insert_sql+=std::to_string(pMarketData->BidPrice10)+",";
+		insert_sql+=pMarketData->BidVolume10+",";
+		insert_sql+=std::to_string(pMarketData->AskPrice10)+",";
+		insert_sql+=pMarketData->AskVolume10+",";
+		insert_sql+=pMarketData->Info1+",";
+		insert_sql+=pMarketData->Info2+",";
+		insert_sql+=pMarketData->Info3+",";
+		insert_sql+=std::to_string(pMarketData->UpperLimitPrice)+",";
+		insert_sql+=std::to_string(pMarketData->LowerLimitPrice)+",";
+		insert_sql+=std::to_string(pMarketData->ClosePrice)+",'";
+		insert_sql+=pMarketData->MDSecurityStat+"',";
+		insert_sql+=pMarketData->TotalBidNumber+",";
+		insert_sql+=pMarketData->TotalOfferNumber+",";
+		insert_sql+=pMarketData->BidTradeMaxDuration+",";
+		insert_sql+=pMarketData->OfferTradeMaxDuration+",";
+		insert_sql+=std::to_string(pMarketData->IOPV)+",";
+		insert_sql+=pMarketData->Ask1NumOrders+",";
+		insert_sql+=pMarketData->Bid1NumOrders+",";
+		insert_sql+=pMarketData->Ask2NumOrders+",";
+		insert_sql+=pMarketData->Bid2NumOrders+",";
+		insert_sql+=pMarketData->Ask3NumOrders+",";
+		insert_sql+=pMarketData->Bid3NumOrders+",";
+		insert_sql+=pMarketData->Ask4NumOrders+",";
+		insert_sql+=pMarketData->Bid4NumOrders+",";
+		insert_sql+=pMarketData->Ask5NumOrders+",";
+		insert_sql+=pMarketData->Bid5NumOrders+",";
+		insert_sql+=pMarketData->Ask6NumOrders+",";
+		insert_sql+=pMarketData->Bid6NumOrders+",";
+		insert_sql+=pMarketData->Ask7NumOrders+",";
+		insert_sql+=pMarketData->Bid7NumOrders+",";
+		insert_sql+=pMarketData->Ask8NumOrders+",";
+		insert_sql+=pMarketData->Bid8NumOrders+",";
+		insert_sql+=pMarketData->Ask9NumOrders+",";
+		insert_sql+=pMarketData->Bid9NumOrders+",";
+		insert_sql+=pMarketData->Ask10NumOrders+",";
+		insert_sql+=pMarketData->Bid10NumOrders+",";
+		insert_sql+=pMarketData->WithdrawBuyNumber+",";
+		insert_sql+=pMarketData->WithdrawBuyAmount+",";
+		insert_sql+=std::to_string(pMarketData->WithdrawBuyMoney)+",";
+		insert_sql+=pMarketData->WithdrawSellNumber+",";
+		insert_sql+=pMarketData->WithdrawSellAmount+",";
+		insert_sql+=std::to_string(pMarketData->WithdrawSellMoney)+")";
+		std::cout<<insert_sql<<std::endl;
+
 }

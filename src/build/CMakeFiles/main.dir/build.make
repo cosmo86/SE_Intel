@@ -69,10 +69,24 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
+CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp
+CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /root/SE_Intel/src/main.cpp
+
+CMakeFiles/main.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/SE_Intel/src/main.cpp > CMakeFiles/main.dir/main.cpp.i
+
+CMakeFiles/main.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/SE_Intel/src/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+
 CMakeFiles/main.dir/L2_quoter.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp
 CMakeFiles/main.dir/L2_quoter.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/L2_quoter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/L2_quoter.cpp.o"
 	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/L2_quoter.cpp.o -MF CMakeFiles/main.dir/L2_quoter.cpp.o.d -o CMakeFiles/main.dir/L2_quoter.cpp.o -c /root/SE_Intel/src/L2_quoter.cpp
 
 CMakeFiles/main.dir/L2_quoter.cpp.i: cmake_force
@@ -83,14 +97,48 @@ CMakeFiles/main.dir/L2_quoter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/L2_quoter.cpp.s"
 	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/SE_Intel/src/L2_quoter.cpp -o CMakeFiles/main.dir/L2_quoter.cpp.s
 
+CMakeFiles/main.dir/ClickHouse.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp
+CMakeFiles/main.dir/ClickHouse.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/ClickHouse.cpp.o"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/ClickHouse.cpp.o -MF CMakeFiles/main.dir/ClickHouse.cpp.o.d -o CMakeFiles/main.dir/ClickHouse.cpp.o -c /root/SE_Intel/src/ClickHouse.cpp
+
+CMakeFiles/main.dir/ClickHouse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/ClickHouse.cpp.i"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/SE_Intel/src/ClickHouse.cpp > CMakeFiles/main.dir/ClickHouse.cpp.i
+
+CMakeFiles/main.dir/ClickHouse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/ClickHouse.cpp.s"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/SE_Intel/src/ClickHouse.cpp -o CMakeFiles/main.dir/ClickHouse.cpp.s
+
+CMakeFiles/main.dir/service.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp
+CMakeFiles/main.dir/service.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/service.cpp.o"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/service.cpp.o -MF CMakeFiles/main.dir/service.cpp.o.d -o CMakeFiles/main.dir/service.cpp.o -c /root/SE_Intel/src/service.cpp
+
+CMakeFiles/main.dir/service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/service.cpp.i"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/SE_Intel/src/service.cpp > CMakeFiles/main.dir/service.cpp.i
+
+CMakeFiles/main.dir/service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/service.cpp.s"
+	/opt/rh/devtoolset-8/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/SE_Intel/src/service.cpp -o CMakeFiles/main.dir/service.cpp.s
+
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/L2_quoter.cpp.o"
+"CMakeFiles/main.dir/main.cpp.o" \
+"CMakeFiles/main.dir/L2_quoter.cpp.o" \
+"CMakeFiles/main.dir/ClickHouse.cpp.o" \
+"CMakeFiles/main.dir/service.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
+main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/L2_quoter.cpp.o
+main: CMakeFiles/main.dir/ClickHouse.cpp.o
+main: CMakeFiles/main.dir/service.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: zimulu/clickhouse/libclickhouse-cpp-lib.a
 main: /root/SE_Intel/lib/liblev2mdapi.so
@@ -102,7 +150,7 @@ main: zimulu/contrib/absl/absl/libabsl_int128.a
 main: zimulu/contrib/cityhash/cityhash/libcityhash.a
 main: zimulu/contrib/lz4/lz4/liblz4.a
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/SE_Intel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

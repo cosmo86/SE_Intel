@@ -25,72 +25,31 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
- /usr/include/getopt.h /usr/include/string.h /usr/include/sys/socket.h \
- /usr/include/sys/uio.h /usr/include/bits/uio.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
- /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
- /usr/include/netinet/in.h \
- /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/bits/in.h \
- /usr/include/arpa/inet.h /usr/include/sys/epoll.h \
- /usr/include/bits/epoll.h /usr/include/fcntl.h /usr/include/bits/fcntl.h \
- /usr/include/bits/fcntl-linux.h /usr/include/linux/falloc.h \
- /usr/include/bits/stat.h /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/event.h /usr/include/event2/event-config.h \
- /usr/include/sys/time.h /usr/include/evutil.h /usr/include/event2/util.h \
- /usr/include/netdb.h /usr/include/rpc/netdb.h \
- /usr/include/bits/siginfo.h /usr/include/bits/netdb.h \
- /usr/include/event2/event_struct.h /usr/include/event2/keyvalq_struct.h \
- /usr/include/event2/event.h /usr/include/event2/event_compat.h \
- /usr/include/event2/buffer.h /usr/include/event2/buffer_compat.h \
- /usr/include/event2/bufferevent.h \
- /usr/include/event2/bufferevent_struct.h \
- /usr/include/event2/bufferevent_compat.h /usr/include/event2/tag.h \
- /usr/include/event2/tag_compat.h /usr/include/openssl/sha.h \
- /usr/include/openssl/e_os2.h /usr/include/openssl/opensslconf.h \
- /usr/include/openssl/opensslconf-x86_64.h \
- /root/SE_Intel/src/../include/TORATstpLev2MdApi.h \
- /root/SE_Intel/src/../include/TORATstpLev2ApiStruct.h \
- /root/SE_Intel/src/../include/TORATstpLev2ApiDataType.h \
- /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
- /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/float.h \
- /usr/local/include/websocketpp/config/asio_no_tls.hpp \
- /usr/local/include/websocketpp/config/core.hpp \
- /usr/local/include/websocketpp/common/platforms.hpp \
- /usr/local/include/websocketpp/common/cpp11.hpp \
- /usr/local/include/websocketpp/common/stdint.hpp \
- /usr/local/include/websocketpp/concurrency/basic.hpp \
- /usr/local/include/websocketpp/common/thread.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/chrono \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/limits \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ctime \
- /usr/include/bits/timex.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
+ /usr/include/getopt.h /usr/include/string.h \
+ /root/SE_Intel/src/../include/ClickHouse.hpp \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/client.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/query.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/column.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../types/types.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
+ /usr/include/assert.h /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cpp_type_traits.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
+ /usr/include/math.h /usr/include/bits/huge_val.h \
+ /usr/include/bits/huge_valf.h /usr/include/bits/huge_vall.h \
+ /usr/include/bits/inf.h /usr/include/bits/nan.h \
+ /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algobase.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cpp_type_traits.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/concept_check.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_funcs.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/assertions.h \
@@ -98,6 +57,52 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ptr_traits.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/debug.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/predefined_ops.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/limits \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/gamma.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/beta_function.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/ell_integral.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/exp_integral.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/hypergeometric.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/legendre_function.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/modified_bessel_func.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_hermite.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_laguerre.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/riemann_zeta.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cstring \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/iosfwd \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stringfwd.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/postypes.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cwchar \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/config.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/options.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ciso646 \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/policy_checks.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/macros.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/attributes.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/optimization.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_base.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_lockfree_defines.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/map \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/allocator.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/new_allocator.h \
@@ -109,33 +114,13 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_construct.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/alloc_traits.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/alloc_traits.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/iosfwd \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stringfwd.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/postypes.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cwchar \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/atomicity.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
- /usr/include/bits/setjmp.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/concurrence.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_function.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/binders.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tuple \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/alloc_traits.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/alloc_traits.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/aligned_buffer.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/node_handle.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/string \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/char_traits.h \
@@ -148,63 +133,89 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cxxabi_forced.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/range_access.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_string.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/atomicity.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/bits/timex.h /usr/include/bits/setjmp.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/string_view \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/string_view.tcc \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdio \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cerrno \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_string.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/tuple \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_construct.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/concurrence.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/allocated_ptr.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/refwrap.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/aligned_buffer.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_base.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_lockfree_defines.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/system_error \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
- /usr/local/include/websocketpp/transport/iostream/endpoint.hpp \
- /usr/local/include/websocketpp/transport/base/endpoint.hpp \
- /usr/local/include/websocketpp/common/functional.hpp \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_vector.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_bvector.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/itemview.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/../exceptions.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/../server_exception.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_function.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/node_handle.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_vector.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_bvector.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algo.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/algorithmfwd.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_heap.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uniform_int_dist.h \
- /usr/local/include/websocketpp/common/system_error.hpp \
- /usr/local/include/websocketpp/transport/iostream/connection.hpp \
- /usr/local/include/websocketpp/transport/iostream/base.hpp \
- /usr/local/include/websocketpp/common/connection_hdl.hpp \
- /usr/local/include/websocketpp/common/memory.hpp \
- /usr/local/include/websocketpp/transport/base/connection.hpp \
- /usr/local/include/websocketpp/uri.hpp \
- /usr/local/include/websocketpp/error.hpp \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/array.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/numeric.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/istream \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/date.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/decimal.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ctime \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/enum.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/geo.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/tuple.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/ip4.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/ip6.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/deque \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_deque.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/deque.tcc \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/lowcardinality.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/nullable.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/map.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../base/projected_iterator.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/iterator \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ios \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_classes.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_classes.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/system_error \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/streambuf.tcc \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_ios.h \
@@ -216,18 +227,47 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.tcc \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_ios.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/istream \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stream_iterator.h \
+ /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/chrono \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
- /usr/local/include/websocketpp/logger/levels.hpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/iostream \
+ /root/SE_Intel/src/../include/TORATstpLev2ApiStruct.h \
+ /root/SE_Intel/src/../include/TORATstpLev2ApiDataType.h \
+ /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/float.h \
+ /root/SE_Intel/src/../include/TORATstpLev2MdApi.h \
+ /root/SE_Intel/src/../include/service.hpp \
+ /usr/local/include/websocketpp/config/asio_no_tls.hpp \
+ /usr/local/include/websocketpp/config/core.hpp \
+ /usr/local/include/websocketpp/common/platforms.hpp \
+ /usr/local/include/websocketpp/common/cpp11.hpp \
+ /usr/local/include/websocketpp/common/stdint.hpp \
+ /usr/local/include/websocketpp/concurrency/basic.hpp \
+ /usr/local/include/websocketpp/common/thread.hpp \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
+ /usr/local/include/websocketpp/transport/iostream/endpoint.hpp \
+ /usr/local/include/websocketpp/transport/base/endpoint.hpp \
+ /usr/local/include/websocketpp/common/functional.hpp \
+ /usr/local/include/websocketpp/common/system_error.hpp \
+ /usr/local/include/websocketpp/transport/iostream/connection.hpp \
+ /usr/local/include/websocketpp/transport/iostream/base.hpp \
+ /usr/local/include/websocketpp/common/connection_hdl.hpp \
+ /usr/local/include/websocketpp/common/memory.hpp \
+ /usr/local/include/websocketpp/transport/base/connection.hpp \
+ /usr/local/include/websocketpp/uri.hpp \
+ /usr/local/include/websocketpp/error.hpp \
+ /usr/local/include/websocketpp/logger/levels.hpp \
  /usr/local/include/websocketpp/http/request.hpp \
  /usr/local/include/websocketpp/http/parser.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/map \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
  /usr/local/include/websocketpp/utilities.hpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/locale \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h \
@@ -246,6 +286,16 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/local/include/websocketpp/message_buffer/message.hpp \
  /usr/local/include/websocketpp/frame.hpp \
  /usr/local/include/websocketpp/common/network.hpp \
+ /usr/include/netinet/in.h /usr/include/sys/socket.h \
+ /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/asm/bitsperlong.h /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/in.h \
  /usr/local/include/websocketpp/message_buffer/alloc.hpp \
  /usr/local/include/websocketpp/logger/basic.hpp \
  /usr/local/include/websocketpp/common/time.hpp \
@@ -266,7 +316,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/config/select_compiler_config.hpp \
  /usr/include/boost/config/compiler/gcc.hpp \
  /usr/include/boost/config/select_stdlib_config.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
  /usr/include/boost/config/no_tr1/utility.hpp \
  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
  /usr/include/boost/config/select_platform_config.hpp \
@@ -294,8 +343,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/task_io_service_thread_info.hpp \
  /usr/include/boost/asio/detail/event.hpp \
  /usr/include/boost/asio/detail/posix_event.hpp \
- /usr/include/boost/assert.hpp /usr/include/assert.h \
- /usr/include/boost/current_function.hpp \
+ /usr/include/boost/assert.hpp /usr/include/boost/current_function.hpp \
  /usr/include/boost/asio/detail/impl/posix_event.ipp \
  /usr/include/boost/asio/detail/throw_error.hpp \
  /usr/include/boost/system/error_code.hpp \
@@ -303,8 +351,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/system/api_config.hpp \
  /usr/include/boost/config/auto_link.hpp /usr/include/boost/cstdint.hpp \
  /usr/include/boost/operators.hpp /usr/include/boost/iterator.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/iterator \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stream_iterator.h \
  /usr/include/boost/utility/enable_if.hpp /usr/include/boost/cerrno.hpp \
  /usr/include/boost/config/abi_prefix.hpp \
  /usr/include/boost/config/abi_suffix.hpp \
@@ -313,8 +359,9 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/exception/detail/attribute_noreturn.hpp \
  /usr/include/boost/exception/exception.hpp \
  /usr/include/boost/system/system_error.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
- /usr/include/boost/asio/error.hpp /usr/include/boost/asio/impl/error.ipp \
+ /usr/include/boost/asio/error.hpp /usr/include/netdb.h \
+ /usr/include/rpc/netdb.h /usr/include/bits/siginfo.h \
+ /usr/include/bits/netdb.h /usr/include/boost/asio/impl/error.ipp \
  /usr/include/boost/asio/detail/op_queue.hpp \
  /usr/include/boost/asio/detail/task_io_service_fwd.hpp \
  /usr/include/boost/asio/detail/thread_info_base.hpp \
@@ -332,7 +379,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/impl/service_registry.ipp \
  /usr/include/boost/asio/detail/task_io_service.hpp \
  /usr/include/boost/asio/detail/atomic_count.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
  /usr/include/boost/asio/detail/reactor_fwd.hpp \
  /usr/include/boost/asio/detail/epoll_reactor_fwd.hpp \
  /usr/include/boost/asio/detail/task_io_service_operation.hpp \
@@ -351,7 +397,9 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/select_interrupter.hpp \
  /usr/include/boost/asio/detail/eventfd_select_interrupter.hpp \
  /usr/include/boost/asio/detail/impl/eventfd_select_interrupter.ipp \
- /usr/include/sys/stat.h /usr/include/sys/eventfd.h \
+ /usr/include/sys/stat.h /usr/include/bits/stat.h /usr/include/fcntl.h \
+ /usr/include/bits/fcntl.h /usr/include/bits/fcntl-linux.h \
+ /usr/include/linux/falloc.h /usr/include/sys/eventfd.h \
  /usr/include/bits/eventfd.h \
  /usr/include/boost/asio/detail/socket_types.hpp /usr/include/sys/ioctl.h \
  /usr/include/bits/ioctls.h /usr/include/asm/ioctls.h \
@@ -359,7 +407,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/asm/ioctl.h /usr/include/asm-generic/ioctl.h \
  /usr/include/bits/ioctl-types.h /usr/include/sys/ttydefaults.h \
  /usr/include/sys/poll.h /usr/include/bits/poll.h /usr/include/sys/un.h \
- /usr/include/netinet/tcp.h /usr/include/net/if.h \
+ /usr/include/netinet/tcp.h /usr/include/arpa/inet.h \
+ /usr/include/net/if.h \
  /usr/include/boost/asio/detail/timer_queue_base.hpp \
  /usr/include/boost/asio/detail/timer_queue_fwd.hpp \
  /usr/include/boost/asio/detail/timer_queue_set.hpp \
@@ -367,6 +416,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/wait_op.hpp \
  /usr/include/boost/asio/detail/impl/epoll_reactor.hpp \
  /usr/include/boost/asio/detail/impl/epoll_reactor.ipp \
+ /usr/include/sys/epoll.h /usr/include/bits/epoll.h \
  /usr/include/sys/timerfd.h /usr/include/bits/timerfd.h \
  /usr/include/boost/asio/impl/io_service.ipp \
  /usr/include/boost/asio/detail/scoped_ptr.hpp \
@@ -378,7 +428,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/shared_ptr.hpp \
  /usr/include/boost/asio/detail/weak_ptr.hpp \
  /usr/include/boost/asio/detail/impl/socket_ops.ipp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cstring \
  /usr/include/boost/asio/detail/timer_queue.hpp \
  /usr/include/boost/asio/detail/date_time_fwd.hpp \
  /usr/include/boost/asio/detail/timer_scheduler.hpp \
@@ -414,7 +463,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/date_time/time_clock.hpp \
  /usr/include/boost/date_time/c_time.hpp \
  /usr/include/boost/date_time/compiler_config.hpp \
- /usr/include/boost/date_time/locale_config.hpp \
+ /usr/include/boost/date_time/locale_config.hpp /usr/include/sys/time.h \
  /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
  /usr/include/boost/config/no_tr1/memory.hpp \
@@ -440,25 +489,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/date_time/posix_time/posix_time_system.hpp \
  /usr/include/boost/date_time/posix_time/posix_time_config.hpp \
  /usr/include/boost/config/no_tr1/cmath.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath /usr/include/math.h \
- /usr/include/bits/huge_val.h /usr/include/bits/huge_valf.h \
- /usr/include/bits/huge_vall.h /usr/include/bits/inf.h \
- /usr/include/bits/nan.h /usr/include/bits/mathdef.h \
- /usr/include/bits/mathcalls.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/gamma.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/beta_function.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/ell_integral.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/exp_integral.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/hypergeometric.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/legendre_function.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/modified_bessel_func.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_hermite.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_laguerre.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/riemann_zeta.tcc \
  /usr/include/boost/date_time/time_duration.hpp \
  /usr/include/boost/static_assert.hpp \
  /usr/include/boost/date_time/time_defs.hpp \
@@ -780,9 +810,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/local/include/websocketpp/processors/processor.hpp \
  /usr/local/include/websocketpp/processors/base.hpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/deque \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_deque.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/deque.tcc \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
  /usr/local/include/websocketpp/impl/connection_impl.hpp \
  /usr/local/include/websocketpp/processors/hybi00.hpp \
@@ -793,42 +820,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/local/include/websocketpp/sha1/sha1.hpp \
  /usr/local/include/websocketpp/version.hpp \
  /usr/local/include/websocketpp/impl/endpoint_impl.hpp \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/client.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/query.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/column.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../types/types.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/config.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/options.h \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/ciso646 \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/policy_checks.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/macros.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/attributes.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/optimization.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/itemview.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/../exceptions.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../columns/../server_exception.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/array.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/numeric.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/date.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/decimal.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/enum.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/geo.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/tuple.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/ip4.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/ip6.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/lowcardinality.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/nullable.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/map.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/../base/projected_iterator.h \
- /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h \
  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
@@ -839,4 +830,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h
+ /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h \
+ /usr/include/openssl/sha.h /usr/include/openssl/e_os2.h \
+ /usr/include/openssl/opensslconf.h \
+ /usr/include/openssl/opensslconf-x86_64.h

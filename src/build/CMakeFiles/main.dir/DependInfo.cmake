@@ -8,7 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/SE_Intel/src/ClickHouse.cpp" "CMakeFiles/main.dir/ClickHouse.cpp.o" "gcc" "CMakeFiles/main.dir/ClickHouse.cpp.o.d"
   "/root/SE_Intel/src/L2_quoter.cpp" "CMakeFiles/main.dir/L2_quoter.cpp.o" "gcc" "CMakeFiles/main.dir/L2_quoter.cpp.o.d"
+  "/root/SE_Intel/src/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
+  "/root/SE_Intel/src/service.cpp" "CMakeFiles/main.dir/service.cpp.o" "gcc" "CMakeFiles/main.dir/service.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

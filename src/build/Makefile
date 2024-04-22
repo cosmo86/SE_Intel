@@ -265,6 +265,30 @@ clickhouse-cpp-lib/fast:
 	$(MAKE) $(MAKESILENT) -f zimulu/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build.make zimulu/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build
 .PHONY : clickhouse-cpp-lib/fast
 
+ClickHouse.o: ClickHouse.cpp.o
+.PHONY : ClickHouse.o
+
+# target to build an object file
+ClickHouse.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ClickHouse.cpp.o
+.PHONY : ClickHouse.cpp.o
+
+ClickHouse.i: ClickHouse.cpp.i
+.PHONY : ClickHouse.i
+
+# target to preprocess a source file
+ClickHouse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ClickHouse.cpp.i
+.PHONY : ClickHouse.cpp.i
+
+ClickHouse.s: ClickHouse.cpp.s
+.PHONY : ClickHouse.s
+
+# target to generate assembly for a file
+ClickHouse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ClickHouse.cpp.s
+.PHONY : ClickHouse.cpp.s
+
 L2_quoter.o: L2_quoter.cpp.o
 .PHONY : L2_quoter.o
 
@@ -289,6 +313,54 @@ L2_quoter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/L2_quoter.cpp.s
 .PHONY : L2_quoter.cpp.s
 
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+service.o: service.cpp.o
+.PHONY : service.o
+
+# target to build an object file
+service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/service.cpp.o
+.PHONY : service.cpp.o
+
+service.i: service.cpp.i
+.PHONY : service.i
+
+# target to preprocess a source file
+service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/service.cpp.i
+.PHONY : service.cpp.i
+
+service.s: service.cpp.s
+.PHONY : service.s
+
+# target to generate assembly for a file
+service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/service.cpp.s
+.PHONY : service.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -309,9 +381,18 @@ help:
 	@echo "... clickhouse-cpp-lib"
 	@echo "... lz4"
 	@echo "... main"
+	@echo "... ClickHouse.o"
+	@echo "... ClickHouse.i"
+	@echo "... ClickHouse.s"
 	@echo "... L2_quoter.o"
 	@echo "... L2_quoter.i"
 	@echo "... L2_quoter.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... service.o"
+	@echo "... service.i"
+	@echo "... service.s"
 .PHONY : help
 
 

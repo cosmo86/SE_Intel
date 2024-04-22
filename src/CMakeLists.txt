@@ -8,7 +8,7 @@ find_package(OpenSSL REQUIRED)
 
 add_subdirectory(/root/clickhouse-app/contribs/clickhouse-cpp zimulu)
 
-add_executable(${PROJECT_NAME} "L2_quoter.cpp")
+add_executable(${PROJECT_NAME} "main.cpp" "L2_quoter.cpp" "ClickHouse.cpp" "service.cpp")
 
 target_include_directories(${PROJECT_NAME} PRIVATE /root/clickhouse-app/contribs/clickhouse-cpp/ /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl)
 

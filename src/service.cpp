@@ -1,5 +1,5 @@
 #include "../include/service.hpp"
-    std::string timestampToString(std::time_t timestamp) {
+    std::string service::timestampToString(std::time_t timestamp) {
             std::time_t currentTime = std::time(nullptr);
             std::tm* tm_info = std::localtime(&currentTime);
             std::ostringstream oss;
@@ -18,7 +18,6 @@
         }
         std::string response = "Service response: " + msg->get_payload();
         try {
-            // Send the response message back to the client
             echo_server.send(hdl, response, websocketpp::frame::opcode::text);
         } catch (const websocketpp::exception& e) {
             std::cout << "Send failed because: " << e.what() << std::endl;
@@ -28,43 +27,34 @@
     void service::on_open( websocketpp::connection_hdl hdl) {
         std::cout << "New connection established" << std::endl;
         socked_V.push_back(hdl);
-        // Start a new thread to send JSON packets to the client
-        //std::thread t(send_json_packet, s, hdl);
-        //t.detach(); // Detach the thread to run independently
     }
     void service::on_close( websocketpp::connection_hdl hdl) {
-        // Handle connection close
-        // Assuming socked_V is declared outside this function and is accessible here
         for(auto it = socked_V.begin(); it != socked_V.end(); ++it) {
             if((*it).lock().get() ==hdl.lock().get()) {
                 socked_V.erase(it);
-                break; // Stop looping once the connection handle is erased
+                break;
             }
         }
     }
     void  service::service_init(){
+        std::cout<<"service_init"<<std::endl;
         try {
-            // Set logging settings
             echo_server.set_access_channels(websocketpp::log::alevel::all);
             echo_server.clear_access_channels(websocketpp::log::alevel::frame_payload);
-            // Initialize Asio
             echo_server.init_asio();
             echo_server.set_message_handler(bind(&service::on_message, this, _1, _2));
             echo_server.set_open_handler(bind(&service::on_open, this, _1));
             echo_server.set_close_handler(bind(&service::on_close, this, _1));
-            // Listen on port 9002
             echo_server.listen(9002);
-            // Start the server accept loop
             echo_server.start_accept();
-            // Start the ASIO io_service run loop
             echo_server.run();
         } catch (const websocketpp::exception& e) {
             std::cout << e.what() << std::endl;
         } catch (...) {
             std::cout << "Other exception" << std::endl;
         }
+        std::cout<<"service success"<<std::endl;
     }
-    // Function to send JSON packet every second
 void  service::sendTransaction(CTORATstpLev2TransactionField* pTransaction){
     if(pTransaction->TradePrice==0)return;
     Json::Value val;
@@ -101,16 +91,16 @@ void service::sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
     val["SecurityID"]=pOrderDetail->SecurityID;
     val["OrderTime"]=pOrderDetail->OrderTime;
     val["Price"]=pOrderDetail->Price;
-    val["Volume"]=pOrderDetail->Volume;
+    val["Volume"]=std::to_string(pOrderDetail->Volume);
     val["Side"]=pOrderDetail->Side;
     val["MainSeq"]=pOrderDetail->MainSeq;
     val["SubSeq"]=pOrderDetail->SubSeq;
     val["Info1"]=pOrderDetail->Info1;
     val["Info2"]=pOrderDetail->Info2;
     val["Info3"]=pOrderDetail->Info3;
-    val["OrderNO"]=pOrderDetail->OrderNO;
+    val["OrderNO"]=std::to_string(pOrderDetail->OrderNO);
     val["OrderStatus"]=pOrderDetail->OrderStatus;
-    val["BizIndex"]=pOrderDetail->BizIndex;
+    val["BizIndex"]=std::to_string(pOrderDetail->BizIndex);
     for(auto i:socked_V){
         try {
             // Send the JSON packet to the client
@@ -125,13 +115,13 @@ void service::sendNGTSTick(CTORATstpLev2NGTSTickField* pTick){
     val["ExchangeID"]=pTick->ExchangeID;
     val["SecurityID"]=pTick->SecurityID;
     val["MainSeq"]=pTick->MainSeq;
-    val["SubSeq"]=pTick->SubSeq;
+    val["SubSeq"]=std::to_string(pTick->SubSeq);
     val["TickTime"]=pTick->TickTime;
     val["TickType"]=pTick->TickType;
-    val["BuyNo"]=pTick->BuyNo;
-    val["SellNo"]=pTick->SellNo;
+    val["BuyNo"]=std::to_string(pTick->BuyNo);
+    val["SellNo"]=std::to_string(pTick->SellNo);
     val["Price"]=pTick->Price;
-    val["Volume"]=pTick->Volume;
+    val["Volume"]=std::to_string(pTick->Volume);
     val["TradeMoney"]=pTick->TradeMoney;
     val["Side"]=pTick->Side;
     val["TradeBSFlag"]=pTick->TradeBSFlag;
@@ -139,6 +129,16 @@ void service::sendNGTSTick(CTORATstpLev2NGTSTickField* pTick){
     val["Info1"]=pTick->Info1;
     val["Info2"]=pTick->Info2;
     val["Info3"]=pTick->Info3;
+    for(auto i:socked_V){
+        try {
+            // Send the JSON packet to the client
+        echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
+        }
+    }
 }
-
+void service::sendMarketData(CTORATstpLev2MarketDataField *pMarketData){
+    
+}
       
