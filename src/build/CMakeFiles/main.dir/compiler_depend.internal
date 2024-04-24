@@ -73,6 +73,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h
@@ -129,6 +130,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/new
  /opt/rh/devtoolset-8/root/usr/include/c++/8/optional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/queue
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio
  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept
@@ -471,6 +473,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /root/SE_Intel/include/TORATstpLev2ApiDataType.h
  /root/SE_Intel/include/TORATstpLev2ApiStruct.h
  /root/SE_Intel/include/TORATstpLev2MdApi.h
+ /root/SE_Intel/include/memory_pool.hpp
  /root/SE_Intel/include/service.hpp
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h
@@ -1393,6 +1396,7 @@ CMakeFiles/main.dir/main.cpp.o
  /root/SE_Intel/include/TORATstpLev2ApiDataType.h
  /root/SE_Intel/include/TORATstpLev2ApiStruct.h
  /root/SE_Intel/include/TORATstpLev2MdApi.h
+ /root/SE_Intel/include/memory_pool.hpp
  /root/SE_Intel/include/service.hpp
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h

@@ -1,4 +1,12 @@
 #include "../include//ClickHouse.hpp"
+void ClickHouse:: test(){
+	while(1){
+		while(!S.empty()){
+			insertMarketData(S.front());;
+			S.pop();
+		}
+	}
+}
 std::string ClickHouse:: getCurrentDate() {
     std::time_t currentTime = std::time(nullptr);
     std::tm* localTime = std::localtime(&currentTime);
@@ -104,7 +112,6 @@ void ClickHouse::insertNGTSTick(CTORATstpLev2NGTSTickField* pTick){
 }
 void ClickHouse::insertMarketData(CTORATstpLev2MarketDataField* pMarketData){
     std::string insert_sql="INSERT INTO MarketData_";
-	std::cout<<2<<std::endl;
 	insert_sql+=getCurrentDate();
 	insert_sql+=" (SecurityID,ExchangeID,DataTimeStamp,PreClosePrice,OpenPrice,NumTrades,TotalVolumeTrade,TotalValueTrade,TotalBidVolume,AvgBidPrice,TotalAskVolume,AvgAskPrice,HighestPrice,LowestPrice,LastPrice,BidPrice1,BidVolume1,AskPrice1,AskVolume1,AskPrice2,AskVolume2,AskPrice3,AskVolume3,BidPrice2,BidVolume2,BidPrice3,BidVolume3,AskPrice4,AskVolume4,AskPrice5,AskVolume5,BidPrice4,BidVolume4,BidPrice5,BidVolume5,AskPrice6,AskVolume6,AskPrice7,AskVolume7,BidPrice6,BidVolume6,BidPrice7,BidVolume7,AskPrice8,AskVolume8,AskPrice9,AskVolume9,BidPrice8,BidVolume8,BidPrice9,BidVolume9,BidPrice10,BidVolume10,AskPrice10,AskVolume10,Info1,Info2,Info3,UpperLimitPrice,LowerLimitPrice,ClosePrice,MDSecurityStat,TotalBidNumber,TotalOfferNumber,BidTradeMaxDuration,OfferTradeMaxDuration,IOPV,Ask1NumOrders,Bid1NumOrders,Ask2NumOrders,Bid2NumOrders,Ask3NumOrders,Bid3NumOrders,Ask4NumOrders,Bid4NumOrders,Ask5NumOrders,Bid5NumOrders,Ask6NumOrders,Bid6NumOrders,Ask7NumOrders,Bid7NumOrders,Ask8NumOrders,Bid8NumOrders,Ask9NumOrders,Bid9NumOrders,Ask10NumOrders,Bid10NumOrders,WithdrawBuyNumber,WithdrawBuyAmount,WithdrawBuyMoney,WithdrawSellNumber,WithdrawSellAmount,WithdrawSellMoney) VALUES (";
 		insert_sql+="'";

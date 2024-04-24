@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <queue>
 #include <iostream>
 #include "TORATstpLev2ApiStruct.h"
 #include "TORATstpLev2ApiDataType.h"
@@ -15,9 +16,11 @@ class ClickHouse{
         Client client;
         static std::string getCurrentDate();
     public:
+        std::queue<CTORATstpLev2MarketDataField *>S;
         ClickHouse():client(ClientOptions().SetHost("localhost")){}
         ~ClickHouse(){}
     public:
+        void test();
         void clickhouse_init(){}
         void buildMarketData();
         void insertMarketData(CTORATstpLev2MarketDataField *pMarketData);

@@ -9,8 +9,12 @@ int main(){
     spi.init(userid,passwd,addrs);
     sleep(3);
     spi.add();
-    spi.init_CH_SV();
-
+    // 使用 std::bind 创建可调用对象并传递给 std::thread
+    std::thread websocket(std::bind(&Lev2MdSpi::init_CH_SV, &spi));
+    std::thread MarketDate(std::bind(&Lev2MdSpi::manage_MarketDate, &spi));
+    std::thread NGTSTick(std::bind(&Lev2MdSpi::manage_NGTSTick, &spi));
+    std::thread OrderDetail(std::bind(&Lev2MdSpi::manage_OrderDetail, &spi));
+    std::thread Transaction(std::bind(&Lev2MdSpi::manage_Transaction, &spi));
     while(1){}
     std::cout<<"this ok"<<std::endl;
 }

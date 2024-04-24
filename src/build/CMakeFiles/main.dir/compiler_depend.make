@@ -72,6 +72,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
@@ -128,6 +129,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
@@ -469,6 +471,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/memory_pool.hpp \
   /root/SE_Intel/include/service.hpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
@@ -1390,6 +1393,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/memory_pool.hpp \
   /root/SE_Intel/include/service.hpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
@@ -3111,6 +3115,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/utility/enable_if.hpp:
 
+/usr/include/boost/utility/base_from_member.hpp:
+
 /usr/include/boost/asio/detail/impl/eventfd_select_interrupter.ipp:
 
 /usr/include/netinet/tcp.h:
@@ -3267,8 +3273,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/queue:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal:
@@ -3278,18 +3282,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/smart_ptr/detail/yield_k.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/climits:
-
-/usr/include/boost/asio/basic_deadline_timer.hpp:
-
-/root/SE_Intel/include/ClickHouse.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h:
-
-/usr/include/boost/mpl/integral_c.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/quoted_string.h:
 
@@ -3313,10 +3305,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/basic_streambuf_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/config/dtp.hpp:
-
-/usr/include/string.h:
-
 /usr/include/stdlib.h:
 
 /root/SE_Intel/src/main.cpp:
@@ -3325,9 +3313,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/stdint.h:
 
-/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h:
-
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/macros.h:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h:
 
@@ -3439,6 +3427,14 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/bits/nan.h:
 
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/usr/include/string.h:
+
+/root/SE_Intel/include/memory_pool.hpp:
+
+/usr/include/boost/asio/detail/impl/service_registry.hpp:
+
 /usr/include/bits/mathdef.h:
 
 /usr/include/bits/mathcalls.h:
@@ -3501,6 +3497,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h:
 
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h:
+
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h:
+
 /usr/local/include/websocketpp/impl/connection_impl.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath:
@@ -3514,10 +3514,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/asm/sockios.h:
 
 /usr/include/boost/mpl/aux_/config/eti.hpp:
-
-/usr/include/bits/byteswap-16.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h:
 
@@ -3589,6 +3585,12 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h:
+
+/usr/include/boost/mpl/integral_c.hpp:
+
 /usr/local/include/websocketpp/transport/base/endpoint.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_construct.h:
@@ -3647,6 +3649,12 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/streambuf.hpp:
 
+/root/SE_Intel/include/ClickHouse.hpp:
+
+/usr/include/boost/asio/basic_deadline_timer.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h:
+
 /usr/include/boost/config.hpp:
 
 /usr/include/boost/asio/detail/impl/task_io_service.hpp:
@@ -3666,8 +3674,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/gnu/stubs.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/legendre_function.tcc:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/deque.tcc:
 
@@ -3779,6 +3785,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/basic_stream_socket.hpp:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/queue:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.h:
@@ -3880,6 +3888,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h:
 
 /usr/include/boost/asio/buffered_read_stream_fwd.hpp:
+
+/usr/include/bits/byteswap-16.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint:
 
 /usr/local/include/websocketpp/processors/processor.hpp:
 
@@ -4006,8 +4018,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h:
 
 /usr/include/stdc-predef.h:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept:
 
@@ -4171,8 +4181,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/impl/resolver_service_base.ipp:
 
-/usr/include/boost/asio/detail/impl/service_registry.hpp:
-
 /usr/include/boost/asio/detail/impl/service_registry.ipp:
 
 /usr/include/boost/type_traits/detail/ice_or.hpp:
@@ -4312,8 +4320,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/detail/task_io_service.hpp:
 
 /usr/include/boost/asio/detail/task_io_service_operation.hpp:
-
-/usr/include/boost/utility/base_from_member.hpp:
 
 /usr/include/boost/asio/detail/thread_info_base.hpp:
 
