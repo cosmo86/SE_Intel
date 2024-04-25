@@ -15,21 +15,27 @@ class ClickHouse{
     private:
         Client client;
         static std::string getCurrentDate();
+        std::queue<std::string> transactionQueue;
+        std::queue<std::string> orderDetailQueue;
+        std::queue<std::string> ngtstickQueue;
+        std::queue<std::string> marketDataQueue;
     public:
-        std::queue<CTORATstpLev2MarketDataField *>S;
         ClickHouse():client(ClientOptions().SetHost("localhost")){}
         ~ClickHouse(){}
     public:
-        void test();
         void clickhouse_init(){}
         void buildMarketData();
         void insertMarketData(CTORATstpLev2MarketDataField *pMarketData);
+        void ExcuteMarketData();
         void buildNGTSTick();
         void insertNGTSTick(CTORATstpLev2NGTSTickField* pTick);
+        void ExcuteNGTSTick();
         void buildTransaction();
         void insertTransaction(CTORATstpLev2TransactionField* pTransaction);
+        void ExcuteTransaction();
         void buildOrderDetail();
         void insertOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail);
+        void ExcuteOrderDetail();
         void execute(std::string sql);
 };
 #endif

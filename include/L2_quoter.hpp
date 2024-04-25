@@ -45,9 +45,6 @@ public:
     Lev2MdSpi(CTORATstpLev2MdApi *api):m_api(api),m_request_id(0){};
     ~Lev2MdSpi(){};
 public:
-	void CH_need(){
-		CH.test();
-	}
 	virtual void init(char * userid,char * password,char * address);
 	virtual	void init_CH_SV();
 	virtual void OnFrontConnected();

@@ -34,7 +34,7 @@ class service{
     void sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail);
     void sendNGTSTick(CTORATstpLev2NGTSTickField* pTick);
     void sendMarketData(CTORATstpLev2MarketDataField *pMarketData);
-
+    
     void service_init();
 };
 #endif  

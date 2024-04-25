@@ -215,8 +215,9 @@
         MarketData[MarketData.first].WithdrawSellAmount=pDepthMarketData->WithdrawSellAmount;
         MarketData[MarketData.first].WithdrawSellMoney=pDepthMarketData->WithdrawSellMoney;
         MarketData[MarketData.first].WithdrawSellNumber=pDepthMarketData->WithdrawSellNumber;
-        /*auto end = std::chrono::high_resolution_clock::now();
         MarketData.first=(MarketData.first+1)%MarketData.length();
+        /*auto end = std::chrono::high_resolution_clock::now();
+        
         std::chrono::duration<double, std::milli> duration0 = end - start;
         std::cout << "MarketData m-s took " << duration0.count() << " milliseconds." << std::endl;*/
         /*CH.insertMarketData(pDepthMarketData);
@@ -317,7 +318,6 @@
                 //cout<<"Transaction first-last="<<Transaction.first-Transaction.last-1<<endl;
             }
         }
-        
     }
 	void Lev2MdSpi::manage_OrderDetail(){
         while(1){
@@ -327,7 +327,7 @@
                 OrderDetail.last=(OrderDetail.last+1)%OrderDetail.length();
                 CH.insertOrderDetail(&OrderDetail[OrderDetail.last]);
                 SV.sendOrderDetail(&OrderDetail[OrderDetail.last]);
-                //cout<<"OrderDetail first-last="<<OrderDetail.first-OrderDetail.last-1<<endl;
+               // cout<<"OrderDetail first-last="<<OrderDetail.first-OrderDetail.last-1<<endl;
             }
         }
     }

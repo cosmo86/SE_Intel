@@ -10,11 +10,13 @@ int main(){
     sleep(3);
     spi.add();
     // 使用 std::bind 创建可调用对象并传递给 std::thread
-    std::thread websocket(std::bind(&Lev2MdSpi::init_CH_SV, &spi));
+    std::thread websocket(std::bind(&Lev2MdSpi::init_CH_SV, &spi));//线程处理网络
+    //线程处理对应函数。
     std::thread MarketDate(std::bind(&Lev2MdSpi::manage_MarketDate, &spi));
     std::thread NGTSTick(std::bind(&Lev2MdSpi::manage_NGTSTick, &spi));
     std::thread OrderDetail(std::bind(&Lev2MdSpi::manage_OrderDetail, &spi));
     std::thread Transaction(std::bind(&Lev2MdSpi::manage_Transaction, &spi));
+    //主线程阻塞并等待处理
     while(1){}
     std::cout<<"this ok"<<std::endl;
 }
