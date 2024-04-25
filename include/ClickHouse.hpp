@@ -19,6 +19,10 @@ class ClickHouse{
         std::queue<std::string> orderDetailQueue;
         std::queue<std::string> ngtstickQueue;
         std::queue<std::string> marketDataQueue;
+        std::time_t lastMarketDataTime = std::time(nullptr); 
+        std::time_t lastNGTSTicTime = std::time(nullptr); 
+        std::time_t lastTransactionTime = std::time(nullptr); 
+        std::time_t lastOrderDetailTime = std::time(nullptr); 
     public:
         ClickHouse():client(ClientOptions().SetHost("localhost")){}
         ~ClickHouse(){}

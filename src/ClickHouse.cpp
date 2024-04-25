@@ -47,6 +47,7 @@ void ClickHouse::ExcuteTransaction(){
 		transactionQueue.pop();
 	}
 	client.Execute(sql.c_str()); // 执行插入数据的 SQL
+	lastTransactionTime=std::time(nullptr);
 }
 void ClickHouse::insertTransaction(CTORATstpLev2TransactionField* pTransaction){
     std::string sql="";
@@ -63,7 +64,10 @@ void ClickHouse::insertTransaction(CTORATstpLev2TransactionField* pTransaction){
         + std::to_string( pTransaction->Info3) + ",'" +  pTransaction->TradeBSFlag + "', "
         + std::to_string( pTransaction->BizIndex) + ")";
     transactionQueue.push(sql);
-	if(transactionQueue.size()>200)ExcuteTransaction();
+	if(transactionQueue.size()>200||std::time(nullptr)-lastTransactionTime>3){
+		lastTransactionTime=std::time(nullptr);
+		ExcuteTransaction();
+	}
 }
 void ClickHouse::ExcuteOrderDetail(){
 	std::string sql = "INSERT INTO OrderDetail_" + getCurrentDate() + " (ExchangeID,SecurityID,OrderTime,Price,Volume,Side,OrderType,MainSeq,SubSeq,Info1,Info2,Info3,OrderNO,OrderStatus,BizIndex) VALUES ";
@@ -72,6 +76,8 @@ void ClickHouse::ExcuteOrderDetail(){
 		orderDetailQueue.pop();
 	}
 	client.Execute(sql.c_str()); // 执行插入数据的 SQL
+	lastOrderDetailTime=std::time(nullptr);
+	std::cout<<sql<<std::endl;
 }
 void ClickHouse::insertOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
     std::string sql="";
@@ -88,7 +94,11 @@ void ClickHouse::insertOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
         + std::to_string( pOrderDetail->OrderNO) + ",'" +  pOrderDetail->OrderStatus + "', "
         + std::to_string( pOrderDetail->BizIndex) + ")";
     orderDetailQueue.push(sql);
-	if(orderDetailQueue.size()>200)ExcuteOrderDetail();
+	if(orderDetailQueue.size()>200||std::time(nullptr)-lastOrderDetailTime>3){
+		lastOrderDetailTime=std::time(nullptr);
+		ExcuteOrderDetail();
+	}
+	
 }
 void ClickHouse::ExcuteNGTSTick(){
 	std::string sql_insert = "INSERT INTO NGTSTickField_"+ getCurrentDate() + " (ExchangeID, SecurityID, MainSeq, SubSeq, TickTime, TickType, BuyNo, SellNo, Price, Volume, TradeMoney, Side, TradeBSFlag, MDSecurityStat, Info1, Info2, Info3) VALUES";
@@ -97,6 +107,7 @@ void ClickHouse::ExcuteNGTSTick(){
 		ngtstickQueue.pop();
 	}
 	client.Execute(sql_insert.c_str()); // 执行插入数据的 SQL
+	lastNGTSTicTime=std::time(nullptr);
 }
 void ClickHouse::insertNGTSTick(CTORATstpLev2NGTSTickField* pTick){
 	std::string sql_insert="";
@@ -121,7 +132,10 @@ void ClickHouse::insertNGTSTick(CTORATstpLev2NGTSTickField* pTick){
 	sql_insert += std::to_string(pTick->Info2) + ",";
 	sql_insert += std::to_string(pTick->Info3) + ")";
 	ngtstickQueue.push(sql_insert);
-	if(ngtstickQueue.size()>200)ExcuteNGTSTick();
+	if(ngtstickQueue.size()>200 ||std::time(nullptr) - lastNGTSTicTime > 3){
+		lastNGTSTicTime=std::time(nullptr);
+		ExcuteNGTSTick();
+	}
 }
 void ClickHouse::ExcuteMarketData(){
     std::string insert_sql="INSERT INTO MarketData_";
@@ -132,6 +146,8 @@ void ClickHouse::ExcuteMarketData(){
 		marketDataQueue.pop();
 	}
 	client.Execute(insert_sql.c_str()); // 执行插入数据的 SQL
+	lastMarketDataTime=std::time(nullptr);
+	
 }
 void ClickHouse::insertMarketData(CTORATstpLev2MarketDataField* pMarketData){
 	std::string insert_sql="";
@@ -232,5 +248,8 @@ void ClickHouse::insertMarketData(CTORATstpLev2MarketDataField* pMarketData){
 		insert_sql+=std::to_string(pMarketData->WithdrawSellAmount)+",";
 		insert_sql+=std::to_string(pMarketData->WithdrawSellMoney)+")";
 		marketDataQueue.push(insert_sql);
-		if(marketDataQueue.size()>10)ExcuteMarketData();
+		if(marketDataQueue.size()>10||std::time(nullptr)-lastMarketDataTime>15){
+			lastMarketDataTime=std::time(nullptr);
+			ExcuteMarketData();
+		}
 }
