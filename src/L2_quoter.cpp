@@ -118,10 +118,11 @@
 
 void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
         //auto start = std::chrono::high_resolution_clock::now();
-            auto start = std::chrono::high_resolution_clock::now();
+           
    
     
         CTORATstpLev2MarketDataField*ptr=(CTORATstpLev2MarketDataField*)malloc(sizeof(CTORATstpLev2MarketDataField));
+        auto start = std::chrono::high_resolution_clock::now();
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -226,9 +227,10 @@ void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, 
     }
 
 void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
-    auto start = std::chrono::high_resolution_clock::now();
+  
         
        CTORATstpLev2NGTSTickField*ptr=(CTORATstpLev2NGTSTickField*)malloc(sizeof(CTORATstpLev2NGTSTickField));
+        auto start = std::chrono::high_resolution_clock::now();
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -256,8 +258,9 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
     std::cout << "NGtist " << duration << " microseconds." << std::endl;
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
-        auto start = std::chrono::high_resolution_clock::now();
+       
        CTORATstpLev2TransactionField*ptr=(CTORATstpLev2TransactionField*)malloc(sizeof(CTORATstpLev2TransactionField));
+         auto start = std::chrono::high_resolution_clock::now();
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -285,8 +288,9 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-        auto start = std::chrono::high_resolution_clock::now();
+       
         CTORATstpLev2OrderDetailField*ptr=(CTORATstpLev2OrderDetailField*)malloc(sizeof(CTORATstpLev2OrderDetailField));
+         auto start = std::chrono::high_resolution_clock::now();
         ptr->BizIndex=pOrderDetail->BizIndex;
         ptr->ExchangeID=pOrderDetail->ExchangeID;
         ptr->Info1=pOrderDetail->Info1;

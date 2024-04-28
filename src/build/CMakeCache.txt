@@ -274,6 +274,9 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//The directory containing a CMake configuration file for Tcmalloc.
+Tcmalloc_DIR:PATH=Tcmalloc_DIR-NOTFOUND
+
 //Use OpenSSL for TLS connections
 WITH_OPENSSL:BOOL=OFF
 
@@ -295,6 +298,9 @@ jemalloc_DIR:PATH=jemalloc_DIR-NOTFOUND
 //The directory containing a CMake configuration file for libevent.
 libevent_DIR:PATH=libevent_DIR-NOTFOUND
 
+//The directory containing a CMake configuration file for libtcmalloc.
+libtcmalloc_DIR:PATH=libtcmalloc_DIR-NOTFOUND
+
 //Value Computed by CMake
 main_BINARY_DIR:STATIC=/root/SE_Intel/src/build
 
@@ -309,6 +315,9 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib64/libssl.so
+
+//The directory containing a CMake configuration file for tcmalloc.
+tcmalloc_DIR:PATH=tcmalloc_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for unofficial-concurrentqueue.
 unofficial-concurrentqueue_DIR:PATH=unofficial-concurrentqueue_DIR-NOTFOUND

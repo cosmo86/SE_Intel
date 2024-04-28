@@ -5,9 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # 添加对 OpenSSL 的查找
 find_package(OpenSSL REQUIRED)
-
-# 添加对 concurrentqueue 的查找
-#find_package(unofficial-concurrentqueue CONFIG REQUIRED)
+#
 
 # 添加子目录
 add_subdirectory(/root/clickhouse-app/contribs/clickhouse-cpp zimulu)
@@ -27,6 +25,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     /usr/lib64/libevent.so 
     /usr/lib64/libevent_pthreads.so 
     /root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a 
+    
     #/root/jemalloc/lib/libjemalloc.a
     OpenSSL::Crypto 
     -lboost_system 
@@ -34,6 +33,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     -L/root/vcpkg/packages/jsoncpp_x64-linux/lib 
     -ljsoncpp
     #-L/root/jemalloc/lib
-    #unofficial::concurrentqueue::concurrentqueue  # 链接 concurrentqueue
    
 )
