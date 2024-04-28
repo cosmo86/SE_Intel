@@ -34,6 +34,8 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include "/root/jemalloc/include/jemalloc/jemalloc.h"
+#include "/root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h"
 using namespace TORALEV2API;
 typedef websocketpp::server<websocketpp::config::asio> server;
 using websocketpp::lib::placeholders::_1;
@@ -60,7 +62,7 @@ public:
 	virtual void OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick);
 	virtual void OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction);
 	virtual void OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail);
-
+	void manage_CH();
 	void manage_MarketDate();
 	void manage_NGTSTick();
 	void manage_Transaction();
@@ -74,10 +76,13 @@ private:
 	char  address[64];
 	ClickHouse CH;
 	service SV;
-	mutex mtx;
-	memory_pool<TORALEV2API::CTORATstpLev2MarketDataField> MarketData;
+	/*memory_pool<TORALEV2API::CTORATstpLev2MarketDataField> MarketData;
 	memory_pool<TORALEV2API::CTORATstpLev2NGTSTickField> NGTSTick;
 	memory_pool<TORALEV2API::CTORATstpLev2TransactionField> Transaction;
-	memory_pool<TORALEV2API::CTORATstpLev2OrderDetailField> OrderDetail;
+	memory_pool<TORALEV2API::CTORATstpLev2OrderDetailField> OrderDetail;*/
+	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2MarketDataField*> MarketData;
+	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2NGTSTickField*> NGTSTick;
+	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2TransactionField*> Transaction;
+	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2OrderDetailField*> OrderDetail;
 };
 #endif

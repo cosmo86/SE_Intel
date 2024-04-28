@@ -289,6 +289,9 @@ WITH_SYSTEM_LZ4:BOOL=OFF
 //Dependencies for the target
 clickhouse-cpp-lib_LIB_DEPENDS:STATIC=general;absl::int128;general;cityhash::cityhash;general;lz4::lz4;
 
+//The directory containing a CMake configuration file for jemalloc.
+jemalloc_DIR:PATH=jemalloc_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for libevent.
 libevent_DIR:PATH=libevent_DIR-NOTFOUND
 
@@ -306,6 +309,9 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib64/libcrypto.so
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib64/libssl.so
+
+//The directory containing a CMake configuration file for unofficial-concurrentqueue.
+unofficial-concurrentqueue_DIR:PATH=unofficial-concurrentqueue_DIR-NOTFOUND
 
 
 ########################

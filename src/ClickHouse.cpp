@@ -77,7 +77,7 @@ void ClickHouse::ExcuteOrderDetail(){
 	}
 	client.Execute(sql.c_str()); // 执行插入数据的 SQL
 	lastOrderDetailTime=std::time(nullptr);
-	std::cout<<sql<<std::endl;
+	//std::cout<<sql<<std::endl;
 }
 void ClickHouse::insertOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
     std::string sql="";
