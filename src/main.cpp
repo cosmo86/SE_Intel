@@ -19,6 +19,12 @@ int main(){
     //std::thread OrderDetail(std::bind(&Lev2MdSpi::manage_OrderDetail, &spi));
     //std::thread Transaction(std::bind(&Lev2MdSpi::manage_Transaction, &spi));
     //主线程阻塞并等待处理
-    while(1){}
+    while(1){
+        
+        if(spi.k>1000){
+            cout<<"222222222222222222222222222222222222222222222"<<endl;
+            cout<<spi.ans/spi.k<<endl;break;
+        }
+    }
     std::cout<<"this ok"<<std::endl;
 }

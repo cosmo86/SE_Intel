@@ -221,9 +221,12 @@ void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, 
         ptr->WithdrawSellMoney=pDepthMarketData->WithdrawSellMoney;
         ptr->WithdrawSellNumber=pDepthMarketData->WithdrawSellNumber;
         MarketData.enqueue(ptr);
-        auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "Markdata " << duration << " microseconds." << std::endl;
+       auto end = std::chrono::high_resolution_clock::now();
+        
+        std::chrono::duration<double, std::milli> duration0 = end - start;
+        ans+=duration0.count();
+        k++;
+        std::cout << "MarketData m-s took " << duration0.count() << " milliseconds." << std::endl;
     }
 
 void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
@@ -254,8 +257,12 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
          ptr->Volume=pTick->Volume;
          NGTSTick.enqueue(ptr);
          auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "NGtist " << duration << " microseconds." << std::endl;
+        
+        std::chrono::duration<double, std::milli> duration0 = end - start;
+                ans+=duration0.count();
+        k++;
+        std::cout << "NGtist " << duration0.count() << " milliseconds." << std::endl;
+
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
        
@@ -283,8 +290,11 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
           ptr->TradeVolume=pTransaction->TradeVolume;
         Transaction.enqueue(ptr);
         auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "FTransaction " << duration << " microseconds." << std::endl;
+        
+        std::chrono::duration<double, std::milli> duration0 = end - start;
+                ans+=duration0.count();
+        k++;
+        std::cout << "Trade " << duration0.count() << " milliseconds." << std::endl;
         
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
@@ -308,10 +318,11 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         ptr->Volume=pOrderDetail->Volume;
         OrderDetail.enqueue(ptr);
         auto end = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
-    std::cout << "Order " << duration << " microseconds." << std::endl;
-        /*CH.insertOrderDetail(pOrderDetail);
-        SV.sendOrderDetail(pOrderDetail);*/
+        
+        std::chrono::duration<double, std::milli> duration0 = end - start;
+                ans+=duration0.count();
+        k++;
+        std::cout << "Order " << duration0.count() << " milliseconds." << std::endl;
     }
     void Lev2MdSpi::manage_CH(){
         while(1){

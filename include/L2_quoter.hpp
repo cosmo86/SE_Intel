@@ -46,6 +46,8 @@ public:
     Lev2MdSpi(CTORATstpLev2MdApi *api):m_api(api),m_request_id(0){};
     ~Lev2MdSpi(){};
 public:
+	double ans=0;
+	int k=0;
 	virtual void init(char * userid,char * password,char * address);
 	virtual	void init_CH_SV();
 	virtual void OnFrontConnected();
@@ -75,6 +77,7 @@ private:
 	char  address[64];
 	ClickHouse CH;
 	service SV;
+
 	/*memory_pool<TORALEV2API::CTORATstpLev2MarketDataField> MarketData;
 	memory_pool<TORALEV2API::CTORATstpLev2NGTSTickField> NGTSTick;
 	memory_pool<TORALEV2API::CTORATstpLev2TransactionField> Transaction;
