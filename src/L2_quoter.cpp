@@ -120,9 +120,7 @@ void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, 
         //auto start = std::chrono::high_resolution_clock::now();
            
     auto start = std::chrono::high_resolution_clock::now();
-    
         CTORATstpLev2MarketDataField*ptr=(CTORATstpLev2MarketDataField*)je_malloc(sizeof(CTORATstpLev2MarketDataField));
-        
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -265,12 +263,10 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
         auto start = std::chrono::high_resolution_clock::now();
        CTORATstpLev2TransactionField*ptr=(CTORATstpLev2TransactionField*)je_malloc(sizeof(CTORATstpLev2TransactionField));
-        
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
         }
-         
          ptr->BizIndex=pTransaction->BizIndex;
          ptr->BuyNo=pTransaction->BuyNo;
          ptr->ExchangeID=pTransaction->ExchangeID;

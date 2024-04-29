@@ -17,31 +17,35 @@ int main(){
     //线程处理对应函数。
     std::thread ClickHouse(std::bind(&Lev2MdSpi::manage_CH,&spi));
     //主线程阻塞并等待处理
+    std::cout<<sizeof(CTORATstpLev2MarketDataField)<<endl;
+    std::cout<<sizeof(CTORATstpLev2NGTSTickField)<<endl;
+    std::cout<<sizeof(CTORATstpLev2TransactionField)<<endl;
+    std::cout<<sizeof(CTORATstpLev2OrderDetailField)<<endl;
     while(1){
         //cout<<spi.k<<endl;
         if(spi.k>1000){
-            cout<<"begin()"<<endl;
+            std::cout<<"begin()"<<endl;
             const int sum=1000;
             vector<double>buff;
             for(int i=0;i<sum;i++){
                 buff.push_back(spi.ans[i]);
             }
             sort(buff.begin(),buff.end());
-            cout<<1<<endl;
+            std::cout<<1<<endl;
             double ans=0;
             for(int i=0;i<spi.k;i++){
                 ans+=buff[i];
             }
             double mean=ans/sum;
-           cout<<"平均数："<<mean<<endl;
-           cout<<"中位数："<<buff[spi.k/2]<<endl;
-           cout<<"99百分位数"<<buff[(int)(spi.k*0.99)];
+           std::cout<<"平均数："<<mean<<endl;
+           std::cout<<"中位数："<<buff[spi.k/2]<<endl;
+           std::cout<<"99百分位数"<<buff[(int)(spi.k*0.99)];
            double ans0=0;
            for(int i=0;i<sum;i++){
                 ans0+=(buff[i]-mean)*(buff[i]-mean);
            }
            ans0=ans0/(sum-1);
-           cout<<"标准差："<<sqrt(ans0)<<endl;
+           std::cout<<"标准差："<<sqrt(ans0)<<endl;
            break;
         }
     }
