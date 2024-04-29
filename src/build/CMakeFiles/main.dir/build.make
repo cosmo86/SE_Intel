@@ -141,11 +141,9 @@ main: CMakeFiles/main.dir/ClickHouse.cpp.o
 main: CMakeFiles/main.dir/service.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: zimulu/clickhouse/libclickhouse-cpp-lib.a
+main: /usr/lib64/libdl.so.2
 main: /root/SE_Intel/lib/liblev2mdapi.so
-main: /usr/lib64/libevent.so
-main: /usr/lib64/libevent_pthreads.so
 main: /root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a
-main: /usr/lib64/libcrypto.so
 main: zimulu/contrib/absl/absl/libabsl_int128.a
 main: zimulu/contrib/cityhash/cityhash/libcityhash.a
 main: zimulu/contrib/lz4/lz4/liblz4.a

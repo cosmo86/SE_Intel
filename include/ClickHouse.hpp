@@ -9,6 +9,7 @@
 #include "TORATstpLev2ApiStruct.h"
 #include "TORATstpLev2ApiDataType.h"
 #include "TORATstpLev2MdApi.h"
+
 using namespace TORALEV2API;
 using namespace clickhouse;//数据库下的名字空间
 class ClickHouse{

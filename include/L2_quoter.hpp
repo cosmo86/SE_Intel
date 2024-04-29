@@ -34,6 +34,7 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include "jemalloc.h"
 #include "/root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h"
 using namespace TORALEV2API;
 typedef websocketpp::server<websocketpp::config::asio> server;
@@ -46,8 +47,8 @@ public:
     Lev2MdSpi(CTORATstpLev2MdApi *api):m_api(api),m_request_id(0){};
     ~Lev2MdSpi(){};
 public:
-	double ans=0;
-	int k=0;
+	int k=-1;
+	double ans[10100]={0};
 	virtual void init(char * userid,char * password,char * address);
 	virtual	void init_CH_SV();
 	virtual void OnFrontConnected();

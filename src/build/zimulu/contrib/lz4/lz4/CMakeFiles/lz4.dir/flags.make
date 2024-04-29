@@ -4,7 +4,7 @@
 # compile C with /opt/rh/devtoolset-8/root/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4
+C_INCLUDES = -I/root/jemalloc-5.2.0/include -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4
 
 C_FLAGS = -O2 -g -DNDEBUG -fPIC
 

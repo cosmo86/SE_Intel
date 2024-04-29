@@ -1,5 +1,7 @@
-#include "../include/L2_quoter.hpp"   
-#include <jemalloc/jemalloc.h> 
+#include "../include/L2_quoter.hpp"
+#include <vector>
+#include <algorithm>
+using namespace std;
 int main(){
     Lev2MdSpi spi;
     char userid[21],passwd[32],addrs[64];
@@ -14,16 +16,33 @@ int main(){
     std::thread websocket(std::bind(&Lev2MdSpi::init_CH_SV, &spi));//线程处理网络
     //线程处理对应函数。
     std::thread ClickHouse(std::bind(&Lev2MdSpi::manage_CH,&spi));
-    //std::thread MarketDate(std::bind(&Lev2MdSpi::manage_MarketDate, &spi));
-    //std::thread NGTSTick(std::bind(&Lev2MdSpi::manage_NGTSTick, &spi));
-    //std::thread OrderDetail(std::bind(&Lev2MdSpi::manage_OrderDetail, &spi));
-    //std::thread Transaction(std::bind(&Lev2MdSpi::manage_Transaction, &spi));
     //主线程阻塞并等待处理
     while(1){
-        
+        //cout<<spi.k<<endl;
         if(spi.k>1000){
-            cout<<"222222222222222222222222222222222222222222222"<<endl;
-            cout<<spi.ans/spi.k<<endl;break;
+            cout<<"begin()"<<endl;
+            const int sum=1000;
+            vector<double>buff;
+            for(int i=0;i<sum;i++){
+                buff.push_back(spi.ans[i]);
+            }
+            sort(buff.begin(),buff.end());
+            cout<<1<<endl;
+            double ans=0;
+            for(int i=0;i<spi.k;i++){
+                ans+=buff[i];
+            }
+            double mean=ans/sum;
+           cout<<"平均数："<<mean<<endl;
+           cout<<"中位数："<<buff[spi.k/2]<<endl;
+           cout<<"99百分位数"<<buff[(int)(spi.k*0.99)];
+           double ans0=0;
+           for(int i=0;i<sum;i++){
+                ans0+=(buff[i]-mean)*(buff[i]-mean);
+           }
+           ans0=ans0/(sum-1);
+           cout<<"标准差："<<sqrt(ans0)<<endl;
+           break;
         }
     }
     std::cout<<"this ok"<<std::endl;

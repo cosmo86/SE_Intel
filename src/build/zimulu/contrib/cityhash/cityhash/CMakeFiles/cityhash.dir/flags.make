@@ -4,7 +4,7 @@
 # compile CXX with /opt/rh/devtoolset-8/root/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4 -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/cityhash/cityhash
+CXX_INCLUDES = -I/root/jemalloc-5.2.0/include -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/lz4/lz4 -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/cityhash/cityhash
 
 CXX_FLAGS =  -pthread -Wall -Wextra -Werror -Wno-deprecated-declarations -O2 -g -DNDEBUG -std=gnu++17 -fPIC
 

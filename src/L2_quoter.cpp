@@ -119,10 +119,10 @@
 void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
         //auto start = std::chrono::high_resolution_clock::now();
            
-   
+    auto start = std::chrono::high_resolution_clock::now();
     
-        CTORATstpLev2MarketDataField*ptr=(CTORATstpLev2MarketDataField*)malloc(sizeof(CTORATstpLev2MarketDataField));
-        auto start = std::chrono::high_resolution_clock::now();
+        CTORATstpLev2MarketDataField*ptr=(CTORATstpLev2MarketDataField*)je_malloc(sizeof(CTORATstpLev2MarketDataField));
+        
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -224,16 +224,15 @@ void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, 
        auto end = std::chrono::high_resolution_clock::now();
         
         std::chrono::duration<double, std::milli> duration0 = end - start;
-        ans+=duration0.count();
-        k++;
-        std::cout << "MarketData m-s took " << duration0.count() << " milliseconds." << std::endl;
+        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
+         //ans[++k]=duration_ns.count(); 
     }
 
 void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
   
-        
-       CTORATstpLev2NGTSTickField*ptr=(CTORATstpLev2NGTSTickField*)malloc(sizeof(CTORATstpLev2NGTSTickField));
-        auto start = std::chrono::high_resolution_clock::now();
+         auto start = std::chrono::high_resolution_clock::now();
+       CTORATstpLev2NGTSTickField*ptr=(CTORATstpLev2NGTSTickField*)je_malloc(sizeof(CTORATstpLev2NGTSTickField));
+       
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -259,15 +258,14 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
          auto end = std::chrono::high_resolution_clock::now();
         
         std::chrono::duration<double, std::milli> duration0 = end - start;
-                ans+=duration0.count();
-        k++;
-        std::cout << "NGtist " << duration0.count() << " milliseconds." << std::endl;
+        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
+         //ans[++k]=duration_ns.count(); 
 
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
-       
-       CTORATstpLev2TransactionField*ptr=(CTORATstpLev2TransactionField*)malloc(sizeof(CTORATstpLev2TransactionField));
-         auto start = std::chrono::high_resolution_clock::now();
+        auto start = std::chrono::high_resolution_clock::now();
+       CTORATstpLev2TransactionField*ptr=(CTORATstpLev2TransactionField*)je_malloc(sizeof(CTORATstpLev2TransactionField));
+        
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
         exit(0);
@@ -292,15 +290,13 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         auto end = std::chrono::high_resolution_clock::now();
         
         std::chrono::duration<double, std::milli> duration0 = end - start;
-                ans+=duration0.count();
-        k++;
-        std::cout << "Trade " << duration0.count() << " milliseconds." << std::endl;
-        
+        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
+        //ans[++k]=duration_ns.count();        
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-       
-        CTORATstpLev2OrderDetailField*ptr=(CTORATstpLev2OrderDetailField*)malloc(sizeof(CTORATstpLev2OrderDetailField));
-         auto start = std::chrono::high_resolution_clock::now();
+        auto start = std::chrono::high_resolution_clock::now();
+        CTORATstpLev2OrderDetailField*ptr=(CTORATstpLev2OrderDetailField*)je_malloc(sizeof(CTORATstpLev2OrderDetailField));
+        
         ptr->BizIndex=pOrderDetail->BizIndex;
         ptr->ExchangeID=pOrderDetail->ExchangeID;
         ptr->Info1=pOrderDetail->Info1;
@@ -317,12 +313,13 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         ptr->SubSeq=pOrderDetail->SubSeq;
         ptr->Volume=pOrderDetail->Volume;
         OrderDetail.enqueue(ptr);
-        auto end = std::chrono::high_resolution_clock::now();
+         auto end = std::chrono::high_resolution_clock::now();
         
         std::chrono::duration<double, std::milli> duration0 = end - start;
-                ans+=duration0.count();
-        k++;
-        std::cout << "Order " << duration0.count() << " milliseconds." << std::endl;
+        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
+        cout<<"order"<<duration_ns.count()<<endl;
+        ans[++k]=duration_ns.count(); 
+
     }
     void Lev2MdSpi::manage_CH(){
         while(1){
@@ -337,7 +334,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         if(MarketData.try_dequeue(ptr)){
                 CH.insertMarketData(ptr);
                 SV.sendMarketData(ptr);
-                free(ptr);
+               je_free(ptr);
         }
 
                 //cout<<"MarkData first-last="<<MarketData.first-MarketData.last-1<<endl;
@@ -347,7 +344,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
          if(NGTSTick.try_dequeue(ptr)){
             CH.insertNGTSTick(ptr);
             SV.sendNGTSTick(ptr);
-            free(ptr);
+           je_free(ptr);
          }
     }
 	void Lev2MdSpi::manage_Transaction(){
@@ -355,7 +352,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         if(Transaction.try_dequeue(ptr)){
             CH.insertTransaction(ptr);
             SV.sendTransaction(ptr);
-            free(ptr);
+            je_free(ptr);
         }
     }
 	void Lev2MdSpi::manage_OrderDetail(){
@@ -363,7 +360,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         if(OrderDetail.try_dequeue(ptr)){
             CH.insertOrderDetail(ptr);
             SV.sendOrderDetail(ptr);
-            free(ptr);
+            je_free(ptr);
         }
     }
 

@@ -4,9 +4,14 @@ project(main)
 set(CMAKE_CXX_STANDARD 17)
 
 # 添加对 OpenSSL 的查找
-find_package(OpenSSL REQUIRED)
+#find_package(OpenSSL REQUIRED)
 #
 
+# 添加 jemalloc 库的包含目录
+include_directories("/root/jemalloc-5.2.0/include")
+
+# 添加 jemalloc 库的链接目录
+link_directories("/root/jemalloc-5.2.0/lib")
 # 添加子目录
 add_subdirectory(/root/clickhouse-app/contribs/clickhouse-cpp zimulu)
 
@@ -20,18 +25,23 @@ target_include_directories(${PROJECT_NAME} PRIVATE /root/clickhouse-app/contribs
 
 # 链接相关库到你的可执行文件
 target_link_libraries(${PROJECT_NAME} PRIVATE 
+    jemalloc
     clickhouse-cpp-lib 
+    /usr/lib64/libdl.so.2
     /root/SE_Intel/lib/liblev2mdapi.so 
-    /usr/lib64/libevent.so 
-    /usr/lib64/libevent_pthreads.so 
+    -L/root/vcpkg/packages/jsoncpp_x64-linux/lib -ljsoncpp 
     /root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a 
-    
-    #/root/jemalloc/lib/libjemalloc.a
-    OpenSSL::Crypto 
-    -lboost_system 
-    -lpthread 
-    -L/root/vcpkg/packages/jsoncpp_x64-linux/lib 
-    -ljsoncpp
-    #-L/root/jemalloc/lib
-   
+    -lboost_system #网络
+    -lpthread #多线程
 )
+#/usr/lib64/libevent.so 
+#/usr/lib64/libevent_pthreads.so 
+#OpenSSL::Crypto 
+#jemalloc dl
+#-ljemalloc -DJEMALLOC_NO_DEMANGLE
+#
+#/root/SE_Intel/lib/libjemalloc.a
+#/root/SE_Intel/lib/libdl.so.2
+#-L/root/SE_Intel/lib 
+#
+   
