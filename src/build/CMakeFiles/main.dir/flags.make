@@ -4,7 +4,7 @@
 # compile CXX with /opt/rh/devtoolset-8/root/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/root/jemalloc-5.2.0/include -I/root/clickhouse-app/contribs/clickhouse-cpp -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl
+CXX_INCLUDES = -I/root/jemalloc-5.2.0/include -I/root/clickhouse-app/contribs/clickhouse-cpp -I/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl -I/root/SE_Intel/src/build/_deps/json-src/include
 
 CXX_FLAGS = -std=gnu++17
 

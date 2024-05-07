@@ -6,6 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 # 添加对 OpenSSL 的查找
 #find_package(OpenSSL REQUIRED)
 #
+include(FetchContent)
+
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz) 
+FetchContent_MakeAvailable(json)
 
 # 添加 jemalloc 库的包含目录
 include_directories("/root/jemalloc-5.2.0/include")
@@ -21,8 +25,6 @@ add_executable(${PROJECT_NAME} "main.cpp" "L2_quoter.cpp" "ClickHouse.cpp" "serv
 # 添加包含目录
 target_include_directories(${PROJECT_NAME} PRIVATE /root/clickhouse-app/contribs/clickhouse-cpp/
                                              /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl)
-
-
 # 链接相关库到你的可执行文件
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     jemalloc
@@ -33,6 +35,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     /root/vcpkg/packages/jsoncpp_x64-linux/lib/libjsoncpp.a 
     -lboost_system #网络
     -lpthread #多线程
+    nlohmann_json::nlohmann_json
 )
 #/usr/lib64/libevent.so 
 #/usr/lib64/libevent_pthreads.so 

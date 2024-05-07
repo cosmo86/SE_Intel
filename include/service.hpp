@@ -12,29 +12,35 @@
 #include "TORATstpLev2ApiStruct.h"
 #include "TORATstpLev2ApiDataType.h"
 #include "TORATstpLev2MdApi.h"
-#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
+#include <nlohmann/json.hpp>
+
+// for convenience
+using json = nlohmann::json;
 using namespace TORALEV2API;
+using websocketpp::lib::bind;
 using websocketpp::lib::placeholders::_1;
 using websocketpp::lib::placeholders::_2;
-using websocketpp::lib::bind;
 typedef websocketpp::server<websocketpp::config::asio> server;
-class service{
-    private:
-        server echo_server;
-        std::vector<websocketpp::connection_hdl> socked_V;
-        static std::string timestampToString(std::time_t timestamp);
-    public:
-        service():echo_server(),socked_V(){}
-        ~service(){}
-    public:
-    void on_message( websocketpp::connection_hdl hdl, server::message_ptr msg);
-    void on_open( websocketpp::connection_hdl hdl);
-    void on_close( websocketpp::connection_hdl hdl);
-    void sendTransaction(CTORATstpLev2TransactionField* pTransaction);
-    void sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail);
-    void sendNGTSTick(CTORATstpLev2NGTSTickField* pTick);
+class service
+{
+private:
+    server echo_server;
+    std::vector<websocketpp::connection_hdl> socked_V;
+    static std::string timestampToString(std::time_t timestamp);
+
+public:
+    service() : echo_server(), socked_V() {}
+    ~service() {}
+
+public:
+    void on_message(websocketpp::connection_hdl hdl, server::message_ptr msg);
+    void on_open(websocketpp::connection_hdl hdl);
+    void on_close(websocketpp::connection_hdl hdl);
+    void sendTransaction(CTORATstpLev2TransactionField *pTransaction);
+    void sendOrderDetail(CTORATstpLev2OrderDetailField *pOrderDetail);
+    void sendNGTSTick(CTORATstpLev2NGTSTickField *pTick);
     void sendMarketData(CTORATstpLev2MarketDataField *pMarketData);
-    
+
     void service_init();
 };
-#endif  
+#endif

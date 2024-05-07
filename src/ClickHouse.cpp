@@ -1,4 +1,4 @@
-#include "../include//ClickHouse.hpp"
+#include "../include/ClickHouse.hpp"
 std::string ClickHouse:: getCurrentDate() {
     std::time_t currentTime = std::time(nullptr);
     std::tm* localTime = std::localtime(&currentTime);

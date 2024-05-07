@@ -23,19 +23,19 @@
 #include "TORATstpLev2ApiDataType.h"
 #include "TORATstpLev2MdApi.h"
 #include "service.hpp"
-#include "memory_pool.hpp"
 #include <openssl/sha.h>
 #include <iostream>
 #include <chrono>
 #include <thread>
 #include <sstream>
 #include <ctime>
-#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
+//#include "/root/json/include/nlohmann/json.hpp"
+//#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
 #include <vector>
 #include <thread>
 #include <mutex>
 #include "jemalloc.h"
-#include "/root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h"
+#include "concurrentqueue.h"
 using namespace TORALEV2API;
 typedef websocketpp::server<websocketpp::config::asio> server;
 using websocketpp::lib::placeholders::_1;

@@ -57,7 +57,7 @@
     }
 void  service::sendTransaction(CTORATstpLev2TransactionField* pTransaction){
     if(pTransaction->TradePrice==0)return;
-    Json::Value val;
+    json val;
     val["ExchangeId"]=pTransaction->ExchangeID;
     val["ExchangeID"]=pTransaction->ExchangeID;
     val["SecurityID"]=pTransaction->SecurityID;
@@ -78,7 +78,7 @@ void  service::sendTransaction(CTORATstpLev2TransactionField* pTransaction){
     for(auto i:socked_V){
         try {
             // Send the JSON packet to the client
-           echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+           echo_server.send(i, val.dump().c_str(), websocketpp::frame::opcode::text);
         } catch (const websocketpp::exception& e) {
             std::cout << "Send failed because: " << e.what() << std::endl;
         }
@@ -86,7 +86,7 @@ void  service::sendTransaction(CTORATstpLev2TransactionField* pTransaction){
     //ws://91.208.73.166:9002
 }
 void service::sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-    Json::Value val;
+    json val;
     val["ExchangeID"]=pOrderDetail->ExchangeID;
     val["SecurityID"]=pOrderDetail->SecurityID;
     val["OrderTime"]=timestampToString(pOrderDetail->OrderTime);
@@ -104,14 +104,14 @@ void service::sendOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
     for(auto i:socked_V){
         try {
             // Send the JSON packet to the client
-        echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        echo_server.send(i, val.dump().c_str(), websocketpp::frame::opcode::text);
         } catch (const websocketpp::exception& e) {
             std::cout << "Send failed because: " << e.what() << std::endl;
         }
     }
 }
 void service::sendNGTSTick(CTORATstpLev2NGTSTickField* pTick){
-    Json::Value val;    
+    json val;    
     val["ExchangeID"]=pTick->ExchangeID;
     val["SecurityID"]=pTick->SecurityID;
     val["MainSeq"]=pTick->MainSeq;
@@ -132,14 +132,14 @@ void service::sendNGTSTick(CTORATstpLev2NGTSTickField* pTick){
     for(auto i:socked_V){
         try {
             // Send the JSON packet to the client
-        echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+        echo_server.send(i, val.dump().c_str(), websocketpp::frame::opcode::text);
         } catch (const websocketpp::exception& e) {
             std::cout << "Send failed because: " << e.what() << std::endl;
         }
     }
 }
 void service::sendMarketData(CTORATstpLev2MarketDataField *pDepthMarketData){
-    Json::Value val;
+    json val;
         val["Ask10NumOrders"]=pDepthMarketData->Ask10NumOrders;
         val["Ask1NumOrders"]=pDepthMarketData->Ask1NumOrders;
         val["Ask2NumOrders"]=pDepthMarketData->Ask2NumOrders;
@@ -236,7 +236,7 @@ void service::sendMarketData(CTORATstpLev2MarketDataField *pDepthMarketData){
      for(auto i:socked_V){
             try {
                 // Send the JSON packet to the client
-            echo_server.send(i, val.toStyledString().c_str(), websocketpp::frame::opcode::text);
+            echo_server.send(i, val.dump().c_str(), websocketpp::frame::opcode::text);
             } catch (const websocketpp::exception& e) {
                 std::cout << "Send failed because: " << e.what() << std::endl;
             }

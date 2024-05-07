@@ -44,6 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("/root/SE_Intel/src/build/_deps/json-build/cmake_install.cmake")
   include("/root/SE_Intel/src/build/zimulu/cmake_install.cmake")
 
 endif()

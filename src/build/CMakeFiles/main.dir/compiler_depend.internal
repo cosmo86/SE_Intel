@@ -281,6 +281,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o
 CMakeFiles/main.dir/L2_quoter.cpp.o
  /root/SE_Intel/src/L2_quoter.cpp
  /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/any
  /opt/rh/devtoolset-8/root/usr/include/c++/8/array
  /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic
  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h
@@ -306,11 +307,20 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc
@@ -322,6 +332,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h
@@ -338,6 +349,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h
@@ -355,11 +367,11 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h
@@ -373,6 +385,10 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype
@@ -382,6 +398,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/climits
  /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt
  /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable
  /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef
@@ -404,6 +421,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/functional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip
@@ -418,12 +437,12 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/memory
  /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex
  /opt/rh/devtoolset-8/root/usr/include/c++/8/new
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric
  /opt/rh/devtoolset-8/root/usr/include/c++/8/optional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream
  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio
  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream
- /opt/rh/devtoolset-8/root/usr/include/c++/8/stack
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf
@@ -448,6 +467,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo
  /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map
  /opt/rh/devtoolset-8/root/usr/include/c++/8/utility
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray
  /opt/rh/devtoolset-8/root/usr/include/c++/8/vector
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h
@@ -474,9 +494,54 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /root/SE_Intel/include/TORATstpLev2ApiDataType.h
  /root/SE_Intel/include/TORATstpLev2ApiStruct.h
  /root/SE_Intel/include/TORATstpLev2MdApi.h
+ /root/SE_Intel/include/concurrentqueue.h
  /root/SE_Intel/include/jemalloc.h
- /root/SE_Intel/include/memory_pool.hpp
  /root/SE_Intel/include/service.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/adl_serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/abi_macros.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/exceptions.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/hash.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/json_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/lexer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/parser.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/position_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_pointer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_ref.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_scope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/detected.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/type_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/void_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/binary_writer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/output_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_concat.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_escape.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/value_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json_fwd.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/ordered_map.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h
@@ -512,16 +577,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc
- /root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h
  /usr/include/_G_config.h
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
@@ -1208,6 +1263,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o
 CMakeFiles/main.dir/main.cpp.o
  /root/SE_Intel/src/main.cpp
  /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/any
  /opt/rh/devtoolset-8/root/usr/include/c++/8/array
  /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic
  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h
@@ -1233,11 +1289,20 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc
@@ -1249,6 +1314,7 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h
@@ -1265,6 +1331,7 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h
@@ -1282,11 +1349,11 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h
@@ -1300,6 +1367,10 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype
@@ -1309,6 +1380,7 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/climits
  /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt
  /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable
  /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef
@@ -1331,6 +1403,8 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/functional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip
@@ -1345,12 +1419,12 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/memory
  /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex
  /opt/rh/devtoolset-8/root/usr/include/c++/8/new
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric
  /opt/rh/devtoolset-8/root/usr/include/c++/8/optional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream
  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio
  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream
- /opt/rh/devtoolset-8/root/usr/include/c++/8/stack
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf
@@ -1375,6 +1449,7 @@ CMakeFiles/main.dir/main.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo
  /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map
  /opt/rh/devtoolset-8/root/usr/include/c++/8/utility
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray
  /opt/rh/devtoolset-8/root/usr/include/c++/8/vector
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h
@@ -1401,9 +1476,54 @@ CMakeFiles/main.dir/main.cpp.o
  /root/SE_Intel/include/TORATstpLev2ApiDataType.h
  /root/SE_Intel/include/TORATstpLev2ApiStruct.h
  /root/SE_Intel/include/TORATstpLev2MdApi.h
+ /root/SE_Intel/include/concurrentqueue.h
  /root/SE_Intel/include/jemalloc.h
- /root/SE_Intel/include/memory_pool.hpp
  /root/SE_Intel/include/service.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/adl_serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/abi_macros.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/exceptions.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/hash.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/json_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/lexer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/parser.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/position_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_pointer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_ref.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_scope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/detected.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/type_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/void_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/binary_writer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/output_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_concat.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_escape.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/value_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json_fwd.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/ordered_map.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h
  /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h
@@ -1439,16 +1559,6 @@ CMakeFiles/main.dir/main.cpp.o
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h
  /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc
- /root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h
  /usr/include/_G_config.h
  /usr/include/alloca.h
  /usr/include/arpa/inet.h
@@ -2135,6 +2245,7 @@ CMakeFiles/main.dir/main.cpp.o
 CMakeFiles/main.dir/service.cpp.o
  /root/SE_Intel/src/service.cpp
  /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/any
  /opt/rh/devtoolset-8/root/usr/include/c++/8/array
  /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic
  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h
@@ -2160,11 +2271,20 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc
@@ -2176,6 +2296,7 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h
@@ -2192,6 +2313,7 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h
@@ -2209,11 +2331,11 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h
@@ -2227,6 +2349,10 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype
@@ -2235,6 +2361,7 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/climits
  /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt
  /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable
  /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal
  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef
@@ -2257,6 +2384,8 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/functional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list
  /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip
@@ -2271,12 +2400,12 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/memory
  /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex
  /opt/rh/devtoolset-8/root/usr/include/c++/8/new
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric
  /opt/rh/devtoolset-8/root/usr/include/c++/8/optional
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream
  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue
  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio
  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream
- /opt/rh/devtoolset-8/root/usr/include/c++/8/stack
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept
  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf
@@ -2301,6 +2430,7 @@ CMakeFiles/main.dir/service.cpp.o
  /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo
  /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map
  /opt/rh/devtoolset-8/root/usr/include/c++/8/utility
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray
  /opt/rh/devtoolset-8/root/usr/include/c++/8/vector
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h
  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h
@@ -2325,15 +2455,51 @@ CMakeFiles/main.dir/service.cpp.o
  /root/SE_Intel/include/TORATstpLev2ApiStruct.h
  /root/SE_Intel/include/TORATstpLev2MdApi.h
  /root/SE_Intel/include/service.hpp
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h
- /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/adl_serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/abi_macros.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/exceptions.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/hash.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/json_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/lexer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/parser.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/input/position_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_pointer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/json_ref.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_scope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/detected.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/type_traits.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/meta/void_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/binary_writer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/output_adapters.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/output/serializer.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_concat.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/string_escape.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/detail/value_t.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/json_fwd.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/ordered_map.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp
+ /root/SE_Intel/src/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp
  /usr/include/_G_config.h
  /usr/include/alloca.h
  /usr/include/arpa/inet.h

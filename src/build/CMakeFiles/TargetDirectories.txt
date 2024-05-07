@@ -5,6 +5,12 @@
 /root/SE_Intel/src/build/CMakeFiles/install.dir
 /root/SE_Intel/src/build/CMakeFiles/install/local.dir
 /root/SE_Intel/src/build/CMakeFiles/install/strip.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/edit_cache.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/list_install_components.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/install.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/install/local.dir
+/root/SE_Intel/src/build/_deps/json-build/CMakeFiles/install/strip.dir
 /root/SE_Intel/src/build/zimulu/CMakeFiles/absl__int128_print_debug_info.dir
 /root/SE_Intel/src/build/zimulu/CMakeFiles/cityhash__cityhash_print_debug_info.dir
 /root/SE_Intel/src/build/zimulu/CMakeFiles/lz4__lz4_print_debug_info.dir

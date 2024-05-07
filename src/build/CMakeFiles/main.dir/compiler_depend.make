@@ -279,6 +279,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
 
 CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/any \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h \
@@ -304,11 +305,20 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc \
@@ -320,6 +330,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h \
@@ -336,6 +347,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
@@ -353,11 +365,11 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
@@ -371,6 +383,10 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype \
@@ -380,6 +396,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
@@ -402,6 +419,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
@@ -416,12 +435,12 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
@@ -446,6 +465,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
@@ -472,9 +492,54 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/concurrentqueue.h \
   /root/SE_Intel/include/jemalloc.h \
-  /root/SE_Intel/include/memory_pool.hpp \
   /root/SE_Intel/include/service.hpp \
+  _deps/json-src/include/nlohmann/adl_serializer.hpp \
+  _deps/json-src/include/nlohmann/byte_container_with_subtype.hpp \
+  _deps/json-src/include/nlohmann/detail/abi_macros.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/from_json.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_json.hpp \
+  _deps/json-src/include/nlohmann/detail/exceptions.hpp \
+  _deps/json-src/include/nlohmann/detail/hash.hpp \
+  _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp \
+  _deps/json-src/include/nlohmann/detail/input/input_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/input/json_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/input/lexer.hpp \
+  _deps/json-src/include/nlohmann/detail/input/parser.hpp \
+  _deps/json-src/include/nlohmann/detail/input/position_t.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp \
+  _deps/json-src/include/nlohmann/detail/json_pointer.hpp \
+  _deps/json-src/include/nlohmann/detail/json_ref.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_scope.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/detected.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/is_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/std_fs.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/type_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/void_t.hpp \
+  _deps/json-src/include/nlohmann/detail/output/binary_writer.hpp \
+  _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/output/serializer.hpp \
+  _deps/json-src/include/nlohmann/detail/string_concat.hpp \
+  _deps/json-src/include/nlohmann/detail/string_escape.hpp \
+  _deps/json-src/include/nlohmann/detail/value_t.hpp \
+  _deps/json-src/include/nlohmann/json.hpp \
+  _deps/json-src/include/nlohmann/json_fwd.hpp \
+  _deps/json-src/include/nlohmann/ordered_map.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h \
@@ -510,16 +575,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc \
-  /root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h \
   /usr/include/_G_config.h \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -1205,6 +1260,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
 
 CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/any \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h \
@@ -1230,11 +1286,20 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc \
@@ -1246,6 +1311,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h \
@@ -1262,6 +1328,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
@@ -1279,11 +1346,11 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
@@ -1297,6 +1364,10 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype \
@@ -1306,6 +1377,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
@@ -1328,6 +1400,8 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
@@ -1342,12 +1416,12 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
@@ -1372,6 +1446,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
@@ -1398,9 +1473,54 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/concurrentqueue.h \
   /root/SE_Intel/include/jemalloc.h \
-  /root/SE_Intel/include/memory_pool.hpp \
   /root/SE_Intel/include/service.hpp \
+  _deps/json-src/include/nlohmann/adl_serializer.hpp \
+  _deps/json-src/include/nlohmann/byte_container_with_subtype.hpp \
+  _deps/json-src/include/nlohmann/detail/abi_macros.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/from_json.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_json.hpp \
+  _deps/json-src/include/nlohmann/detail/exceptions.hpp \
+  _deps/json-src/include/nlohmann/detail/hash.hpp \
+  _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp \
+  _deps/json-src/include/nlohmann/detail/input/input_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/input/json_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/input/lexer.hpp \
+  _deps/json-src/include/nlohmann/detail/input/parser.hpp \
+  _deps/json-src/include/nlohmann/detail/input/position_t.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp \
+  _deps/json-src/include/nlohmann/detail/json_pointer.hpp \
+  _deps/json-src/include/nlohmann/detail/json_ref.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_scope.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/detected.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/is_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/std_fs.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/type_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/void_t.hpp \
+  _deps/json-src/include/nlohmann/detail/output/binary_writer.hpp \
+  _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/output/serializer.hpp \
+  _deps/json-src/include/nlohmann/detail/string_concat.hpp \
+  _deps/json-src/include/nlohmann/detail/string_escape.hpp \
+  _deps/json-src/include/nlohmann/detail/value_t.hpp \
+  _deps/json-src/include/nlohmann/json.hpp \
+  _deps/json-src/include/nlohmann/json_fwd.hpp \
+  _deps/json-src/include/nlohmann/ordered_map.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h \
@@ -1436,16 +1556,6 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/port.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc \
-  /root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h \
   /usr/include/_G_config.h \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -2131,6 +2241,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
 
 CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/any \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h \
@@ -2156,11 +2267,20 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc \
@@ -2172,6 +2292,7 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h \
@@ -2188,6 +2309,7 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
@@ -2205,11 +2327,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
@@ -2223,6 +2345,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype \
@@ -2231,6 +2357,7 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
@@ -2253,6 +2380,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
@@ -2267,12 +2396,12 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/stack \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
@@ -2297,6 +2426,7 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
@@ -2321,15 +2451,51 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
   /root/SE_Intel/include/service.hpp \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h \
-  /root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h \
+  _deps/json-src/include/nlohmann/adl_serializer.hpp \
+  _deps/json-src/include/nlohmann/byte_container_with_subtype.hpp \
+  _deps/json-src/include/nlohmann/detail/abi_macros.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/from_json.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp \
+  _deps/json-src/include/nlohmann/detail/conversions/to_json.hpp \
+  _deps/json-src/include/nlohmann/detail/exceptions.hpp \
+  _deps/json-src/include/nlohmann/detail/hash.hpp \
+  _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp \
+  _deps/json-src/include/nlohmann/detail/input/input_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/input/json_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/input/lexer.hpp \
+  _deps/json-src/include/nlohmann/detail/input/parser.hpp \
+  _deps/json-src/include/nlohmann/detail/input/position_t.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+  _deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp \
+  _deps/json-src/include/nlohmann/detail/json_pointer.hpp \
+  _deps/json-src/include/nlohmann/detail/json_ref.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_scope.hpp \
+  _deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/detected.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/is_sax.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/std_fs.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/type_traits.hpp \
+  _deps/json-src/include/nlohmann/detail/meta/void_t.hpp \
+  _deps/json-src/include/nlohmann/detail/output/binary_writer.hpp \
+  _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp \
+  _deps/json-src/include/nlohmann/detail/output/serializer.hpp \
+  _deps/json-src/include/nlohmann/detail/string_concat.hpp \
+  _deps/json-src/include/nlohmann/detail/string_escape.hpp \
+  _deps/json-src/include/nlohmann/detail/value_t.hpp \
+  _deps/json-src/include/nlohmann/json.hpp \
+  _deps/json-src/include/nlohmann/json_fwd.hpp \
+  _deps/json-src/include/nlohmann/ordered_map.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp \
+  _deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
   /usr/include/_G_config.h \
   /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
@@ -3017,8 +3183,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/local/include/websocketpp/transport/iostream/endpoint.hpp:
 
-/usr/local/include/websocketpp/transport/iostream/connection.hpp:
-
 /usr/local/include/websocketpp/transport/asio/security/none.hpp:
 
 /usr/local/include/websocketpp/transport/asio/endpoint.hpp:
@@ -3034,8 +3198,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/local/include/websocketpp/roles/server_endpoint.hpp:
 
 /usr/local/include/websocketpp/processors/hybi00.hpp:
-
-/usr/local/include/websocketpp/message_buffer/message.hpp:
 
 /usr/local/include/websocketpp/logger/levels.hpp:
 
@@ -3054,6 +3216,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/local/include/websocketpp/endpoint_base.hpp:
 
 /usr/local/include/websocketpp/connection_base.hpp:
+
+/usr/local/include/websocketpp/config/core.hpp:
 
 /usr/local/include/websocketpp/config/asio_no_tls.hpp:
 
@@ -3113,8 +3277,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/netinet/in.h:
 
-/usr/include/linux/version.h:
-
 /usr/include/linux/posix_types.h:
 
 /usr/include/linux/falloc.h:
@@ -3127,61 +3289,85 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/utility/addressof.hpp:
 
-/usr/include/netinet/tcp.h:
+/usr/include/boost/type_traits/is_volatile.hpp:
 
-/usr/include/bits/sockaddr.h:
+/usr/include/boost/type_traits/is_void.hpp:
 
-/usr/include/boost/asio/detail/handler_tracking.hpp:
+/usr/include/boost/type_traits/is_same.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_function.h:
+/usr/include/boost/type_traits/is_rvalue_reference.hpp:
+
+/usr/include/boost/type_traits/is_integral.hpp:
+
+/usr/include/boost/type_traits/is_function.hpp:
+
+/usr/include/boost/type_traits/is_float.hpp:
+
+/usr/include/boost/type_traits/is_base_and_derived.hpp:
+
+/usr/include/boost/type_traits/is_array.hpp:
+
+/usr/include/boost/type_traits/is_abstract.hpp:
+
+/usr/include/boost/type_traits/intrinsics.hpp:
+
+/usr/include/boost/type_traits/ice.hpp:
+
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/include/boost/type_traits/detail/type_trait_def.hpp:
+
+/usr/include/boost/type_traits/detail/template_arity_spec.hpp:
+
+/usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
+
+/usr/include/boost/type_traits/detail/ice_or.hpp:
+
+/usr/include/boost/type_traits/detail/ice_eq.hpp:
+
+/usr/include/boost/type_traits/detail/ice_and.hpp:
+
+/usr/local/include/websocketpp/random/none.hpp:
+
+/usr/include/boost/type_traits/detail/false_result.hpp:
+
+/usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
+
+/usr/include/boost/type_traits/detail/bool_trait_def.hpp:
+
+/usr/include/boost/type_traits/config.hpp:
 
 /usr/include/boost/type_traits/broken_compiler_spec.hpp:
 
-/usr/include/boost/asio/detail/descriptor_read_op.hpp:
+/usr/include/boost/type_traits/add_rvalue_reference.hpp:
 
-/usr/include/boost/asio/detail/config.hpp:
+/usr/include/boost/type_traits/add_const.hpp:
 
-/usr/include/boost/asio/buffered_stream_fwd.hpp:
+/usr/include/boost/throw_exception.hpp:
 
-/usr/include/boost/config/select_stdlib_config.hpp:
+/usr/include/boost/system/system_error.hpp:
 
-/usr/include/boost/type_traits/is_volatile.hpp:
+/usr/include/boost/system/error_code.hpp:
 
-/usr/include/boost/asio/detail/completion_handler.hpp:
+/usr/include/strings.h:
 
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h:
+/usr/include/boost/system/config.hpp:
 
-/usr/include/boost/asio/detail/call_stack.hpp:
+/usr/include/boost/static_assert.hpp:
 
-/usr/include/bits/byteswap.h:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:
 
-/usr/include/boost/asio/detail/atomic_count.hpp:
+/usr/include/boost/smart_ptr/detail/yield_k.hpp:
 
-/usr/include/boost/asio/detail/base_from_completion_cond.hpp:
+/usr/local/include/websocketpp/processors/hybi07.hpp:
 
-/usr/include/boost/asio/buffers_iterator.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock_sync.hpp:
 
-/usr/include/boost/asio/detail/handler_invoke_helpers.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock.hpp:
 
-/usr/include/boost/asio/buffered_write_stream_fwd.hpp:
+/usr/local/include/websocketpp/impl/utilities_impl.hpp:
 
-/usr/include/boost/cstdint.hpp:
-
-/usr/include/boost/asio/detail/gcc_x86_fenced_block.hpp:
-
-/usr/include/boost/asio/buffered_read_stream.hpp:
-
-/usr/include/boost/asio/basic_streambuf.hpp:
-
-/usr/include/boost/asio/basic_socket.hpp:
-
-/usr/include/boost/date_time/time_resolution_traits.hpp:
-
-/usr/include/boost/asio/basic_serial_port.hpp:
-
-/usr/include/boost/asio/basic_seq_packet_socket.hpp:
-
-/usr/include/boost/asio/ip/udp.hpp:
+/usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream.tcc:
 
@@ -3191,15 +3377,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio.hpp:
 
-/usr/include/bits/uio.h:
-
 /usr/include/bits/termios.h:
 
-/usr/include/boost/asio/local/basic_endpoint.hpp:
-
 /usr/include/bits/signum.h:
-
-/usr/include/boost/asio/basic_waitable_timer.hpp:
 
 /usr/include/boost/asio/ip/basic_resolver_query.hpp:
 
@@ -3223,13 +3403,15 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/asm/posix_types.h:
 
+/usr/include/bits/waitstatus.h:
+
 /usr/include/asm/bitsperlong.h:
 
 /usr/include/asm-generic/sockios.h:
 
-/usr/include/asm-generic/socket.h:
+/usr/include/linux/ioctl.h:
 
-/usr/include/boost/config/abi_prefix.hpp:
+/usr/include/asm-generic/posix_types.h:
 
 /usr/include/bits/types.h:
 
@@ -3237,31 +3419,65 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/locale.h:
 
-/usr/include/bits/waitstatus.h:
+/usr/include/asm-generic/socket.h:
 
-/usr/include/boost/type_traits/is_float.hpp:
+/usr/include/boost/config/abi_prefix.hpp:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/reader.h:
+_deps/json-src/include/nlohmann/detail/value_t.hpp:
 
-/usr/include/boost/asio/detail/impl/epoll_reactor.ipp:
+/usr/local/include/websocketpp/transport/base/connection.hpp:
 
-/usr/include/boost/exception/exception.hpp:
+/usr/include/boost/asio/local/connect_pair.hpp:
 
-/usr/include/linux/ioctl.h:
+/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/attributes.h:
 
-/usr/include/asm-generic/posix_types.h:
+_deps/json-src/include/nlohmann/detail/string_concat.hpp:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/forwards.h:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h:
 
-/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h:
+_deps/json-src/include/nlohmann/detail/meta/type_traits.hpp:
 
-/usr/local/include/websocketpp/config/core.hpp:
+/usr/include/boost/asio/ip/impl/address_v6.hpp:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/allocator.h:
+/usr/include/boost/date_time/gregorian/greg_weekday.hpp:
 
-/usr/include/gnu/stubs-64.h:
+_deps/json-src/include/nlohmann/detail/meta/is_sax.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits:
+/usr/include/boost/asio/local/basic_endpoint.hpp:
+
+_deps/json-src/include/nlohmann/detail/output/serializer.hpp:
+
+_deps/json-src/include/nlohmann/detail/meta/identity_tag.hpp:
+
+/usr/include/boost/asio/windows/stream_handle.hpp:
+
+_deps/json-src/include/nlohmann/detail/macro_unscope.hpp:
+
+_deps/json-src/include/nlohmann/detail/json_ref.hpp:
+
+_deps/json-src/include/nlohmann/json_fwd.hpp:
+
+/usr/include/boost/asio/serial_port.hpp:
+
+/usr/local/include/websocketpp/http/impl/parser.hpp:
+
+/usr/include/boost/date_time/microsec_time_clock.hpp:
+
+_deps/json-src/include/nlohmann/detail/json_pointer.hpp:
+
+/usr/include/bits/huge_vall.h:
+
+/usr/include/linux/errno.h:
+
+_deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp:
+
+_deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp:
+
+_deps/json-src/include/nlohmann/detail/input/lexer.hpp:
+
+/usr/include/getopt.h:
+
+/usr/include/boost/is_placeholder.hpp:
 
 /usr/local/include/websocketpp/common/stdint.hpp:
 
@@ -3269,29 +3485,45 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h:
 
-/usr/include/boost/mpl/aux_/na.hpp:
+/usr/include/boost/preprocessor/control/iif.hpp:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/version.h:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/numeric:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/writer.h:
+_deps/json-src/include/nlohmann/detail/input/json_sax.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc:
+/usr/include/boost/type_traits/is_class.hpp:
+
+/usr/include/boost/date_time/gregorian/greg_day.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_stack.h:
-
-/usr/include/boost/smart_ptr/detail/yield_k.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/climits:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice_array.h:
+
+/usr/include/boost/mpl/aux_/na_fwd.hpp:
+
+/usr/include/boost/asio/posix/descriptor_base.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h:
+
+/usr/include/bits/timex.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef:
+
+/usr/local/include/websocketpp/transport/iostream/connection.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/quoted_string.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/exceptions.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h:
+/usr/include/bits/uio.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/codecvt.h:
 
@@ -3304,6 +3536,12 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/buffered_stream.hpp:
 
 /usr/include/wctype.h:
+
+/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
+
+/usr/include/boost/asio/impl/serial_port_base.hpp:
+
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/types/types.h:
 
 /usr/include/sys/select.h:
 
@@ -3321,13 +3559,21 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h:
+
 /usr/include/boost/config/no_tr1/utility.hpp:
 
 /usr/include/math.h:
 
 /usr/include/boost/asio/detail/consuming_buffers.hpp:
 
-/usr/include/linux/errno.h:
+/usr/include/boost/asio/seq_packet_socket_service.hpp:
+
+_deps/json-src/include/nlohmann/detail/input/position_t.hpp:
+
+/root/SE_Intel/include/jemalloc.h:
+
+/usr/include/boost/asio/handler_alloc_hook.hpp:
 
 /usr/include/libio.h:
 
@@ -3337,11 +3583,17 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/bits/posix_opt.h:
 
-/usr/include/boost/asio/posix/descriptor_base.hpp:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h:
 
 /usr/include/asm/posix_types_64.h:
 
-/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h:
+/usr/include/gnu/stubs-64.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits:
+
+_deps/json-src/include/nlohmann/adl_serializer.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/array:
 
@@ -3355,21 +3607,27 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/regex/user.hpp:
 
+/usr/include/netinet/tcp.h:
+
+/usr/include/bits/sockaddr.h:
+
 /usr/include/bits/wordsize.h:
 
-/usr/include/boost/asio/detail/thread.hpp:
-
-/usr/include/boost/asio/detail/impl/posix_event.ipp:
-
 /usr/include/boost/asio/detail/impl/posix_thread.ipp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/deque:
+
+_deps/json-src/include/nlohmann/detail/meta/call_std/end.hpp:
+
+_deps/json-src/include/nlohmann/detail/conversions/from_json.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/ext/concurrence.h:
 
 /usr/include/bits/waitflags.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h:
 
-/usr/include/bits/timex.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h:
 
 /usr/local/include/websocketpp/concurrency/basic.hpp:
 
@@ -3389,15 +3647,23 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_heap.h:
 
+/usr/include/boost/type_traits/integral_constant.hpp:
+
+/usr/include/boost/type_traits/detail/ice_not.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc:
+
 /usr/include/boost/asio/raw_socket_service.hpp:
 
-/usr/include/boost/asio/detail/impl/epoll_reactor.hpp:
+/usr/local/include/websocketpp/message_buffer/message.hpp:
 
-/usr/include/boost/asio/deadline_timer_service.hpp:
+_deps/json-src/include/nlohmann/ordered_map.hpp:
 
-/usr/include/bits/setjmp.h:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_numeric.h:
 
 /usr/include/wchar.h:
+
+/usr/include/boost/asio/time_traits.hpp:
 
 /usr/include/time.h:
 
@@ -3429,23 +3695,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/bits/nan.h:
 
-/usr/include/boost/mpl/aux_/config/dtp.hpp:
-
-/usr/include/string.h:
-
-/root/SE_Intel/include/memory_pool.hpp:
-
-/usr/include/boost/asio/detail/impl/service_registry.hpp:
-
 /usr/include/bits/mathdef.h:
 
 /usr/include/bits/mathcalls.h:
 
-/usr/include/boost/asio/detail/impl/descriptor_ops.ipp:
-
-/usr/include/boost/asio/detail/handler_type_requirements.hpp:
-
-/usr/include/bits/sigstack.h:
+/usr/include/boost/asio/detail/atomic_count.hpp:
 
 /usr/include/bits/errno.h:
 
@@ -3453,37 +3707,51 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/bits/endian.h:
 
+/usr/include/bits/byteswap.h:
+
+_deps/json-src/include/nlohmann/json.hpp:
+
+/usr/include/boost/asio/detail/timer_scheduler_fwd.hpp:
+
+/usr/include/boost/preprocessor/control/detail/while.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h:
 
 /usr/include/boost/mpl/bool_fwd.hpp:
 
 /usr/include/asm-generic/errno.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h:
+/usr/include/asm-generic/ioctls.h:
 
-/root/vcpkg/packages/concurrentqueue_x64-linux/include/concurrentqueue/concurrentqueue.h:
-
-/usr/include/boost/asio/detail/descriptor_write_op.hpp:
-
-/usr/include/asm-generic/errno-base.h:
+/usr/include/boost/mpl/bool.hpp:
 
 /usr/include/ctype.h:
 
 /usr/include/_G_config.h:
 
+_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128_have_intrinsic.inc:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_after.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_hermite.tcc:
 
 /usr/include/boost/preprocessor/list/fold_left.hpp:
 
+/usr/include/boost/version.hpp:
+
+/usr/include/boost/asio/detail/impl/reactive_socket_service_base.ipp:
+
 /usr/include/asm/ioctls.h:
 
 /usr/include/pthread.h:
 
-/usr/include/boost/asio/detail/impl/task_io_service.ipp:
+/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/numeric/int128.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc:
 
@@ -3497,7 +3765,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/optimization.h:
 
-/root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/attributes.h:
+_deps/json-src/include/nlohmann/detail/meta/std_fs.hpp:
+
+/usr/include/boost/asio/detail/handler_invoke_helpers.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/query.h:
 
@@ -3505,7 +3775,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/uuid.h:
 
+_deps/json-src/include/nlohmann/detail/abi_macros.hpp:
+
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cassert:
 
 /usr/local/include/websocketpp/impl/connection_impl.hpp:
 
@@ -3518,6 +3792,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/date_time/gregorian/gregorian_types.hpp:
 
 /usr/include/asm/sockios.h:
+
+/usr/include/boost/system/api_config.hpp:
+
+/usr/include/boost/date_time/time_system_split.hpp:
 
 /usr/include/boost/mpl/aux_/config/eti.hpp:
 
@@ -3542,6 +3820,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/detail/service_registry.hpp:
 
 /usr/include/boost/smart_ptr/detail/shared_count.hpp:
+
+_deps/json-src/include/nlohmann/detail/input/binary_reader.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ios:
 
@@ -3593,7 +3873,13 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/signal_set_service.hpp:
 
+/usr/include/boost/asio/basic_seq_packet_socket.hpp:
+
+/usr/include/boost/asio/ip/udp.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h:
+
+_deps/json-src/include/nlohmann/detail/hash.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h:
 
@@ -3607,7 +3893,25 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_construct.h:
 
+/usr/include/boost/asio/buffered_stream_fwd.hpp:
+
+/usr/include/boost/asio/detail/config.hpp:
+
+/usr/include/boost/config/select_stdlib_config.hpp:
+
+/usr/include/boost/mpl/aux_/na.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem:
+
+/root/SE_Intel/include/TORATstpLev2ApiStruct.h:
+
+/usr/include/boost/smart_ptr/detail/sp_has_sync.hpp:
+
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/lowcardinality.h:
+
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h:
 
@@ -3633,33 +3937,29 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ptr_traits.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h:
-
 /usr/include/bits/siginfo.h:
+
+/usr/include/boost/preprocessor/facilities/overload.hpp:
 
 /usr/local/include/websocketpp/frame.hpp:
 
+_deps/json-src/include/nlohmann/detail/macro_scope.hpp:
+
 /usr/include/bits/environments.h:
-
-/usr/include/boost/asio/datagram_socket_service.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/limits:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h:
 
-/root/SE_Intel/src/ClickHouse.cpp:
-
 /usr/include/boost/date_time/year_month_day.hpp:
-
-/usr/include/boost/asio/detail/epoll_reactor.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_lockfree_defines.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/hypergeometric.tcc:
+/usr/include/boost/asio/detail/impl/task_io_service.ipp:
 
-/usr/include/boost/asio/streambuf.hpp:
+_deps/json-src/include/nlohmann/detail/meta/void_t.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/hypergeometric.tcc:
 
 /root/SE_Intel/include/ClickHouse.hpp:
 
@@ -3668,10 +3968,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h:
 
 /usr/include/boost/config.hpp:
-
-/usr/include/boost/asio/detail/impl/task_io_service.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h:
 
 /usr/include/bits/typesizes.h:
 
@@ -3683,15 +3979,17 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h:
 
+_deps/json-src/include/nlohmann/detail/iterators/primitive_iterator.hpp:
+
 /usr/include/gnu/stubs.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/legendre_function.tcc:
 
+_deps/json-src/include/nlohmann/detail/conversions/to_json.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/deque.tcc:
 
 /usr/include/boost/asio/detail/task_io_service_fwd.hpp:
-
-/usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
 /usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
@@ -3707,17 +4005,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/regex_fwd.hpp:
 
-/usr/include/boost/asio/detail/array.hpp:
-
-/usr/include/boost/asio/detail/impl/reactive_serial_port_service.ipp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/aligned_buffer.h:
 
-/usr/include/boost/preprocessor/facilities/overload.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/stack:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/streambuf_iterator.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/mask_array.h:
 
 /usr/include/boost/asio/detail/chrono_time_traits.hpp:
 
@@ -3731,13 +4023,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/array.h:
 
-/usr/include/boost/system/system_error.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h:
-
-/usr/include/boost/system/error_code.hpp:
 
 /usr/include/boost/date_time/gregorian/greg_duration.hpp:
 
@@ -3745,15 +4033,23 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/date_time/posix_time/posix_time_system.hpp:
 
-/usr/include/boost/asio/detail/deadline_timer_service.hpp:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_function.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h:
+
+/usr/include/boost/type_traits/add_reference.hpp:
+
+/usr/include/boost/asio/detail/scoped_ptr.hpp:
 
 /usr/include/boost/asio/detail/task_io_service_thread_info.hpp:
 
 /usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
 /usr/include/boost/asio/is_write_buffered.hpp:
+
+/root/SE_Intel/src/ClickHouse.cpp:
+
+_deps/json-src/include/nlohmann/detail/output/binary_writer.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm:
 
@@ -3771,31 +4067,17 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/asm-generic/bitsperlong.h:
 
-/usr/local/include/websocketpp/impl/utilities_impl.hpp:
+_deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 
-/usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+/usr/include/boost/asio/detail/deadline_timer_service.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/allocator.h:
-
-/usr/include/asm-generic/ioctls.h:
-
-/usr/include/boost/mpl/bool.hpp:
 
 /usr/include/bits/posix1_lim.h:
 
 /usr/include/bits/inf.h:
 
-/usr/include/boost/date_time/time.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
-
-/usr/include/boost/date_time/gregorian/greg_day.hpp:
-
-/usr/include/boost/type_traits/is_class.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h:
-
-/usr/include/boost/asio/basic_stream_socket.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/queue:
 
@@ -3825,10 +4107,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic:
 
-/usr/include/boost/asio/detail/event.hpp:
-
-/usr/include/boost/asio/ip/detail/impl/endpoint.ipp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algobase.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h:
@@ -3845,12 +4123,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h:
 
-/usr/include/asm/errno.h:
-
-/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
-
-/usr/include/boost/asio/windows/random_access_handle_service.hpp:
-
 /usr/include/bits/poll.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc:
@@ -3859,17 +4131,13 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/config/user.hpp:
 
-/usr/include/boost/type_traits/detail/ice_eq.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/new:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/value.h:
-
-/usr/include/boost/asio/deadline_timer.hpp:
-
-/usr/include/boost/asio/ip/detail/socket_option.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/algorithmfwd.h:
+
+/usr/include/boost/type_traits/is_reference.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream_insert.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.tcc:
 
@@ -3881,15 +4149,7 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/impl/write.hpp:
 
-/usr/include/boost/asio/detail/dependent_type.hpp:
-
-/usr/include/boost/smart_ptr/shared_ptr.hpp:
-
 /usr/include/sys/types.h:
-
-/usr/include/bits/huge_vall.h:
-
-/usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_funcs.h:
 
@@ -3903,6 +4163,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/bits/byteswap-16.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint:
 
 /usr/local/include/websocketpp/processors/processor.hpp:
@@ -3913,14 +4175,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/mpl/aux_/config/workaround.hpp:
 
-/usr/include/boost/asio/detail/descriptor_ops.hpp:
-
-/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
-
-/usr/include/boost/asio/detail/posix_mutex.hpp:
-
-/usr/include/boost/date_time/gregorian_calendar.hpp:
-
 /usr/local/include/websocketpp/version.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo:
@@ -3929,29 +4183,25 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdlib:
 
-/usr/include/boost/asio/time_traits.hpp:
-
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json_features.h:
-
-/usr/include/libintl.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/char_traits.h:
-
-/usr/include/bits/stdio_lim.h:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ctime:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/boost/asio/detail/impl/descriptor_ops.ipp:
+
+/usr/include/boost/asio/detail/handler_type_requirements.hpp:
 
 /usr/local/include/websocketpp/common/asio.hpp:
 
 /usr/include/boost/asio/read.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.tcc:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h:
 
 /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/float.h:
 
 /usr/include/boost/preprocessor/tuple/elem.hpp:
-
-/usr/include/boost/asio/detail/buffered_stream_storage.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/assertions.h:
 
@@ -3962,8 +4212,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/debug.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tuple:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/deque:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/iostream:
 
@@ -3977,8 +4225,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/date_time/compiler_config.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/ext/concurrence.h:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/new_allocator.h:
@@ -3988,6 +4234,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/detail/fenced_block.hpp:
 
 /usr/include/boost/asio/detail/mutex.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt:
 
 /usr/include/boost/mpl/aux_/config/lambda.hpp:
 
@@ -4003,11 +4251,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/valarray:
+
 /usr/include/boost/preprocessor/cat.hpp:
-
-/usr/include/bits/ioctl-types.h:
-
-/usr/include/boost/regex/config/cwchar.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/istream:
 
@@ -4019,19 +4265,31 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/timer_queue_set.hpp:
 
+/usr/include/linux/version.h:
+
+_deps/json-src/include/nlohmann/detail/input/input_adapters.hpp:
+
+/usr/include/boost/detail/sp_typeinfo.hpp:
+
+/usr/include/boost/asio/posix/stream_descriptor_service.hpp:
+
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/map:
 
-/usr/include/boost/asio/detail/date_time_fwd.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/ext/atomicity.h:
-
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h:
-
 /usr/include/stdc-predef.h:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept:
 
 /usr/include/boost/asio/ip/detail/endpoint.hpp:
+
+_deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp:
+
+/usr/include/boost/type_traits/is_arithmetic.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h:
 
 /usr/include/boost/type_traits/remove_pointer.hpp:
 
@@ -4047,9 +4305,13 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/system_error:
 
 /usr/include/boost/config/abi_suffix.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h:
 
 /usr/include/bits/fcntl.h:
 
@@ -4057,21 +4319,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/reactive_socket_connect_op.hpp:
 
-/usr/include/boost/asio/impl/serial_port_base.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/types/types.h:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/modified_bessel_func.tcc:
 
 /usr/include/boost/asio/handler_invoke_hook.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_laguerre.tcc:
-
-/usr/include/boost/asio/basic_socket_acceptor.hpp:
-
-/usr/include/boost/asio/socket_acceptor_service.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/refwrap.h:
 
@@ -4089,9 +4341,19 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/riemann_zeta.tcc:
 
+/usr/include/boost/asio/detail/reactive_socket_service.hpp:
+
+/usr/include/boost/mpl/int.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cstdio:
+
+/usr/include/bits/sigcontext.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map:
+
+_deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h:
 
@@ -4111,9 +4373,21 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stream_iterator.h:
 
+/usr/include/boost/type_traits/is_base_of.hpp:
+
+/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h:
 
 /usr/include/boost/asio/detail/posix_event.hpp:
+
+/opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
+
+/usr/include/boost/asio/detail/descriptor_ops.hpp:
+
+/usr/include/boost/asio/detail/posix_mutex.hpp:
+
+/usr/include/boost/date_time/gregorian_calendar.hpp:
 
 /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h:
 
@@ -4121,19 +4395,15 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /root/SE_Intel/include/TORATstpLev2ApiDataType.h:
 
-/usr/include/boost/type_traits/is_array.hpp:
-
-/root/SE_Intel/include/TORATstpLev2ApiStruct.h:
-
-/usr/include/boost/smart_ptr/detail/sp_has_sync.hpp:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/lowcardinality.h:
-
-/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h:
+
+/usr/include/libintl.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/char_traits.h:
+
+/usr/include/bits/stdio_lim.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/client.h:
 
@@ -4149,41 +4419,163 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/date_time/gregorian/greg_date.hpp:
 
-/usr/include/boost/asio/basic_socket_iostream.hpp:
-
-/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
-
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/enum.h:
 
 /usr/include/boost/asio/detail/impl/timer_queue_set.ipp:
 
 /usr/include/bits/in.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cassert:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cpp_type_traits.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_array.tcc:
 
 /usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/ip6.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h:
+
 /usr/include/boost/mpl/aux_/config/ctps.hpp:
-
-/usr/include/boost/type_traits/ice.hpp:
-
-/usr/include/boost/asio/detail/signal_handler.hpp:
-
-/usr/include/boost/asio/detail/buffer_resize_guard.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/map.h:
 
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h:
+
+/usr/include/boost/asio/detail/completion_handler.hpp:
+
+/usr/include/boost/asio/basic_serial_port.hpp:
+
+/usr/include/string.h:
+
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
+
+/usr/include/boost/asio/basic_socket.hpp:
+
+/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
+
+/usr/include/boost/asio/basic_socket_iostream.hpp:
+
+/usr/include/boost/date_time/time_resolution_traits.hpp:
+
+/usr/include/boost/asio/socket_acceptor_service.hpp:
+
+/usr/include/boost/asio/basic_socket_acceptor.hpp:
+
+/usr/include/boost/asio/basic_stream_socket.hpp:
+
+/usr/include/boost/asio/basic_streambuf.hpp:
+
+/usr/include/boost/asio/basic_waitable_timer.hpp:
+
+/usr/include/boost/asio/detail/impl/posix_event.ipp:
+
+/usr/include/boost/asio/detail/thread.hpp:
+
+/usr/include/boost/asio/buffered_read_stream.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+
+/usr/include/boost/date_time/time.hpp:
+
+/usr/include/boost/asio/detail/impl/task_io_service.hpp:
+
+/usr/include/boost/asio/buffered_write_stream_fwd.hpp:
+
+/usr/include/boost/cstdint.hpp:
+
+/usr/include/boost/asio/buffers_iterator.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/limits:
+
+/usr/include/boost/asio/datagram_socket_service.hpp:
+
+/usr/include/boost/asio/deadline_timer.hpp:
+
+/root/SE_Intel/include/concurrentqueue.h:
+
+/usr/include/boost/asio/ip/detail/socket_option.hpp:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/boost/asio/deadline_timer_service.hpp:
+
+/usr/include/boost/asio/detail/array.hpp:
+
+/usr/include/boost/asio/detail/impl/reactive_serial_port_service.ipp:
+
+/usr/include/boost/asio/impl/io_service.hpp:
+
+/usr/include/boost/asio/detail/array_fwd.hpp:
+
+/usr/include/boost/asio/detail/base_from_completion_cond.hpp:
+
+/usr/include/boost/asio/detail/signal_handler.hpp:
+
+/usr/include/boost/asio/detail/buffer_resize_guard.hpp:
+
+_deps/json-src/include/nlohmann/detail/input/parser.hpp:
+
+/usr/include/boost/asio/detail/buffered_stream_storage.hpp:
+
+/usr/include/boost/asio/detail/call_stack.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/ext/atomicity.h:
+
+/usr/include/boost/asio/detail/date_time_fwd.hpp:
+
+/usr/include/boost/asio/streambuf.hpp:
+
+/usr/include/boost/asio/detail/dependent_type.hpp:
+
+/usr/include/boost/asio/detail/descriptor_read_op.hpp:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/boost/asio/detail/descriptor_write_op.hpp:
+
+/usr/include/boost/asio/detail/epoll_reactor.hpp:
+
+/usr/include/bits/ioctl-types.h:
+
+/usr/include/boost/regex/config/cwchar.hpp:
+
+/usr/include/boost/asio/ip/detail/impl/endpoint.ipp:
+
+/usr/include/boost/asio/detail/event.hpp:
+
+/usr/include/asm/errno.h:
+
+/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
+
+/usr/include/boost/asio/windows/random_access_handle_service.hpp:
+
+/usr/include/boost/asio/detail/gcc_x86_fenced_block.hpp:
+
+/usr/include/boost/asio/detail/handler_tracking.hpp:
+
+/usr/include/boost/asio/detail/impl/epoll_reactor.hpp:
+
+/usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf:
+
+/usr/include/boost/asio/detail/socket_ops.hpp:
+
+/usr/include/boost/asio/detail/impl/epoll_reactor.ipp:
+
+/usr/include/boost/exception/exception.hpp:
+
 /usr/include/boost/asio/detail/impl/handler_tracking.ipp:
 
 /usr/include/boost/preprocessor/list/fold_right.hpp:
 
+_deps/json-src/include/nlohmann/detail/meta/call_std/begin.hpp:
+
 /usr/include/boost/asio/detail/impl/posix_mutex.ipp:
+
+_deps/json-src/include/nlohmann/byte_container_with_subtype.hpp:
 
 /usr/include/bits/select.h:
 
@@ -4191,17 +4583,17 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/impl/reactive_descriptor_service.ipp:
 
-/usr/include/boost/version.hpp:
-
-/usr/include/boost/asio/detail/impl/reactive_socket_service_base.ipp:
-
 /usr/include/linux/limits.h:
 
 /usr/include/boost/asio/detail/impl/resolver_service_base.ipp:
 
+/usr/include/boost/asio/detail/impl/service_registry.hpp:
+
 /usr/include/boost/asio/detail/impl/service_registry.ipp:
 
-/usr/include/boost/type_traits/detail/ice_or.hpp:
+/usr/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/usr/include/boost/asio/detail/impl/socket_ops.ipp:
 
 /usr/include/boost/asio/basic_raw_socket.hpp:
 
@@ -4221,7 +4613,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/signal_set_service.hpp:
 
-/usr/include/boost/throw_exception.hpp:
+/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
+
+/usr/include/boost/memory_order.hpp:
+
+/usr/include/boost/asio/detail/keyword_tss_ptr.hpp:
 
 /usr/include/boost/asio/detail/noncopyable.hpp:
 
@@ -4258,18 +4654,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/detail/reactive_socket_recvmsg_op.hpp:
 
 /usr/include/boost/asio/detail/reactive_socket_send_op.hpp:
-
-/usr/include/boost/date_time/time_system_split.hpp:
-
-/usr/include/boost/system/api_config.hpp:
-
-/usr/include/boost/mpl/int.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cstdio:
-
-/usr/include/bits/sigcontext.h:
-
-/usr/include/boost/asio/detail/reactive_socket_service.hpp:
 
 /usr/include/boost/preprocessor/control/if.hpp:
 
@@ -4315,8 +4699,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/signal_op.hpp:
 
-/usr/include/boost/type_traits/add_rvalue_reference.hpp:
-
 /usr/include/boost/asio/detail/socket_holder.hpp:
 
 /usr/include/boost/type_traits/add_lvalue_reference.hpp:
@@ -4343,6 +4725,16 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/detail/timer_queue.hpp:
 
+/usr/include/boost/mpl/if.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/cstring:
+
+/usr/include/boost/asio/detail/timer_queue_base.hpp:
+
+/usr/include/boost/type_traits/is_convertible.hpp:
+
+/usr/include/boost/regex/config.hpp:
+
 /usr/include/boost/type_traits/detail/type_trait_undef.hpp:
 
 /usr/include/boost/asio/detail/timer_queue_fwd.hpp:
@@ -4350,14 +4742,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/detail/resolve_endpoint_op.hpp:
 
 /usr/include/boost/asio/detail/timer_queue_ptime.hpp:
-
-/usr/include/boost/asio/detail/timer_scheduler_fwd.hpp:
-
-/usr/include/boost/preprocessor/control/detail/while.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h:
-
-/usr/include/boost/type_traits/is_arithmetic.hpp:
 
 /usr/include/boost/asio/detail/tss_ptr.hpp:
 
@@ -4393,14 +4777,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/impl/handler_alloc_hook.ipp:
 
-/usr/include/boost/asio/detail/array_fwd.hpp:
-
-/usr/include/boost/asio/impl/io_service.hpp:
-
-/usr/include/getopt.h:
-
-/usr/include/boost/is_placeholder.hpp:
-
 /usr/include/boost/asio/impl/io_service.ipp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/optional:
@@ -4425,6 +4801,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/ip/basic_endpoint.hpp:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/slice_array.h:
+
 /usr/include/boost/asio/ip/basic_resolver.hpp:
 
 /usr/include/boost/asio/ip/host_name.hpp:
@@ -4439,11 +4817,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/ip/impl/address_v4.hpp:
 
+_deps/json-src/include/nlohmann/detail/string_escape.hpp:
+
 /usr/include/boost/asio/ip/impl/address_v4.ipp:
-
-/usr/include/boost/asio/ip/impl/address_v6.hpp:
-
-/usr/include/boost/date_time/gregorian/greg_weekday.hpp:
 
 /usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
 
@@ -4473,17 +4849,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/ip/unicast.hpp:
 
-/usr/include/boost/regex/config.hpp:
-
-/usr/include/boost/type_traits/is_convertible.hpp:
-
-/usr/local/include/websocketpp/transport/base/connection.hpp:
-
-/usr/include/boost/asio/local/connect_pair.hpp:
-
 /usr/include/boost/asio/local/detail/endpoint.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/predefined_ops.h:
+
+_deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp:
 
 /usr/include/boost/asio/local/detail/impl/endpoint.ipp:
 
@@ -4497,35 +4867,15 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/asio/posix/basic_stream_descriptor.hpp:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/forward_list.h:
+
 /usr/include/boost/date_time/gregorian/greg_duration_types.hpp:
-
-/usr/include/boost/detail/sp_typeinfo.hpp:
-
-/usr/include/boost/asio/posix/stream_descriptor_service.hpp:
-
-/usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
 /usr/local/include/websocketpp/common/platforms.hpp:
 
 /usr/include/boost/asio/read_at.hpp:
 
 /usr/include/boost/asio/read_until.hpp:
-
-/usr/local/include/websocketpp/processors/hybi07.hpp:
-
-/usr/include/boost/smart_ptr/detail/spinlock_sync.hpp:
-
-/root/SE_Intel/include/jemalloc.h:
-
-/usr/include/boost/asio/handler_alloc_hook.hpp:
-
-/usr/include/boost/asio/seq_packet_socket_service.hpp:
-
-/usr/include/boost/asio/serial_port.hpp:
-
-/usr/local/include/websocketpp/http/impl/parser.hpp:
-
-/usr/include/boost/date_time/microsec_time_clock.hpp:
 
 /usr/include/boost/asio/serial_port_base.hpp:
 
@@ -4545,6 +4895,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/limits.h:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/any:
+
 /usr/include/boost/mpl/lambda_fwd.hpp:
 
 /usr/include/boost/asio/detail/reactive_socket_recv_op.hpp:
@@ -4558,8 +4910,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/asio/windows/basic_object_handle.hpp:
 
 /usr/include/boost/asio/windows/object_handle_service.hpp:
-
-/usr/include/boost/asio/windows/stream_handle.hpp:
 
 /usr/include/boost/asio/windows/stream_handle_service.hpp:
 
@@ -4576,6 +4926,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/preprocessor/detail/is_binary.hpp:
 
 /usr/local/include/websocketpp/processors/hybi13.hpp:
+
+_deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/valarray_before.h:
 
 /usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
 
@@ -4621,12 +4975,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/date_time/gregorian/greg_month.hpp:
 
-/usr/include/boost/memory_order.hpp:
-
-/usr/include/boost/asio/detail/keyword_tss_ptr.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_ios.tcc:
 
 /usr/include/boost/date_time/gregorian/greg_ymd.hpp:
@@ -4648,6 +4996,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/date_time/posix_time/posix_time_config.hpp:
 
 /usr/include/boost/date_time/posix_time/posix_time_types.hpp:
+
+_deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
 
 /usr/include/boost/asio/impl/error.ipp:
 
@@ -4675,8 +5025,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/mpl/aux_/config/integral.hpp:
 
-/usr/include/boost/type_traits/is_abstract.hpp:
-
 /usr/local/include/websocketpp/http/parser.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algo.h:
@@ -4691,12 +5039,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc:
-
-/usr/include/boost/type_traits/integral_constant.hpp:
-
-/usr/include/boost/type_traits/detail/ice_not.hpp:
-
 /usr/include/boost/asio/ip/address_v6.hpp:
 
 /usr/include/boost/mpl/aux_/config/ttp.hpp:
@@ -4705,13 +5047,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/mpl/aux_/lambda_support.hpp:
 
-/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
-
-/usr/include/boost/type_traits/is_base_of.hpp:
-
-/usr/include/boost/mpl/aux_/na_fwd.hpp:
-
 /usr/include/boost/mpl/aux_/na_spec.hpp:
+
+_deps/json-src/include/nlohmann/detail/meta/detected.hpp:
 
 /usr/include/boost/preprocessor/config/config.hpp:
 
@@ -4720,12 +5058,6 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
 /usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/cstring:
-
-/usr/include/boost/asio/detail/timer_queue_base.hpp:
-
-/usr/include/boost/mpl/if.hpp:
 
 /usr/local/include/websocketpp/base64/base64.hpp:
 
@@ -4741,25 +5073,23 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/preprocessor/comma_if.hpp:
 
-/usr/include/boost/type_traits/detail/template_arity_spec.hpp:
-
 /usr/include/boost/preprocessor/control/expr_iif.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h:
 
 /usr/include/boost/shared_ptr.hpp:
 
-/usr/include/boost/preprocessor/control/iif.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
-/usr/include/boost/asio/connect.hpp:
+_deps/json-src/include/nlohmann/detail/json_custom_base_class.hpp:
 
 /usr/include/bits/locale.h:
 
 /usr/include/boost/preprocessor/control/while.hpp:
 
-/usr/include/boost/date_time/date_generators.hpp:
+/usr/include/boost/asio/connect.hpp:
 
-/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
+/usr/include/boost/date_time/date_generators.hpp:
 
 /usr/include/boost/preprocessor/detail/auto_rec.hpp:
 
@@ -4787,6 +5117,8 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
+_deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp:
+
 /usr/include/boost/preprocessor/repeat.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tree.h:
@@ -4795,11 +5127,11 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/preprocessor/repetition/enum_params.hpp:
 
-/root/vcpkg/packages/jsoncpp_x64-linux/include/json/config.h:
-
 /usr/include/boost/preprocessor/variadic/elem.hpp:
 
 /usr/include/boost/preprocessor/variadic/size.hpp:
+
+_deps/json-src/include/nlohmann/detail/exceptions.hpp:
 
 /usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
 
@@ -4808,59 +5140,3 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/boost/smart_ptr/detail/operator_bool.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
-
-/usr/include/boost/smart_ptr/detail/spinlock.hpp:
-
-/usr/include/boost/static_assert.hpp:
-
-/usr/include/strings.h:
-
-/usr/include/boost/system/config.hpp:
-
-/usr/include/boost/type_traits/add_const.hpp:
-
-/usr/include/boost/asio/detail/scoped_ptr.hpp:
-
-/usr/include/boost/type_traits/add_reference.hpp:
-
-/usr/include/boost/type_traits/config.hpp:
-
-/usr/include/boost/type_traits/detail/bool_trait_def.hpp:
-
-/usr/include/boost/asio/detail/socket_ops.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf:
-
-/usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
-
-/usr/local/include/websocketpp/random/none.hpp:
-
-/usr/include/boost/type_traits/detail/false_result.hpp:
-
-/usr/include/boost/type_traits/detail/ice_and.hpp:
-
-/usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
-
-/usr/include/boost/type_traits/detail/type_trait_def.hpp:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
-
-/usr/include/boost/type_traits/intrinsics.hpp:
-
-/usr/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/include/boost/type_traits/is_function.hpp:
-
-/usr/include/boost/type_traits/is_integral.hpp:
-
-/usr/include/boost/asio/detail/impl/socket_ops.ipp:
-
-/usr/include/boost/type_traits/is_lvalue_reference.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream_insert.h:
-
-/usr/include/boost/type_traits/is_reference.hpp:
-
-/usr/include/boost/type_traits/is_same.hpp:
-
-/usr/include/boost/type_traits/is_void.hpp:

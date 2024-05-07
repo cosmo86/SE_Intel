@@ -1,4 +1,5 @@
 #include "../include/L2_quoter.hpp"//头文件信息
+using namespace std;
 	//初始化，账号，密码，连接地址,数据库，网络
     void Lev2MdSpi::init(char * userid,char * password,char * address){
         strcpy(this->userid,userid);//账号

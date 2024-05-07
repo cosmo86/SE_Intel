@@ -13,14 +13,10 @@ int main(){
     sleep(3);
     spi.add();
     // 使用 std::bind 创建可调用对象并传递给 std::thread
-    std::thread websocket(std::bind(&Lev2MdSpi::init_CH_SV, &spi));//线程处理网络
+    std::thread websocket(&Lev2MdSpi::init_CH_SV, &spi);//线程处理网络
     //线程处理对应函数。
-    std::thread ClickHouse(std::bind(&Lev2MdSpi::manage_CH,&spi));
+    std::thread ClickHouse(&Lev2MdSpi::manage_CH,&spi);
     //主线程阻塞并等待处理
-    std::cout<<sizeof(CTORATstpLev2MarketDataField)<<endl;
-    std::cout<<sizeof(CTORATstpLev2NGTSTickField)<<endl;
-    std::cout<<sizeof(CTORATstpLev2TransactionField)<<endl;
-    std::cout<<sizeof(CTORATstpLev2OrderDetailField)<<endl;
     while(1){
         //cout<<spi.k<<endl;
         if(spi.k>1000){
