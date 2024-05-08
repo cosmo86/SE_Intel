@@ -184,7 +184,7 @@ absl__int128_print_debug_info: cmake_check_build_system
 
 # fast build rule for target.
 absl__int128_print_debug_info/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/CMakeFiles/absl__int128_print_debug_info.dir/build.make zimulu/CMakeFiles/absl__int128_print_debug_info.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/CMakeFiles/absl__int128_print_debug_info.dir/build.make include_clickhouse/CMakeFiles/absl__int128_print_debug_info.dir/build
 .PHONY : absl__int128_print_debug_info/fast
 
 #=============================================================================
@@ -197,7 +197,7 @@ cityhash__cityhash_print_debug_info: cmake_check_build_system
 
 # fast build rule for target.
 cityhash__cityhash_print_debug_info/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/CMakeFiles/cityhash__cityhash_print_debug_info.dir/build.make zimulu/CMakeFiles/cityhash__cityhash_print_debug_info.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/CMakeFiles/cityhash__cityhash_print_debug_info.dir/build.make include_clickhouse/CMakeFiles/cityhash__cityhash_print_debug_info.dir/build
 .PHONY : cityhash__cityhash_print_debug_info/fast
 
 #=============================================================================
@@ -210,7 +210,7 @@ lz4__lz4_print_debug_info: cmake_check_build_system
 
 # fast build rule for target.
 lz4__lz4_print_debug_info/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/CMakeFiles/lz4__lz4_print_debug_info.dir/build.make zimulu/CMakeFiles/lz4__lz4_print_debug_info.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/CMakeFiles/lz4__lz4_print_debug_info.dir/build.make include_clickhouse/CMakeFiles/lz4__lz4_print_debug_info.dir/build
 .PHONY : lz4__lz4_print_debug_info/fast
 
 #=============================================================================
@@ -223,7 +223,7 @@ absl_int128: cmake_check_build_system
 
 # fast build rule for target.
 absl_int128/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/contrib/absl/absl/CMakeFiles/absl_int128.dir/build.make zimulu/contrib/absl/absl/CMakeFiles/absl_int128.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/contrib/absl/absl/CMakeFiles/absl_int128.dir/build.make include_clickhouse/contrib/absl/absl/CMakeFiles/absl_int128.dir/build
 .PHONY : absl_int128/fast
 
 #=============================================================================
@@ -236,7 +236,7 @@ lz4: cmake_check_build_system
 
 # fast build rule for target.
 lz4/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/contrib/lz4/lz4/CMakeFiles/lz4.dir/build.make zimulu/contrib/lz4/lz4/CMakeFiles/lz4.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/contrib/lz4/lz4/CMakeFiles/lz4.dir/build.make include_clickhouse/contrib/lz4/lz4/CMakeFiles/lz4.dir/build
 .PHONY : lz4/fast
 
 #=============================================================================
@@ -249,7 +249,7 @@ cityhash: cmake_check_build_system
 
 # fast build rule for target.
 cityhash/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/build.make zimulu/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/build.make include_clickhouse/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/build
 .PHONY : cityhash/fast
 
 #=============================================================================
@@ -262,7 +262,7 @@ clickhouse-cpp-lib: cmake_check_build_system
 
 # fast build rule for target.
 clickhouse-cpp-lib/fast:
-	$(MAKE) $(MAKESILENT) -f zimulu/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build.make zimulu/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build
+	$(MAKE) $(MAKESILENT) -f include_clickhouse/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build.make include_clickhouse/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/build
 .PHONY : clickhouse-cpp-lib/fast
 
 ClickHouse.o: ClickHouse.cpp.o
@@ -312,6 +312,30 @@ L2_quoter.s: L2_quoter.cpp.s
 L2_quoter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/L2_quoter.cpp.s
 .PHONY : L2_quoter.cpp.s
+
+async_logger.o: async_logger.cpp.o
+.PHONY : async_logger.o
+
+# target to build an object file
+async_logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/async_logger.cpp.o
+.PHONY : async_logger.cpp.o
+
+async_logger.i: async_logger.cpp.i
+.PHONY : async_logger.i
+
+# target to preprocess a source file
+async_logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/async_logger.cpp.i
+.PHONY : async_logger.cpp.i
+
+async_logger.s: async_logger.cpp.s
+.PHONY : async_logger.s
+
+# target to generate assembly for a file
+async_logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/async_logger.cpp.s
+.PHONY : async_logger.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -387,6 +411,9 @@ help:
 	@echo "... L2_quoter.o"
 	@echo "... L2_quoter.i"
 	@echo "... L2_quoter.s"
+	@echo "... async_logger.o"
+	@echo "... async_logger.i"
+	@echo "... async_logger.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

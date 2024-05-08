@@ -237,8 +237,11 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
+ /root/SE_Intel/src/../include/concurrentqueue.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/iostream \
  /root/SE_Intel/src/../include/TORATstpLev2ApiStruct.h \
  /root/SE_Intel/src/../include/TORATstpLev2ApiDataType.h \
@@ -252,9 +255,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/local/include/websocketpp/common/stdint.hpp \
  /usr/local/include/websocketpp/concurrency/basic.hpp \
  /usr/local/include/websocketpp/common/thread.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
  /opt/rh/devtoolset-8/root/usr/include/c++/8/condition_variable \
  /usr/local/include/websocketpp/transport/iostream/endpoint.hpp \
  /usr/local/include/websocketpp/transport/base/endpoint.hpp \
@@ -367,7 +367,6 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/boost/asio/detail/op_queue.hpp \
  /usr/include/boost/asio/detail/task_io_service_fwd.hpp \
  /usr/include/boost/asio/detail/thread_info_base.hpp \
- /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
  /usr/include/boost/asio/detail/handler_invoke_helpers.hpp \
  /usr/include/boost/asio/handler_invoke_hook.hpp \
  /usr/include/boost/asio/impl/io_service.hpp \
@@ -811,6 +810,8 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/local/include/websocketpp/utf8_validator.hpp \
  /usr/local/include/websocketpp/processors/processor.hpp \
  /usr/local/include/websocketpp/processors/base.hpp \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
  /usr/local/include/websocketpp/impl/connection_impl.hpp \
  /usr/local/include/websocketpp/processors/hybi00.hpp \
  /usr/local/include/websocketpp/common/md5.hpp \
@@ -890,6 +891,14 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
  /usr/include/openssl/sha.h /usr/include/openssl/e_os2.h \
  /usr/include/openssl/opensslconf.h \
  /usr/include/openssl/opensslconf-x86_64.h \
+ /root/SE_Intel/src/../include/async_logger.hpp \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/fstream \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
+ /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fstream.tcc \
+ /root/SE_Intel/src/../include/Event.h /usr/include/fmt/ostream.h \
+ /usr/include/fmt/format.h /usr/include/fmt/core.h \
+ /usr/include/fmt/color.h /usr/include/fmt/format.h \
  /root/SE_Intel/src/../include/jemalloc.h \
  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdbool.h \
- /usr/include/strings.h /root/SE_Intel/src/../include/concurrentqueue.h
+ /usr/include/strings.h

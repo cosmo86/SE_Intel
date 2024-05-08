@@ -65,21 +65,21 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/json-build/nlohmann_jsonConfigVersion.cmake"
   "_deps/json-build/nlohmann_jsonConfig.cmake"
   "_deps/json-build/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "zimulu/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "zimulu/contrib/absl/absl/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "zimulu/contrib/lz4/lz4/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "zimulu/contrib/cityhash/cityhash/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "zimulu/clickhouse/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include_clickhouse/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include_clickhouse/contrib/absl/absl/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include_clickhouse/contrib/lz4/lz4/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include_clickhouse/contrib/cityhash/cityhash/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "include_clickhouse/clickhouse/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
-  "zimulu/CMakeFiles/absl__int128_print_debug_info.dir/DependInfo.cmake"
-  "zimulu/CMakeFiles/cityhash__cityhash_print_debug_info.dir/DependInfo.cmake"
-  "zimulu/CMakeFiles/lz4__lz4_print_debug_info.dir/DependInfo.cmake"
-  "zimulu/contrib/absl/absl/CMakeFiles/absl_int128.dir/DependInfo.cmake"
-  "zimulu/contrib/lz4/lz4/CMakeFiles/lz4.dir/DependInfo.cmake"
-  "zimulu/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/DependInfo.cmake"
-  "zimulu/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/DependInfo.cmake"
+  "include_clickhouse/CMakeFiles/absl__int128_print_debug_info.dir/DependInfo.cmake"
+  "include_clickhouse/CMakeFiles/cityhash__cityhash_print_debug_info.dir/DependInfo.cmake"
+  "include_clickhouse/CMakeFiles/lz4__lz4_print_debug_info.dir/DependInfo.cmake"
+  "include_clickhouse/contrib/absl/absl/CMakeFiles/absl_int128.dir/DependInfo.cmake"
+  "include_clickhouse/contrib/lz4/lz4/CMakeFiles/lz4.dir/DependInfo.cmake"
+  "include_clickhouse/contrib/cityhash/cityhash/CMakeFiles/cityhash.dir/DependInfo.cmake"
+  "include_clickhouse/clickhouse/CMakeFiles/clickhouse-cpp-lib.dir/DependInfo.cmake"
   )

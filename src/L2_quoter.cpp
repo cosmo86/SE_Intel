@@ -9,6 +9,7 @@ using namespace std;
         m_api->RegisterFront(address);//调用 RegisterFront 方法注册前置机地址
         m_api->RegisterSpi(this);//派生自回调接口类的实例
         m_api->Init();
+        logger=GetLogger();
         std::cout<<"Init yes"<<std::endl;
     }
     //初始化网络和数据库，并接受数据库数据

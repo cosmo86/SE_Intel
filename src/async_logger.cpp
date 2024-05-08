@@ -1,4 +1,4 @@
-#include "../include/async_logger.h"
+#include "../include/async_logger.hpp"
 #include <chrono>
 #include <ctime>
 #include <sstream>
@@ -105,9 +105,6 @@ void AsyncFileLogger::flushQueue() {//最后执行
     }
     ofs.close();
 }
-
-
-
 LoggerPtr GetLogger() {
     static LoggerPtr logger = new AsyncFileLogger(CusLogger_LogLevel::DEBUG,CusLogger_LogLevel::WARN,6);
     return logger;

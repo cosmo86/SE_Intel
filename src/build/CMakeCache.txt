@@ -29,7 +29,7 @@ BUILD_TESTS:BOOL=OFF
 CHECK_VERSION:BOOL=OFF
 
 //Value Computed by CMake
-CLICKHOUSE-CLIENT_BINARY_DIR:STATIC=/root/SE_Intel/src/build/zimulu
+CLICKHOUSE-CLIENT_BINARY_DIR:STATIC=/root/SE_Intel/src/build/include_clickhouse
 
 //Value Computed by CMake
 CLICKHOUSE-CLIENT_IS_TOP_LEVEL:STATIC=OFF

@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
-#include <queue>
+#include "concurrentqueue.h"
 #include <iostream>
 #include "TORATstpLev2ApiStruct.h"
 #include "TORATstpLev2ApiDataType.h"
@@ -16,10 +16,10 @@ class ClickHouse{
     private:
         Client client;
         static std::string getCurrentDate();
-        std::queue<std::string> transactionQueue;
-        std::queue<std::string> orderDetailQueue;
-        std::queue<std::string> ngtstickQueue;
-        std::queue<std::string> marketDataQueue;
+        moodycamel::ConcurrentQueue<std::string> transactionQueue;
+        moodycamel::ConcurrentQueue<std::string> orderDetailQueue;
+        moodycamel::ConcurrentQueue<std::string> ngtstickQueue;
+       moodycamel::ConcurrentQueue<std::string> marketDataQueue;
         std::time_t lastMarketDataTime = std::time(nullptr); 
         std::time_t lastNGTSTicTime = std::time(nullptr); 
         std::time_t lastTransactionTime = std::time(nullptr); 

@@ -59,6 +59,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_function.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algo.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algobase.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_bvector.h \
@@ -72,7 +73,6 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_multimap.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
@@ -94,6 +94,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cerrno \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/chrono \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ciso646 \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
@@ -126,10 +127,10 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/limits \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/map \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
-  /opt/rh/devtoolset-8/root/usr/include/c++/8/queue \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
@@ -137,6 +138,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/string \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/string_view \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/system_error \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/beta_function.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/ell_integral.tcc \
@@ -176,6 +178,7 @@ CMakeFiles/main.dir/ClickHouse.cpp.o: /root/SE_Intel/src/ClickHouse.cpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/concurrentqueue.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/uuid.h \
   /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/block.h \
@@ -311,6 +314,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h \
@@ -421,6 +425,7 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/fstream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
@@ -468,8 +473,10 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h \
@@ -488,10 +495,12 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
   /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
   /root/SE_Intel/include/ClickHouse.hpp \
+  /root/SE_Intel/include/Event.h \
   /root/SE_Intel/include/L2_quoter.hpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/async_logger.hpp \
   /root/SE_Intel/include/concurrentqueue.h \
   /root/SE_Intel/include/jemalloc.h \
   /root/SE_Intel/include/service.hpp \
@@ -1137,6 +1146,10 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /usr/include/errno.h \
   /usr/include/fcntl.h \
   /usr/include/features.h \
+  /usr/include/fmt/color.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/ostream.h \
   /usr/include/getopt.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
@@ -1258,6 +1271,263 @@ CMakeFiles/main.dir/L2_quoter.cpp.o: /root/SE_Intel/src/L2_quoter.cpp \
   /usr/local/include/websocketpp/utilities.hpp \
   /usr/local/include/websocketpp/version.hpp
 
+CMakeFiles/main.dir/async_logger.cpp.o: /root/SE_Intel/src/async_logger.cpp \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/array \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/atomic \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/auto_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/backward/binders.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/algorithmfwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/alloc_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/allocated_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/atomic_lockfree_defines.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_ios.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_ios.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_string.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/basic_string.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/char_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/codecvt.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/concept_check.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cpp_type_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cxxabi_forced.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/cxxabi_init_exception.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_defines.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/exception_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_dir.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fstream.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hash_bytes.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/hashtable_policy.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ios_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/istream.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_classes.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_classes.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_conv.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/localefwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/memoryfwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/move.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/nested_exception.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/node_handle.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream_insert.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/parse_numbers.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/postypes.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/predefined_ops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ptr_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/quoted_string.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/range_access.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/refwrap.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/specfun.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/sstream.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_abs.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_function.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algo.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_algobase.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_bvector.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_construct.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_function.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_heap.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_funcs.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_types.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_pair.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_tempbuf.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_uninitialized.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_vector.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stream_iterator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/streambuf.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/streambuf_iterator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/string_view.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stringfwd.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uniform_int_dist.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unordered_map.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/uses_allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/vector.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cctype \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cerrno \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/chrono \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/climits \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/clocale \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cmath \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstddef \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdint \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdio \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstdlib \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cstring \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ctime \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cwchar \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/cwctype \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/assertions.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/debug/debug.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/exception \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/aligned_buffer.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/alloc_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/atomicity.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/concurrence.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/new_allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/numeric_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/string_conversions.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/fstream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ios \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/iosfwd \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/iostream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/istream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/iterator \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/limits \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/locale \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/memory \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/mutex \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/new \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/optional \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ostream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/ratio \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/sstream \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/stdexcept \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/streambuf \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/string \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/string_view \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/system_error \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/thread \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/bessel_function.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/beta_function.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/ell_integral.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/exp_integral.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/gamma.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/hypergeometric.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/legendre_function.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/modified_bessel_func.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_hermite.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/poly_laguerre.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/riemann_zeta.tcc \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/tuple \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/type_traits \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/typeinfo \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/unordered_map \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/utility \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/messages_members.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/time_members.h \
+  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
+  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h \
+  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
+  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
+  /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
+  /root/SE_Intel/include/Event.h \
+  /root/SE_Intel/include/async_logger.hpp \
+  /root/SE_Intel/include/concurrentqueue.h \
+  /usr/include/_G_config.h \
+  /usr/include/alloca.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/assert.h \
+  /usr/include/bits/byteswap-16.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/errno.h \
+  /usr/include/bits/huge_val.h \
+  /usr/include/bits/huge_valf.h \
+  /usr/include/bits/huge_vall.h \
+  /usr/include/bits/inf.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/bits/locale.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathdef.h \
+  /usr/include/bits/nan.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/sched.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/sigset.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/sys_errlist.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/ctype.h \
+  /usr/include/endian.h \
+  /usr/include/errno.h \
+  /usr/include/features.h \
+  /usr/include/fmt/color.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/ostream.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/libintl.h \
+  /usr/include/libio.h \
+  /usr/include/limits.h \
+  /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
+  /usr/include/locale.h \
+  /usr/include/math.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/sysmacros.h \
+  /usr/include/sys/types.h \
+  /usr/include/time.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/xlocale.h
+
 CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/algorithm \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/any \
@@ -1292,6 +1562,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_fwd.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_ops.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fs_path.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fstream.tcc \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functexcept.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/functional_hash.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/gslice.h \
@@ -1402,6 +1673,7 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/type_traits.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/fstream \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/functional \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/initializer_list \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip \
@@ -1449,8 +1721,10 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/valarray \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/vector \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h \
+  /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h \
   /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h \
@@ -1469,10 +1743,12 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h \
   /opt/rh/devtoolset-8/root/usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
   /root/SE_Intel/include/ClickHouse.hpp \
+  /root/SE_Intel/include/Event.h \
   /root/SE_Intel/include/L2_quoter.hpp \
   /root/SE_Intel/include/TORATstpLev2ApiDataType.h \
   /root/SE_Intel/include/TORATstpLev2ApiStruct.h \
   /root/SE_Intel/include/TORATstpLev2MdApi.h \
+  /root/SE_Intel/include/async_logger.hpp \
   /root/SE_Intel/include/concurrentqueue.h \
   /root/SE_Intel/include/jemalloc.h \
   /root/SE_Intel/include/service.hpp \
@@ -2118,6 +2394,10 @@ CMakeFiles/main.dir/main.cpp.o: /root/SE_Intel/src/main.cpp \
   /usr/include/errno.h \
   /usr/include/fcntl.h \
   /usr/include/features.h \
+  /usr/include/fmt/color.h \
+  /usr/include/fmt/core.h \
+  /usr/include/fmt/format.h \
+  /usr/include/fmt/ostream.h \
   /usr/include/getopt.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
@@ -3281,6 +3561,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/linux/falloc.h:
 
+/usr/include/fmt/format.h:
+
+/usr/include/fmt/color.h:
+
 /usr/include/fcntl.h:
 
 /usr/include/boost/utility/enable_if.hpp:
@@ -3369,13 +3653,9 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 
 /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream.tcc:
+/usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
 
-/usr/include/boost/asio/basic_datagram_socket.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
-
-/usr/include/boost/asio.hpp:
+/usr/include/boost/smart_ptr/detail/shared_count.hpp:
 
 /usr/include/bits/termios.h:
 
@@ -3404,6 +3684,10 @@ CMakeFiles/main.dir/service.cpp.o: /root/SE_Intel/src/service.cpp \
 /usr/include/asm/posix_types.h:
 
 /usr/include/bits/waitstatus.h:
+
+/usr/include/boost/regex_fwd.hpp:
+
+/usr/include/boost/asio/ip/impl/basic_endpoint.hpp:
 
 /usr/include/asm/bitsperlong.h:
 
@@ -3467,6 +3751,8 @@ _deps/json-src/include/nlohmann/detail/json_pointer.hpp:
 
 /usr/include/bits/huge_vall.h:
 
+/root/SE_Intel/include/async_logger.hpp:
+
 /usr/include/linux/errno.h:
 
 _deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp:
@@ -3474,6 +3760,10 @@ _deps/json-src/include/nlohmann/detail/iterators/iterator_traits.hpp:
 _deps/json-src/include/nlohmann/detail/iterators/internal_iterator.hpp:
 
 _deps/json-src/include/nlohmann/detail/input/lexer.hpp:
+
+/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
+
+_deps/json-src/include/nlohmann/detail/exceptions.hpp:
 
 /usr/include/getopt.h:
 
@@ -3485,7 +3775,9 @@ _deps/json-src/include/nlohmann/detail/input/lexer.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h:
 
-/usr/include/boost/preprocessor/control/iif.hpp:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/c++io.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/queue:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/numeric:
 
@@ -3497,9 +3789,19 @@ _deps/json-src/include/nlohmann/detail/input/json_sax.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/iomanip:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/fstream:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/csignal:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/climits:
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h:
+
+/usr/include/boost/mpl/integral_c.hpp:
+
+/usr/include/boost/smart_ptr/detail/operator_bool.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.h:
 
@@ -3523,17 +3825,7 @@ _deps/json-src/include/nlohmann/detail/input/json_sax.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/exceptions.h:
 
-/usr/include/bits/uio.h:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/codecvt.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/thread:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/exp_integral.tcc:
-
-/usr/include/xlocale.h:
-
-/usr/include/boost/asio/buffered_stream.hpp:
 
 /usr/include/wctype.h:
 
@@ -3641,6 +3933,8 @@ _deps/json-src/include/nlohmann/detail/conversions/from_json.hpp:
 
 /usr/include/bits/stdlib-float.h:
 
+/usr/include/fmt/ostream.h:
+
 /usr/include/bits/sigset.h:
 
 /usr/include/netdb.h:
@@ -3694,6 +3988,8 @@ _deps/json-src/include/nlohmann/ordered_map.hpp:
 /opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/special_function_util.h:
 
 /usr/include/bits/nan.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/basic_file.h:
 
 /usr/include/bits/mathdef.h:
 
@@ -3753,6 +4049,8 @@ _deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/forward_list:
 
+/usr/include/fmt/core.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets_nonio.tcc:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/policy_checks.h:
@@ -3778,6 +4076,14 @@ _deps/json-src/include/nlohmann/detail/meta/std_fs.hpp:
 _deps/json-src/include/nlohmann/detail/abi_macros.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/utils.h:
+
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h:
+
+/usr/include/boost/asio/detail/completion_handler.hpp:
+
+/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/numeric.h:
+
+/usr/include/boost/mpl/aux_/config/workaround.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/cassert:
 
@@ -3819,8 +4125,6 @@ _deps/json-src/include/nlohmann/detail/abi_macros.hpp:
 
 /usr/include/boost/asio/detail/service_registry.hpp:
 
-/usr/include/boost/smart_ptr/detail/shared_count.hpp:
-
 _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ios:
@@ -3828,6 +4132,8 @@ _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp:
 /usr/local/include/websocketpp/connection.hpp:
 
 /usr/include/boost/iterator.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/climits:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/base/open_telemetry.h:
 
@@ -3871,7 +4177,9 @@ _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_relops.h:
 
-/usr/include/boost/asio/signal_set_service.hpp:
+/usr/include/boost/shared_ptr.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h:
 
 /usr/include/boost/asio/basic_seq_packet_socket.hpp:
 
@@ -3882,12 +4190,6 @@ _deps/json-src/include/nlohmann/detail/input/binary_reader.hpp:
 _deps/json-src/include/nlohmann/detail/hash.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/enable_special_members.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_map.h:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_queue.h:
-
-/usr/include/boost/mpl/integral_c.hpp:
 
 /usr/local/include/websocketpp/transport/base/endpoint.hpp:
 
@@ -3902,6 +4204,8 @@ _deps/json-src/include/nlohmann/detail/hash.hpp:
 /usr/include/boost/mpl/aux_/na.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/shared_ptr_atomic.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/ostream.tcc:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/filesystem:
 
@@ -3941,6 +4245,10 @@ _deps/json-src/include/nlohmann/detail/hash.hpp:
 
 /usr/include/boost/preprocessor/facilities/overload.hpp:
 
+/usr/include/xlocale.h:
+
+/usr/include/boost/asio/buffered_stream.hpp:
+
 /usr/local/include/websocketpp/frame.hpp:
 
 _deps/json-src/include/nlohmann/detail/macro_scope.hpp:
@@ -3963,9 +4271,9 @@ _deps/json-src/include/nlohmann/detail/meta/void_t.hpp:
 
 /root/SE_Intel/include/ClickHouse.hpp:
 
-/usr/include/boost/asio/basic_deadline_timer.hpp:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/stdlib.h:
+
+/usr/include/boost/asio/basic_deadline_timer.hpp:
 
 /usr/include/boost/config.hpp:
 
@@ -4000,10 +4308,6 @@ _deps/json-src/include/nlohmann/detail/conversions/to_json.hpp:
 /usr/include/boost/asio/detail/signal_blocker.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/inc.hpp:
-
-/usr/include/boost/asio/ip/impl/basic_endpoint.hpp:
-
-/usr/include/boost/regex_fwd.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/ext/aligned_buffer.h:
 
@@ -4079,8 +4383,6 @@ _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/invoke.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/queue:
-
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/std_mutex.h:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/locale_facets.h:
@@ -4151,9 +4453,9 @@ _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 
 /usr/include/sys/types.h:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_funcs.h:
-
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/tuple.h:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator_base_funcs.h:
 
 /usr/include/boost/asio/detail/bind_handler.hpp:
 
@@ -4170,10 +4472,6 @@ _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 /usr/local/include/websocketpp/processors/processor.hpp:
 
 /usr/include/boost/preprocessor/logical/and.hpp:
-
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/numeric.h:
-
-/usr/include/boost/mpl/aux_/config/workaround.hpp:
 
 /usr/local/include/websocketpp/version.hpp:
 
@@ -4235,9 +4533,9 @@ _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 
 /usr/include/boost/asio/detail/mutex.hpp:
 
-/opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt:
-
 /usr/include/boost/mpl/aux_/config/lambda.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/codecvt:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/nullable.h:
 
@@ -4258,6 +4556,8 @@ _deps/json-src/include/nlohmann/detail/output/output_adapters.hpp:
 /opt/rh/devtoolset-8/root/usr/include/c++/8/istream:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/functional:
+
+/usr/include/boost/asio.hpp:
 
 /usr/include/boost/preprocessor/detail/check.hpp:
 
@@ -4311,6 +4611,10 @@ _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp:
 
 /usr/include/boost/config/abi_suffix.hpp:
 
+/opt/rh/devtoolset-8/root/usr/include/c++/8/thread:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/tr1/exp_integral.tcc:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/indirect_array.h:
 
 /usr/include/bits/fcntl.h:
@@ -4355,6 +4659,10 @@ _deps/json-src/include/nlohmann/detail/conversions/to_chars.hpp:
 
 _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp:
 
+/usr/include/boost/asio/signal_set_service.hpp:
+
+/root/SE_Intel/include/Event.h:
+
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_raw_storage_iter.h:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/contrib/absl/absl/base/config.h:
@@ -4394,6 +4702,8 @@ _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp:
 /usr/include/boost/config/posix_features.hpp:
 
 /root/SE_Intel/include/TORATstpLev2ApiDataType.h:
+
+/usr/include/boost/preprocessor/control/iif.hpp:
 
 /opt/rh/devtoolset-8/root/usr/include/c++/8/bits/stl_iterator.h:
 
@@ -4441,9 +4751,11 @@ _deps/json-src/include/nlohmann/detail/iterators/iteration_proxy.hpp:
 
 /root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/map.h:
 
-/root/clickhouse-app/contribs/clickhouse-cpp/clickhouse/columns/string.h:
+/usr/include/bits/uio.h:
 
-/usr/include/boost/asio/detail/completion_handler.hpp:
+/usr/include/boost/asio/basic_datagram_socket.hpp:
+
+/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
 /usr/include/boost/asio/basic_serial_port.hpp:
 
@@ -4925,6 +5237,10 @@ _deps/json-src/include/nlohmann/thirdparty/hedley/hedley.hpp:
 
 /usr/include/boost/preprocessor/detail/is_binary.hpp:
 
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
+
+/usr/include/boost/config/no_tr1/cmath.hpp:
+
 /usr/local/include/websocketpp/processors/hybi13.hpp:
 
 _deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp:
@@ -4948,6 +5264,8 @@ _deps/json-src/include/nlohmann/detail/iterators/iter_impl.hpp:
 /usr/include/boost/date_time/posix_time/date_duration_operators.hpp:
 
 /usr/include/boost/date_time/adjust_functors.hpp:
+
+/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/fstream.tcc:
 
 /usr/include/stdio.h:
 
@@ -5049,13 +5367,11 @@ _deps/json-src/include/nlohmann/detail/iterators/json_reverse_iterator.hpp:
 
 /usr/include/boost/mpl/aux_/na_spec.hpp:
 
+/root/SE_Intel/src/async_logger.cpp:
+
 _deps/json-src/include/nlohmann/detail/meta/detected.hpp:
 
 /usr/include/boost/preprocessor/config/config.hpp:
-
-/usr/include/boost/config/no_tr1/cmath.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
 /usr/include/boost/mpl/aux_/static_cast.hpp:
 
@@ -5074,10 +5390,6 @@ _deps/json-src/include/nlohmann/detail/meta/detected.hpp:
 /usr/include/boost/preprocessor/comma_if.hpp:
 
 /usr/include/boost/preprocessor/control/expr_iif.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/bits/unique_ptr.h:
-
-/usr/include/boost/shared_ptr.hpp:
 
 /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
@@ -5130,13 +5442,3 @@ _deps/json-src/include/nlohmann/detail/meta/cpp_future.hpp:
 /usr/include/boost/preprocessor/variadic/elem.hpp:
 
 /usr/include/boost/preprocessor/variadic/size.hpp:
-
-_deps/json-src/include/nlohmann/detail/exceptions.hpp:
-
-/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
-
-/opt/rh/devtoolset-8/root/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h:
-
-/usr/include/boost/smart_ptr/detail/operator_bool.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_convertible.hpp:

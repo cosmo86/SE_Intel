@@ -29,8 +29,7 @@
 #include <thread>
 #include <sstream>
 #include <ctime>
-//#include "/root/json/include/nlohmann/json.hpp"
-//#include "/root/vcpkg/packages/jsoncpp_x64-linux/include/json/json.h"
+#include "async_logger.hpp"//???
 #include <vector>
 #include <thread>
 #include <mutex>
@@ -45,7 +44,7 @@ class Lev2MdSpi : public CTORATstpLev2MdSpi{
 public:
 	Lev2MdSpi():CH(),SV(),m_api(nullptr),m_request_id(0){};
     Lev2MdSpi(CTORATstpLev2MdApi *api):m_api(api),m_request_id(0){};
-    ~Lev2MdSpi(){};
+    ~Lev2MdSpi(){    logger->stop();};
 public:
 	int k=-1;
 	double ans[10100]={0};
@@ -78,7 +77,7 @@ private:
 	char  address[64];
 	ClickHouse CH;
 	service SV;
-
+	LoggerPtr logger;
 	/*memory_pool<TORALEV2API::CTORATstpLev2MarketDataField> MarketData;
 	memory_pool<TORALEV2API::CTORATstpLev2NGTSTickField> NGTSTick;
 	memory_pool<TORALEV2API::CTORATstpLev2TransactionField> Transaction;
