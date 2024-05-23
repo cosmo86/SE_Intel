@@ -10,16 +10,100 @@ using namespace std;
         m_api->RegisterSpi(this);//派生自回调接口类的实例
         m_api->Init();
         logger=GetLogger();
-        std::cout<<"Init yes"<<std::endl;
+        logger->info("Init yes");
     }
     //初始化网络和数据库，并接受数据库数据
-    void Lev2MdSpi::init_CH_SV(){
-        this->CH.clickhouse_init();//数据库初始化
-        this->SV.service_init();//网络初始化
+    void Lev2MdSpi::Service(){
+        //this->SV.service_init(bind(&Lev2MdSpi::recive_,this,_1));//网络初始化
+        this->SV.service_init(std::function<void(void*)>(std::bind(&Lev2MdSpi::recive_, this, std::placeholders::_1)));
+    }
+    void Lev2MdSpi:: recive_(void*it){
+        json *pt=(json*)it;
+        json data=*pt;
+        if(strncmp(data["type"].get<std::string>().c_str(),"Sendinput",9)==0){
+            //std::cout<<data<<std::endl;
+            inputstrategy*ptr=new inputstrategy();
+            ptr->SecurityID=data["data"]["SecurityID"];
+            ptr->ExchangeID=data["data"]["ExchangeID"];
+            ptr-> BuyTriggerVolume=data["data"]["BuyTriggerVolume"];
+            ptr->CancelVolume=data["data"]["CancelVolume"];
+            ptr-> DBVolume=data["data"]["DBVolume"];
+            ptr-> ordercancellationcount=data["data"]["ordercancellationcount"];
+            ptr-> MaxTriggerTimes=data["data"]["MaxTriggerTimes"];
+            ptr-> ScoutBuyTriggerCashLim=data["data"]["ScoutBuyTriggerCashLim"];
+            ptr-> minMonitorTimes=data["data"]["minMonitorTimes"];
+            ptr-> Cond2Percent=data["data"]["Cond2Percent"];
+            ptr-> Cond2HighTime=data["data"]["Cond2HighTime"];
+            ptr-> Cond2TrackDuration=data["data"]["Cond2TrackDuration"];
+            ptr->  MaxBuyTriggerVolume=data["data"]["MaxBuyTriggerVolume"];
+            addstrategy(ptr);
+        }
+        if(strncmp(data["type"].get<std::string>().c_str(),"getdata",7)==0){
+            getstrategy();
+        }
+        if(strncmp(data["type"].get<std::string>().c_str(),"Senddelete",10)==0){
+            //std::cout<<"senddelete"<<std::endl;
+            removestrategy(data);
+        }
+    }
+    void  Lev2MdSpi::addstrategy(inputstrategy*ptr){
+            strategy data;
+                data.SecurityID= ptr->SecurityID;
+                data. ExchangeID=ptr->ExchangeID;
+                data.OrderID=std::string("OrderID");//策略委托
+                data.SecurityName=std::string("SecurityName");//股票名称
+                data.ID=std::to_string(++Strategy_id);//策略编号
+                data.BuyTriggerVolume=ptr-> BuyTriggerVolume;
+                data.CancelVolume=ptr->CancelVolume;
+                data.Position=0;//目标仓位 元
+                data.TargetPosition=0;//目标仓位 股
+                data.CurrPosition=0;//已买仓位 股
+                data.LowerTimeLimit=0;//延迟触发
+                data.MaxTriggerTimes= ptr-> MaxTriggerTimes;//大单延迟时间
+                data.Status=0;//策略状态
+                data.Count=0;//撤单次数 nullptr
+                data.ScoutStatus=0;//保护单状态 nullptr
+                data.ScoutBuyTriggerCashLim=ptr-> ScoutBuyTriggerCashLim;//保护单触发金额 nullptr
+                data.ScoutMonitorDuration=0;//保护单监控区间 nullptr
+                data.Cond2Percent=ptr-> Cond2Percent;//撤单动量比例 nullptr
+                data.Cond2HighTime= ptr-> Cond2HighTime;//撤单动量监控时间 nullptr
+                data.Cond2TrackDuration=ptr-> Cond2TrackDuration;//撤单动量时间区间 nullptr
+                data.CancelTriggerVolumeLarge=0;//大单大撤单金额 nullptr
+                data.Cond4LowTime=0;//大单大撤单起始时间 nullptr
+                data.Cond4HighTime=0;//大单大撤单结束时间 nullptr
+            Strategy.push_back(data);
+            SV.sendaddstrategy(&data);
+    }
+    void  Lev2MdSpi::getstrategy(){
+        SV.sendgetstrategy(Strategy);
+    }
+    void  Lev2MdSpi::changestrategy(strategy*ptr){
+
+    }
+    void  Lev2MdSpi::removestrategy(json data){
+        int i=data["data"]["sum"].get<int>();
+        vector<std::string>ans;
+        for(int j=0;j<i;j++){
+            ans.push_back(data["data"][std::to_string(j)]["ID"].get<std::string>());
+            std::cout<<ans[j]<<std::endl;
+        }
+        for (auto it = Strategy.begin(); it != Strategy.end(); ) {
+            if (std::find(ans.begin(), ans.end(), (*it).ID) != ans.end()) {
+                // 删除当前元素，并继续循环，但不增加迭代器
+                it = Strategy.erase(it);
+            } else {
+                // 如果不是要删除的元素，就移动到下一个元素
+                ++it;
+            }
+        }
+        SV.sendgetstrategy(Strategy);
+
+
+          
     }
     //登陆
     void Lev2MdSpi::OnFrontConnected(){
-        std::cout<<"OnFrontConnected!"<<std::endl;
+        logger->info("OnFrontConnected!");
         CTORATstpReqUserLoginField req_user_login_field;
         memset(&req_user_login_field, 0, sizeof(req_user_login_field));//清空
         strcpy(req_user_login_field.LogInAccount, userid);//userid
@@ -29,52 +113,60 @@ using namespace std;
         int ret = m_api->ReqUserLogin(&req_user_login_field, ++m_request_id);//调用登陆函数，参数为登陆请求信息
         if (ret != 0)//登陆失败返回0
         {
-            printf("ReqUserLogin fail, ret[%d]\n", ret);
+            logger->warn("ReqUserLogin fail, ret[%d]\n", ret);
         }
     }
     //登陆响应
     void Lev2MdSpi:: OnRspUserLogin(CTORATstpRspUserLoginField *pRspUserLogin, CTORATstpRspInfoField *pRspInfo, int nRequestID, bool bIsLast){
         if (pRspInfo->ErrorID == 0){
-            printf("login success\n");
+            logger->info("login success");
         }
         else{
-            printf("login fail, error_id[%d] error_msg[%s]\n",pRspInfo ->ErrorID, pRspInfo ->ErrorMsg);
+            logger->warn("login fail, error_id[%d] error_msg[%s]\n",pRspInfo ->ErrorID, pRspInfo ->ErrorMsg);
         }
     }
-
-    void Lev2MdSpi::add(){
+    void Lev2MdSpi::Add(){
+        while(1){
+            string S;
+            cout<<"cin>>";
+            cin>>S;
+            cout<<S<<endl;
+            if(S.length()==6){
+                add(S);
+            }
+        }
+    }
+    void Lev2MdSpi::add(std::string s){
+        cout<<s<<endl;
         char* security_list[1];
         char nonconst_id[31];
-        std::cout<<"plase write number"<<std::endl;
-        std::string s;
-        std::cin>>s;
         strcpy(nonconst_id ,s.c_str());
         security_list[0] = nonconst_id;
         if (m_api->SubscribeNGTSTick(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE) == 0){
-            std::cout<<"add SubscribeNGTSTick success!"<<std::endl;
+            logger->info("add SubscribeNGTSTick success!");
         }
         else{
-            std::cout<<"add SubscribeNGTSTick error!"<<std::endl;
+            logger->warn("add SubscribeNGTSTick error!");
         }
 		//Subscribe old orderdetial 
 		if (m_api->SubscribeOrderDetail(security_list, sizeof(security_list) / sizeof(char*),TORA_TSTP_EXD_SZSE) == 0){
-			std::cout<<"add SubscribeOrderDetail success!"<<std::endl;
+			logger->info("add SubscribeOrderDetail success!");
         }
 		else{
-			std::cout<<"add SubscribeOrderDetail error!"<<std::endl;
+			logger->warn("add SubscribeOrderDetail error!");
 		}
 		//Subscribe old trasaction 
         if (m_api->SubscribeTransaction(security_list, sizeof(security_list) / sizeof(char*), TORA_TSTP_EXD_SZSE) == 0){
-			std::cout<<"add SubscribeTransaction success!"<<std::endl;
+			logger->info("add SubscribeTransaction success!");
 		}
 		else{
-			std::cout<<"add SubscribeTransaction error!"<<std::endl;
+			logger->warn("add SubscribeTransaction error!");
 		}
         if(m_api->SubscribeMarketData(security_list,sizeof(security_list) / sizeof(char*),TORA_TSTP_EXD_SZSE) ==0){
-            std::cout<<"add SubscribeMarketData success!"<<std::endl;
+            logger->info("add SubscribeMarketData success!");
         }
         else{
-            std::cout<<"add SubscribeMarketData error!"<<std::endl;
+            logger->warn("add SubscribeMarketData error!");
         }
         
         
@@ -83,45 +175,43 @@ using namespace std;
     //------------------------------------------------------------------------响应报文----------------------------------------------------------------------------------//
     void Lev2MdSpi::OnRspSubNGTSTick(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
         if (pRspInfo->ErrorID == 0){
-            std::cout<<"yes0"<<std::endl;
+            logger->info("OnRspSubNGTSTick");
             CH.buildNGTSTick();
         }
         else{
-            printf("sub market data fail, error_id[%d] error_msg[%s] \n",pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+            logger->warn("sub market data fail, error_id[%d] error_msg[%s] \n",pRspInfo->ErrorID, pRspInfo->ErrorMsg);
         }
     }
 	void Lev2MdSpi::OnRspSubTransaction(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
         if (pRspInfo->ErrorID == 0){
-            std::cout<<"yes1"<<std::endl;
+            logger->info("OnRspSubTransaction");
             CH.buildTransaction();
         }
         else{
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+            logger->warn("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
         }
     }
 	void Lev2MdSpi::OnRspSubOrderDetail(CTORATstpSpecificSecurityField* pSpecificSecurity, TORALEV2API::CTORATstpRspInfoField* pRspInfo, int nRequestID, bool bIsLast){
         
-        if (pRspInfo->ErrorID == 0){std::cout<<"yes2"<<std::endl;
+        if (pRspInfo->ErrorID == 0){ 
+        logger->info("OnRspSubOrderDetail");
            CH.buildOrderDetail();
         }
         else{
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+            logger->warn("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
         }
     }
     void Lev2MdSpi::OnRspSubMarketData (CTORATstpSpecificSecurityField*pSpecificSecurity, CTORATstpRspInfoField*pRspInfo, int nRequestID, bool bIsLast) {
         if (pRspInfo->ErrorID == 0){
-            std::cout<<"yes3"<<std::endl;
+           logger->info("OnRspSubMarketData");
            CH.buildMarketData();
         }
         else{
-         printf("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
+         logger->warn("sub market data fail, error_id[%d] error_msg[%s] \n", pRspInfo->ErrorID, pRspInfo->ErrorMsg);
         }
     }
 
 void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, const int FirstLevelBuyNum, const int FirstLevelBuyOrderVolumes[], const int FirstLevelSellNum, const int FirstLevelSellOrderVolumes[]){
-        //auto start = std::chrono::high_resolution_clock::now();
-           
-    auto start = std::chrono::high_resolution_clock::now();
         CTORATstpLev2MarketDataField*ptr=(CTORATstpLev2MarketDataField*)je_malloc(sizeof(CTORATstpLev2MarketDataField));
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
@@ -221,16 +311,11 @@ void Lev2MdSpi::OnRtnMarketData(CTORATstpLev2MarketDataField* pDepthMarketData, 
         ptr->WithdrawSellMoney=pDepthMarketData->WithdrawSellMoney;
         ptr->WithdrawSellNumber=pDepthMarketData->WithdrawSellNumber;
         MarketData.enqueue(ptr);
-       auto end = std::chrono::high_resolution_clock::now();
-        
-        std::chrono::duration<double, std::milli> duration0 = end - start;
-        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
-         //ans[++k]=duration_ns.count(); 
+
     }
 
 void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
   
-         auto start = std::chrono::high_resolution_clock::now();
        CTORATstpLev2NGTSTickField*ptr=(CTORATstpLev2NGTSTickField*)je_malloc(sizeof(CTORATstpLev2NGTSTickField));
        
         if(ptr==nullptr){
@@ -255,15 +340,9 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
          ptr->TradeMoney=pTick->TradeMoney;
          ptr->Volume=pTick->Volume;
          NGTSTick.enqueue(ptr);
-         auto end = std::chrono::high_resolution_clock::now();
-        
-        std::chrono::duration<double, std::milli> duration0 = end - start;
-        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
-         //ans[++k]=duration_ns.count(); 
 
     }
 	void Lev2MdSpi::OnRtnTransaction(CTORATstpLev2TransactionField* pTransaction){
-        auto start = std::chrono::high_resolution_clock::now();
        CTORATstpLev2TransactionField*ptr=(CTORATstpLev2TransactionField*)je_malloc(sizeof(CTORATstpLev2TransactionField));
         if(ptr==nullptr){
         cout<<"malloc err"<<endl;
@@ -284,15 +363,10 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
           ptr->TradePrice=pTransaction->TradePrice;
           ptr->TradeTime=pTransaction->TradeTime;
           ptr->TradeVolume=pTransaction->TradeVolume;
-        Transaction.enqueue(ptr);
-        auto end = std::chrono::high_resolution_clock::now();
-        
-        std::chrono::duration<double, std::milli> duration0 = end - start;
-        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
-        //ans[++k]=duration_ns.count();        
+        Transaction.enqueue(ptr);  
+
     }
 	void Lev2MdSpi::OnRtnOrderDetail(CTORATstpLev2OrderDetailField* pOrderDetail){
-        auto start = std::chrono::high_resolution_clock::now();
         CTORATstpLev2OrderDetailField*ptr=(CTORATstpLev2OrderDetailField*)je_malloc(sizeof(CTORATstpLev2OrderDetailField));
         
         ptr->BizIndex=pOrderDetail->BizIndex;
@@ -311,15 +385,10 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         ptr->SubSeq=pOrderDetail->SubSeq;
         ptr->Volume=pOrderDetail->Volume;
         OrderDetail.enqueue(ptr);
-         auto end = std::chrono::high_resolution_clock::now();
-        
-        std::chrono::duration<double, std::milli> duration0 = end - start;
-        std::chrono::duration<double, std::nano> duration_ns = std::chrono::duration_cast<std::chrono::duration<double, std::nano>>(duration0);
-        cout<<"order"<<duration_ns.count()<<endl;
-        ans[++k]=duration_ns.count(); 
 
     }
     void Lev2MdSpi::manage_CH(){
+        this->CH.clickhouse_init();//数据库初始化
         while(1){
             manage_MarketDate();
             manage_NGTSTick();
@@ -331,7 +400,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
        CTORATstpLev2MarketDataField*ptr=nullptr;
         if(MarketData.try_dequeue(ptr)){
                 CH.insertMarketData(ptr);
-                SV.sendMarketData(ptr);
+                //SV.sendMarketData(ptr);
                je_free(ptr);
         }
 
@@ -341,7 +410,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         CTORATstpLev2NGTSTickField*ptr=nullptr;
          if(NGTSTick.try_dequeue(ptr)){
             CH.insertNGTSTick(ptr);
-            SV.sendNGTSTick(ptr);
+            //SV.sendNGTSTick(ptr);
            je_free(ptr);
          }
     }
@@ -349,7 +418,7 @@ void Lev2MdSpi::OnRtnNGTSTick(CTORATstpLev2NGTSTickField* pTick){
         CTORATstpLev2TransactionField*ptr=nullptr;
         if(Transaction.try_dequeue(ptr)){
             CH.insertTransaction(ptr);
-            SV.sendTransaction(ptr);
+            //SV.sendTransaction(ptr);
             je_free(ptr);
         }
     }

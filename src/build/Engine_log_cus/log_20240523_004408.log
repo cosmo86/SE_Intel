@@ -1,0 +1,15 @@
+Init yes
+OnFrontConnected!
+login success
+add SubscribeNGTSTick success!
+add SubscribeOrderDetail success!
+add SubscribeTransaction success!
+add SubscribeMarketData success!
+OnRspSubNGTSTick
+OnRspSubOrderDetail
+OnRspSubTransaction
+OnRspSubMarketData
+OnFrontConnected!
+login success
+OnFrontConnected!
+login success

@@ -1,4 +1,89 @@
 #include "../include/service.hpp"
+    void service::sendaddstrategy(strategy*ptr){
+         json data;
+        data["type"]="Sendinput";
+         strategy temporary_data=*ptr;
+            data["data"]["BuyTriggerVolume"]=temporary_data.BuyTriggerVolume;
+            data["data"]["SecurityID"]= temporary_data.SecurityID;
+            data["data"]["ExchangeID"]=temporary_data.ExchangeID;
+            data["data"]["OrderID"] =temporary_data.OrderID;
+            data["data"]["SecurityName"]=temporary_data.SecurityName;
+            data["data"]["ID"]=temporary_data.ID;
+           data["data"]["CancelVolume"]= temporary_data.CancelVolume;
+            data["data"]["Position"]=temporary_data.Position;
+            data["data"]["TargetPosition"]=temporary_data.TargetPosition;
+            data["data"]["CurrPosition"]=temporary_data.CurrPosition;
+            data["data"]["LowerTimeLimit"]=temporary_data. LowerTimeLimit;
+            data["data"]["MaxTriggerTimes"]=temporary_data. MaxTriggerTimes;
+            data["data"]["Status"]=temporary_data. Status;
+           data["data"]["Count"]= temporary_data. Count;
+           data["data"]["ScoutStatus"]=temporary_data. ScoutStatus;
+            data["data"]["ScoutBuyTriggerCashLim"]=temporary_data. ScoutBuyTriggerCashLim;
+            data["data"]["ScoutMonitorDuration"]=temporary_data. ScoutMonitorDuration;
+           data["data"]["Cond2Percent"] =temporary_data. Cond2Percent;
+           data["data"]["Cond2HighTime"] =temporary_data. Cond2HighTime;
+            data["data"]["Cond2TrackDuration"]=temporary_data. Cond2TrackDuration;
+           data["data"]["CancelTriggerVolumeLarge"] =temporary_data. CancelTriggerVolumeLarge;
+           data["data"]["Cond4LowTime"] =temporary_data. Cond4LowTime;
+            data["data"]["Cond4HighTime"]=temporary_data. Cond4HighTime;
+        for(auto i:socked_V){
+        try {
+            // Send the JSON packet to the client
+           echo_server.send(i, data.dump().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
+        }
+        }
+    }
+    void service::sendgetstrategy(std::list<strategy>&val){
+        json data;
+        data["type"]="getdata";
+        int n=val.size();
+        data["data"]["sum"]=n;
+        std::list<strategy>::iterator it = val.begin();
+        for(int i=0;i<n;i++){
+            strategy temporary_data=*it;
+            data["data"][std::to_string(i)]["BuyTriggerVolume"]=temporary_data.BuyTriggerVolume;
+            data["data"][std::to_string(i)]["SecurityID"]= temporary_data.SecurityID;
+            data["data"][std::to_string(i)]["ExchangeID"]=temporary_data.ExchangeID;
+            data["data"][std::to_string(i)]["OrderID"] =temporary_data.OrderID;
+            data["data"][std::to_string(i)]["SecurityName"]=temporary_data.SecurityName;
+            data["data"][std::to_string(i)]["ID"]=temporary_data.ID;
+           data["data"][std::to_string(i)]["CancelVolume"]= temporary_data.CancelVolume;
+            data["data"][std::to_string(i)]["Position"]=temporary_data.Position;
+            data["data"][std::to_string(i)]["TargetPosition"]=temporary_data.TargetPosition;
+            data["data"][std::to_string(i)]["CurrPosition"]=temporary_data.CurrPosition;
+            data["data"][std::to_string(i)]["LowerTimeLimit"]=temporary_data. LowerTimeLimit;
+            data["data"][std::to_string(i)]["MaxTriggerTimes"]=temporary_data. MaxTriggerTimes;
+            data["data"][std::to_string(i)]["Status"]=temporary_data. Status;
+           data["data"][std::to_string(i)]["Count"]= temporary_data. Count;
+           data["data"][std::to_string(i)]["ScoutStatus"]=temporary_data. ScoutStatus;
+            data["data"][std::to_string(i)]["ScoutBuyTriggerCashLim"]=temporary_data. ScoutBuyTriggerCashLim;
+            data["data"][std::to_string(i)]["ScoutMonitorDuration"]=temporary_data. ScoutMonitorDuration;
+           data["data"][std::to_string(i)]["Cond2Percent"] =temporary_data. Cond2Percent;
+           data["data"][std::to_string(i)]["Cond2HighTime"] =temporary_data. Cond2HighTime;
+            data["data"][std::to_string(i)]["Cond2TrackDuration"]=temporary_data. Cond2TrackDuration;
+           data["data"][std::to_string(i)]["CancelTriggerVolumeLarge"] =temporary_data. CancelTriggerVolumeLarge;
+           data["data"][std::to_string(i)]["Cond4LowTime"] =temporary_data. Cond4LowTime;
+            data["data"][std::to_string(i)]["Cond4HighTime"]=temporary_data. Cond4HighTime;
+            it++;
+        }
+        std::cout<<data<<std::endl;
+            for(auto i:socked_V){
+        try {
+            // Send the JSON packet to the client
+           echo_server.send(i, data.dump().c_str(), websocketpp::frame::opcode::text);
+        } catch (const websocketpp::exception& e) {
+            std::cout << "Send failed because: " << e.what() << std::endl;
+        }
+        }
+    }
+    void service::sendchangestrategy(strategy*ptr){
+
+    }
+    void service::sendremovestrategy(strategy*ptr){
+
+    }
     std::string service::timestampToString(std::time_t timestamp) {
             std::time_t currentTime = std::time(nullptr);
             std::tm* tm_info = std::localtime(&currentTime);
@@ -6,22 +91,10 @@
             oss << std::put_time(tm_info, "%Y-%m-%dT%H:%M:%S");
             return oss.str();
         }
-    void service::on_message( websocketpp::connection_hdl hdl, server::message_ptr msg) {
-        std::cout << "on_message called with hdl: " << hdl.lock().get()
-                << " and message: " << msg->get_payload()
-                << std::endl;
-
-        // Check for a special command to instruct the server to stop listening
-        if (msg->get_payload() == "stop-listening") {
-            echo_server.stop_listening();
-            return;
-        }
-        std::string response = "Service response: " + msg->get_payload();
-        try {
-            echo_server.send(hdl, response, websocketpp::frame::opcode::text);
-        } catch (const websocketpp::exception& e) {
-            std::cout << "Send failed because: " << e.what() << std::endl;
-        }
+    void service::on_message(websocketpp::connection_hdl hdl, server::message_ptr msg) {
+        json data=json::parse(msg->get_payload());
+        json *data_ptr=&data;
+        fn((void*)(data_ptr));
     }
     // Callback function when a new connection is established
     void service::on_open( websocketpp::connection_hdl hdl) {
@@ -36,14 +109,14 @@
             }
         }
     }
-    void  service::service_init(){
-        std::cout<<"service_init"<<std::endl;
+    void  service::service_init(std::function<void(void*)>kn){
         try {
-            echo_server.set_access_channels(websocketpp::log::alevel::all);
-            echo_server.clear_access_channels(websocketpp::log::alevel::frame_payload);
+            //echo_server.set_access_channels(websocketpp::log::alevel::all);
+            fn=kn;
+            echo_server.clear_access_channels(websocketpp::log::alevel::all);
             echo_server.init_asio();
-            echo_server.set_message_handler(bind(&service::on_message, this, _1, _2));
             echo_server.set_open_handler(bind(&service::on_open, this, _1));
+            echo_server.set_message_handler(bind(&service::on_message, this, _1, _2));
             echo_server.set_close_handler(bind(&service::on_close, this, _1));
             echo_server.listen(9002);
             echo_server.start_accept();

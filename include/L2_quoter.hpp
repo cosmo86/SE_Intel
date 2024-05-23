@@ -33,6 +33,7 @@
 #include <vector>
 #include <thread>
 #include <mutex>
+#include <list>
 #include "jemalloc.h"
 #include "concurrentqueue.h"
 using namespace TORALEV2API;
@@ -40,16 +41,15 @@ typedef websocketpp::server<websocketpp::config::asio> server;
 using websocketpp::lib::placeholders::_1;
 using websocketpp::lib::placeholders::_2;
 using websocketpp::lib::bind;
+
 class Lev2MdSpi : public CTORATstpLev2MdSpi{
 public:
 	Lev2MdSpi():CH(),SV(),m_api(nullptr),m_request_id(0){};
     Lev2MdSpi(CTORATstpLev2MdApi *api):m_api(api),m_request_id(0){};
     ~Lev2MdSpi(){    logger->stop();};
 public:
-	int k=-1;
-	double ans[10100]={0};
 	virtual void init(char * userid,char * password,char * address);
-	virtual	void init_CH_SV();
+	virtual	void Service();
 	virtual void OnFrontConnected();
 	virtual void OnRspUserLogin(CTORATstpRspUserLoginField *pRspUserLogin, CTORATstpRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
@@ -68,20 +68,26 @@ public:
 	void manage_NGTSTick();
 	void manage_Transaction();
 	void manage_OrderDetail();
-	void add();
+	void add(std::string s);
+	void Add();
+	
+	void recive_(void*ptr);//当收到数据时进行处理的回调函数。
+    void addstrategy(inputstrategy*ptr);//增加策略
+    void getstrategy();//获取策略
+    void changestrategy(strategy*ptr);//修改策略
+    void removestrategy(json data);//删除策略
+	      
 private:
 	int m_request_id;
     CTORATstpLev2MdApi *m_api;
 	char  userid[21];
 	char  password[41];
 	char  address[64];
+    std::list<strategy>Strategy;//策略集合
+	int Strategy_id=0;
 	ClickHouse CH;
 	service SV;
 	LoggerPtr logger;
-	/*memory_pool<TORALEV2API::CTORATstpLev2MarketDataField> MarketData;
-	memory_pool<TORALEV2API::CTORATstpLev2NGTSTickField> NGTSTick;
-	memory_pool<TORALEV2API::CTORATstpLev2TransactionField> Transaction;
-	memory_pool<TORALEV2API::CTORATstpLev2OrderDetailField> OrderDetail;*/
 	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2MarketDataField*> MarketData;
 	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2NGTSTickField*> NGTSTick;
 	moodycamel::ConcurrentQueue<TORALEV2API::CTORATstpLev2TransactionField*> Transaction;

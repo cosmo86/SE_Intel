@@ -1,0 +1,6 @@
+Init yes
+OnFrontConnected!
+add SubscribeNGTSTick error!
+add SubscribeOrderDetail error!
+add SubscribeTransaction error!
+add SubscribeMarketData error!
